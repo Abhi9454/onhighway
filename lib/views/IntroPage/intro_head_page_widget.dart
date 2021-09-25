@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/main.dart';
 import '../../helpers/clipper_clip_path.dart';
 import '../../config.dart';
 
@@ -44,7 +46,9 @@ class IntroHeadPageWidget extends StatelessWidget {
                   Container(
                     width: MediaQuery.of(context).size.width * 0.6,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(LandingPage());
+                      },
                       child: Text(
                         'Sign In',
                         style: TextStyle(fontWeight: FontWeight.bold),

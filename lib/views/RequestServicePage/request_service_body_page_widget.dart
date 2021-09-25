@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:onhighway/views/Widgets/poster_widget.dart';
+import 'package:onhighway/views/Widgets/app_body_options_navigation_widget.dart';
+import 'package:onhighway/views/Widgets/app_footer.dart';
 import '../../config.dart';
 import '../Widgets/app_body_payment_container_widget.dart';
 import '../Widgets/app_head_logo_widget.dart';
@@ -18,12 +21,12 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
-            width: MediaQuery.of(context).size.width * 0.9,
+            width: MediaQuery.of(context).size.width * 0.8,
             color: AppConfig().secondary,
             child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: Text(
-                'Request a new service',
+                'Choose options',
                 textAlign: TextAlign.left,
                 style: TextStyle(color: Colors.black, fontSize: 22),
               ),
@@ -31,7 +34,7 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
           ),
         ),
         Container(
-          width: MediaQuery.of(context).size.width * 0.9,
+          width: MediaQuery.of(context).size.width * 0.80,
           height: MediaQuery.of(context).size.height / 4,
           color: AppConfig().onSecondary,
           child: Column(
@@ -63,69 +66,20 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
             ],
           ),
         ),
+        SizedBox(
+          height: 10,
+        ),
         Padding(
           padding: const EdgeInsets.all(5.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                color: AppConfig().onPrimary,
-                width: MediaQuery.of(context).size.width * 0.25,
-                height: MediaQuery.of(context).size.height / 7,
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8.0, bottom: 5.0),
-                        child: Icon(
-                          Icons.add,
-                          size: 20,
-                          color: Colors.white,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 10.0),
-                        child: Text(
-                          'Add a new vehicle',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.white, fontSize: 15),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Container(
-                color: AppConfig().onPrimary,
-                width: MediaQuery.of(context).size.width * 0.25,
-                height: MediaQuery.of(context).size.height / 7,
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8.0, bottom: 5.0),
-                        child: Icon(
-                          Icons.car_repair,
-                          size: 20,
-                          color: Colors.white,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 10.0),
-                        child: Text(
-                          'View vehicles added',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.white, fontSize: 15),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+              GestureDetector(
+                onTap: () {
+                  print('Service History Box');
+                },
+                child:
+                    AppBodyNavigationContainer('Add a new vehicle', Icons.add),
               ),
               SizedBox(
                 width: 10,
@@ -134,39 +88,24 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
                 onTap: () {
                   print('Service History Box');
                 },
-                child: Container(
-                  color: AppConfig().onPrimary,
-                  width: MediaQuery.of(context).size.width * 0.25,
-                  height: MediaQuery.of(context).size.height / 7,
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0, bottom: 5.0),
-                          child: Icon(
-                            Icons.history,
-                            size: 20,
-                            color: Colors.white,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              bottom: 10.0, right: 5.0, left: 5.0),
-                          child: Text(
-                            'Service History',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.white, fontSize: 15),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                child: AppBodyNavigationContainer(
+                    'View vehicles added', Icons.car_rental),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              GestureDetector(
+                onTap: () {
+                  print('Service History Box');
+                },
+                child: AppBodyNavigationContainer(
+                    'Service History', Icons.history),
               )
             ],
           ),
         ),
+        PosterWidget(),
+        AppFooter() //Footer
       ],
     );
   }

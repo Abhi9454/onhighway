@@ -1,7 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:onhighway/views/RequestServicePage/request_service_body_page_widget.dart';
-import '../HomePage/widget/home_text_widget.dart';
-import '../../helpers/clipper_clip_path.dart';
+import '../RequestServicePage/request_service_body_page_widget.dart';
 
 import '../../config.dart';
 
@@ -11,39 +10,28 @@ class RequestServiceHeadPageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppConfig().primary,
-      body: Column(
-        children: [
-          SafeArea(
-            child: ClipPath(
-              clipper: ClipPathClass(),
-              child: Container(
-                color: Colors.white,
-                height: MediaQuery.of(context).size.height * 0.9,
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
-                  child: RequestServiceBodyPageWidget(),
-                  //Stateless Body Widget
-                ),
-              ), //Body Widget
-            ),
+      backgroundColor: Colors.white,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(50),
+        child: AppBar(
+          backgroundColor: AppConfig().secondary,
+          leading: IconButton(
+            icon: Icon(CupertinoIcons.back, color: AppConfig().primary),
+            onPressed: () => Navigator.of(context).pop(),
           ),
-          //bottom footer links
-          Container(
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  HomeTextWidget('Visit Website|'),
-                  HomeTextWidget('Contact Support|'),
-                  HomeTextWidget('Our Terms|'),
-                  HomeTextWidget('Plans and Features')
-                ],
-              ),
-            ),
-          )
-        ],
+          title: Text(
+            'Request a new service',
+            textAlign: TextAlign.left,
+            style: TextStyle(color: Colors.black, fontSize: 22),
+          ),
+        ),
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: RequestServiceBodyPageWidget(),
+          //Stateless Body Widget
+        ),
       ),
     );
   }

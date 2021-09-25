@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomePagePosterWidget extends StatelessWidget {
-  const HomePagePosterWidget({Key? key}) : super(key: key);
+class PosterWidget extends StatelessWidget {
+  const PosterWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

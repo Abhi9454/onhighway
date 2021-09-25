@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onhighway/config.dart';
 class HomeTextWidget extends StatelessWidget {
   HomeTextWidget(this.linkText);
 
@@ -9,8 +10,8 @@ class HomeTextWidget extends StatelessWidget {
     return Text(
       linkText,
       style: TextStyle(
-          color: Colors.white,
-          fontSize: 12
+          color: AppConfig().primary,
+          fontSize: 14
       ),
     );
   }
