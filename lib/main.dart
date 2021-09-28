@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:onhighway/views/IntroPage/intro_head_page_widget.dart';
+import '/views/IntroPage/intro_head_page_widget.dart';
 import '/views/RequestServicePage/request_service_head_page_widget.dart';
 import '../views/HomePage/home_head_page_widget.dart';
 import 'config.dart';
@@ -9,13 +9,17 @@ void main() {
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
     title: AppConfig().appName,
+    theme: ThemeData.light().copyWith(
+      primaryColor: AppConfig().primary,
+      scaffoldBackgroundColor: Colors.white,
+      accentColor: AppConfig().primary
+    ),
     home: IntroHeadPageWidget(),
   ));
 }
 
 class LandingPageController extends GetxController {
   var tabIndex = 0.obs;
-
   void changeTabIndex(int index) {
     tabIndex.value = index;
   }

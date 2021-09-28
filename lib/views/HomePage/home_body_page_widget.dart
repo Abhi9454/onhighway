@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../AddNewVehiclePage/add_new_vehicle_page_head_widget.dart';
 import '/views/RequestServicePage/request_service_head_page_widget.dart';
 import '/views/Widgets/app_body_options_navigation_widget.dart';
 import '/views/Widgets/app_footer.dart';
@@ -77,7 +78,7 @@ class HomePageBodyWidget extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () {
-                  print('Service History Box');
+                  Get.to(AddNewVehicleHeadPageWidget());
                 },
                 child:
                     AppBodyNavigationContainer('Add a new vehicle', Icons.add),

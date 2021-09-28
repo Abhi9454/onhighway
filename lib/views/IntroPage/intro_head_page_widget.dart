@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '/main.dart';
+import '../RegistrationPage/registration_page_widget.dart';
+import '/views/LoginPage/login_page_widget.dart';
 import '../../helpers/clipper_clip_path.dart';
 import '../../config.dart';
 
@@ -47,7 +48,7 @@ class IntroHeadPageWidget extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.6,
                     child: ElevatedButton(
                       onPressed: () {
-                        Get.to(LandingPage());
+                        Get.to(LoginPageWidget());
                       },
                       child: Text(
                         'Sign In',
@@ -64,7 +65,9 @@ class IntroHeadPageWidget extends StatelessWidget {
                     margin: const EdgeInsets.only(bottom: 50),
                     width: MediaQuery.of(context).size.width * 0.6,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(RegistrationPageWidget());
+                      },
                       child: Text(
                         'Sign Up',
                         style: TextStyle(

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:onhighway/views/Widgets/poster_widget.dart';
-import 'package:onhighway/views/Widgets/app_body_options_navigation_widget.dart';
-import 'package:onhighway/views/Widgets/app_footer.dart';
+import 'package:get/get.dart';
+import '../AddNewVehiclePage/add_new_vehicle_page_head_widget.dart';
+import '../Widgets/poster_widget.dart';
+import '../Widgets/app_body_options_navigation_widget.dart';
+import '../Widgets/app_footer.dart';
 import '../../config.dart';
 import '../Widgets/app_body_payment_container_widget.dart';
 import '../Widgets/app_head_logo_widget.dart';
@@ -76,7 +78,7 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () {
-                  print('Service History Box');
+                  Get.to(AddNewVehicleHeadPageWidget());
                 },
                 child:
                     AppBodyNavigationContainer('Add a new vehicle', Icons.add),
