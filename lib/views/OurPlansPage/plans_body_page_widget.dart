@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onhighway/views/Widgets/app_head_logo_widget.dart';
+import '../../views/Widgets/app_head_logo_widget.dart';
 import '../../config.dart';
 
 class PlansBodyPageWidget extends StatelessWidget {
