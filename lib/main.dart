@@ -1,25 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import '/views/OurPlansPage/plans_head_page_widget.dart';
+import '/views/ServiceHistoryPage/service_history_head_page_widget.dart';
+import 'locale/localisation_service.dart';
 import '/views/IntroPage/intro_head_page_widget.dart';
-import '/views/RequestServicePage/request_service_head_page_widget.dart';
 import '../views/HomePage/home_head_page_widget.dart';
 import 'config.dart';
 
-void main() {
-  runApp(GetMaterialApp(
-    debugShowCheckedModeBanner: false,
-    title: AppConfig().appName,
-    theme: ThemeData.light().copyWith(
-      primaryColor: AppConfig().primary,
-      scaffoldBackgroundColor: Colors.white,
-      accentColor: AppConfig().primary
+void main() async {
+  await GetStorage.init();
+  final _box = GetStorage();
+  _box.writeIfNull("locale", "English");
+  runApp(
+    GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: AppConfig().appName,
+      locale: LocalizationService().getCurrentLocale(),
+      theme: ThemeData.light().copyWith(
+          primaryColor: AppConfig().primary,
+          scaffoldBackgroundColor: Colors.white,
+          accentColor: AppConfig().primary),
+      translations: LocalizationService(),
+      home: IntroHeadPageWidget(),
     ),
-    home: IntroHeadPageWidget(),
-  ));
+  );
 }
 
 class LandingPageController extends GetxController {
   var tabIndex = 0.obs;
+
   void changeTabIndex(int index) {
     tabIndex.value = index;
   }
@@ -53,17 +63,13 @@ class LandingPage extends StatelessWidget {
                 label: "Home",
                 backgroundColor: AppConfig().primary),
             BottomNavigationBarItem(
-                icon: const Icon(Icons.cloud_upload),
-                label: "My Vehicles",
+                icon: const Icon(Icons.history),
+                label: "serviceHistory".tr,
                 backgroundColor: AppConfig().primary),
             BottomNavigationBarItem(
                 icon: const Icon(Icons.support_agent),
-                label: "History",
+                label: "Our Plans",
                 backgroundColor: AppConfig().primary),
-            BottomNavigationBarItem(
-                icon: const Icon(Icons.settings),
-                label: "Settings",
-                backgroundColor: AppConfig().primary)
           ],
         )));
   }
@@ -72,19 +78,17 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final LandingPageController landingPageController =
         Get.put(LandingPageController(), permanent: false);
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       bottomNavigationBar:
-          buildBottomNavigationMenu(context, landingPageController),
+      buildBottomNavigationMenu(context, landingPageController),
       body: Obx(() => IndexedStack(
-            index: landingPageController.tabIndex.value,
-            children: [
-              HomePageHeadWidget(),
-              RequestServiceHeadPageWidget(),
-              HomePageHeadWidget(),
-              RequestServiceHeadPageWidget(),
-            ],
-          )),
-    ));
+        index: landingPageController.tabIndex.value,
+        children: [
+          HomePageHeadWidget(),
+          ServiceHistoryHeadPageWidget(),
+          PlansHeadPageWidget(),
+        ],
+      )),
+    );
   }
 }

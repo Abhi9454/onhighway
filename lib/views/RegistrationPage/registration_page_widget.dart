@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../HomePage/widget/home_text_widget.dart';
 import '../Widgets/app_head_logo_widget.dart';
-
+import 'package:get/get.dart';
 import '../../config.dart';
 class RegistrationPageWidget extends StatelessWidget {
   const RegistrationPageWidget({Key? key}) : super(key: key);
@@ -138,7 +138,7 @@ class RegistrationPageWidget extends StatelessWidget {
                           onPressed: () {
                             print('Login Button');
                           },
-                          child: Text('Sign In'),
+                          child: Text('signUp'.tr),
                           style: ElevatedButton.styleFrom(
                             shape: new RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(5.0),

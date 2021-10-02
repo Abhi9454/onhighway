@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
-import '../../main.dart';
+import 'package:onhighway/main.dart';
+import '../IntroPage/intro_head_page_widget.dart';
 import '../../config.dart';
 import '../HomePage/widget/home_text_widget.dart';
 import '/views/Widgets/app_head_logo_widget.dart';
@@ -41,64 +42,60 @@ class LoginPageWidget extends StatelessWidget {
                 child: Form(
                   child: Column(
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: AppConfig().primary),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              left: 15.0, right: 15, top: 5.0, bottom: 5.0),
-                          child: TextFormField(
-                            autofocus: false,
-                            obscureText: true,
-                            style:
-                                TextStyle(color: Colors.black, fontSize: 18),
-                            decoration: const InputDecoration(
-                              icon: const Icon(Icons.email),
-                              hintText: 'Email',
-                              border: InputBorder.none,
-                            ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            left: 15.0, right: 15, top: 5.0, bottom: 5.0),
+                        child: TextFormField(
+                          autofocus: false,
+                          obscureText: true,
+                          style:
+                              TextStyle(color: Colors.black, fontSize: 18),
+                          decoration: const InputDecoration(
+                            hintText: 'Email',
+                              enabledBorder: const OutlineInputBorder(
+                                borderSide: const BorderSide(color: Colors.grey, width: 0.0),
+                              ),
+                              focusedBorder: const OutlineInputBorder(
+                                borderSide: const BorderSide(color: Colors.grey, width: 0.0),
+                              )
                           ),
                         ),
                       ),
                       SizedBox(
                         height: 15,
                       ),
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: AppConfig().primary),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              left: 15.0, right: 15, top: 5.0, bottom: 5.0),
-                          child: TextFormField(
-                            autofocus: false,
-                            obscureText: true,
-                            style:
-                                TextStyle(color: Colors.black, fontSize: 18),
-                            decoration: const InputDecoration(
-                              icon: const Icon(Icons.lock),
-                              hintText: 'Password',
-                              border: InputBorder.none,
-                            ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            left: 15.0, right: 15, top: 5.0, bottom: 5.0),
+                        child: TextFormField(
+                          autofocus: false,
+                          obscureText: true,
+                          style:
+                              TextStyle(color: Colors.black, fontSize: 18),
+                          decoration: const InputDecoration(
+                            hintText: 'Password',
+                              enabledBorder: const OutlineInputBorder(
+                                borderSide: const BorderSide(color: Colors.grey, width: 0.0),
+                              ),
+                              focusedBorder: const OutlineInputBorder(
+                                borderSide: const BorderSide(color: Colors.grey, width: 0.0),
+                              )
                           ),
                         ),
                       ),
                       SizedBox(height: 15,),
                       Container(
-                        width: MediaQuery.of(context).size.width * 0.9,
-                        height: MediaQuery.of(context).size.width * 0.12,
+                        width: MediaQuery.of(context).size.width * 0.5,
                         child: ElevatedButton(
                           onPressed: () {
-                            Get.offAll(LandingPage());
+                            Get.offAll(() => LandingPage());
                           },
-                          child: Text('Sign In'),
+                          child: Text('signIn'.tr),
                           style: ElevatedButton.styleFrom(
                             shape: new RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(5.0),
                             ),
+                            padding: const EdgeInsets.all(15),
                             primary: Color(0XFF091e6d),
                           ),
                         ),

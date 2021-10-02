@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../HomePage/widget/home_text_widget.dart';
-
+import 'package:get/get.dart';
 class AppFooter extends StatelessWidget {
   const AppFooter({Key? key}) : super(key: key);
 
@@ -12,8 +12,8 @@ class AppFooter extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            HomeTextWidget('Visit Website | '),
-            HomeTextWidget('Contact Support'),
+            HomeTextWidget('visitWebsite'.tr + ' | '),
+            HomeTextWidget('contactSupport'.tr),
           ],
         ),
       ),

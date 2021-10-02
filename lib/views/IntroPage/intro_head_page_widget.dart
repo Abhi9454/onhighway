@@ -45,39 +45,42 @@ class IntroHeadPageWidget extends StatelessWidget {
               Column(
                 children: [
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.6,
+                    width: MediaQuery.of(context).size.width * 0.7,
                     child: ElevatedButton(
                       onPressed: () {
                         Get.to(LoginPageWidget());
                       },
                       child: Text(
-                        'Sign In',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        'signIn'.tr,
+                        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),
                       ),
                       style: ElevatedButton.styleFrom(
                           shape: new RoundedRectangleBorder(
                             borderRadius: new BorderRadius.circular(30.0),
                           ),
+                          padding: const EdgeInsets.all(15),
                           primary: Color(0XFF091e6d)),
                     ),
                   ),
+                  SizedBox(height: 10,),
                   Container(
-                    margin: const EdgeInsets.only(bottom: 50),
-                    width: MediaQuery.of(context).size.width * 0.6,
+                    margin: const EdgeInsets.only(bottom: 80),
+                    width: MediaQuery.of(context).size.width * 0.7,
                     child: ElevatedButton(
                       onPressed: () {
                         Get.to(RegistrationPageWidget());
                       },
                       child: Text(
-                        'Sign Up',
+                        'signUp'.tr,
                         style: TextStyle(
                             color: AppConfig().primary,
-                            fontWeight: FontWeight.bold),
+                            fontWeight: FontWeight.bold,fontSize: 18),
                       ),
                       style: ElevatedButton.styleFrom(
                           shape: new RoundedRectangleBorder(
                             borderRadius: new BorderRadius.circular(30.0),
                           ),
+                          padding: const EdgeInsets.all(15),
                           primary: Colors.white),
                     ),
                   ),

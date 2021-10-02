@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../RunningServicePage/running_service_head_page_widget.dart';
+import '../MyVehiclesPage/my_vehicle_head_page_widget.dart';
 import '../AddNewVehiclePage/add_new_vehicle_page_head_widget.dart';
 import '/views/RequestServicePage/request_service_head_page_widget.dart';
 import '/views/Widgets/app_body_options_navigation_widget.dart';
@@ -18,96 +20,69 @@ class HomePageBodyWidget extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        AppHeadLogoWidget(),                       /// Header Logo
-        AppBodyPaymentContainer(),                 ///Header payment button widget
-        Padding(
-          padding: const EdgeInsets.all(30.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Get.to(RequestServiceHeadPageWidget());             ///Navigate to Request service page
-                },
-                child: Container(
-                  color: AppConfig().secondary,
-                  width: MediaQuery.of(context).size.width * 0.5,
-                  height: MediaQuery.of(context).size.height / 6,
-                  child: Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Text(
-                        'Request a new service',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.black, fontSize: 24),
-                      ),
+        AppHeadLogoWidget(),
+        AppBodyPaymentContainer(),
+        SizedBox(
+          child: Padding(
+            padding: const EdgeInsets.all(30.0),
+            child: GestureDetector(
+              onTap: () {
+                Get.to(RequestServiceHeadPageWidget());
+              },
+              child: Container(
+                color: AppConfig().secondary,
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text(
+                      'requestService'.tr,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.black, fontSize: 24),
                     ),
                   ),
                 ),
               ),
-              SizedBox(
-                width: 20,
-              ),
-              GestureDetector(
-                onTap: () {
-                  Get.to(RequestServiceHeadPageWidget());           ///Navigate to Running services Page
-                },
-                child: Container(
-                  color: AppConfig().secondary,
-                  width: MediaQuery.of(context).size.width * 0.25,
-                  height: MediaQuery.of(context).size.height / 6,
-                  child: Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Text(
-                        'Running services',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.black, fontSize: 15),
-                      ),
-                    ),
-                  ),
+            ),
+          ),
+        ),
+        SizedBox(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 15.0,right: 15.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Get.to(AddNewVehicleHeadPageWidget());
+                  },
+                  child: AppBodyNavigationContainer('addVehicle'.tr, Icons.add),
                 ),
-              ),
-            ],
+                SizedBox(
+                  width: 5,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Get.to(MyVehicleHeadPageWidget());
+                  },
+                  child: AppBodyNavigationContainer(
+                      'myVehicles'.tr, Icons.car_rental),
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Get.to(RunningServiceHeadPageWidget());
+                  },
+                  child: AppBodyNavigationContainer(
+                      'runningService'.tr, Icons.run_circle),
+                )
+              ],
+            ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.all(5.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Get.to(AddNewVehicleHeadPageWidget());
-                },
-                child:
-                    AppBodyNavigationContainer('Add a new vehicle', Icons.add),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              GestureDetector(
-                onTap: () {
-                  print('Service History Box');
-                },
-                child: AppBodyNavigationContainer(
-                    'View vehicles added', Icons.car_rental),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              GestureDetector(
-                onTap: () {
-                  print('Service History Box');
-                },
-                child: AppBodyNavigationContainer(
-                    'Service History', Icons.history),
-              )
-            ],
-          ),
-        ),
-        PosterWidget(), ///Bottom App Poster
-        AppFooter() ///App Footer
+        PosterWidget(),
+        AppFooter()
       ],
     );
   }

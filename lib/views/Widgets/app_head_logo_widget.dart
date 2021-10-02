@@ -7,7 +7,7 @@ class AppHeadLogoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        margin: const EdgeInsets.only(top: 10),
+        margin: const EdgeInsets.only(top: 25),
         child: Image(
           image: AssetImage(
             'images/on-highway-logo.png',             //header logo image

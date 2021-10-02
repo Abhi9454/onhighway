@@ -18,6 +18,8 @@ dependencies:
   get: ^4.3.8
   lint: ^1.0.0
   dio: ^4.0.0
+  get_storage: ^2.0.3
+
 
 dev_dependencies:
   flutter_test:

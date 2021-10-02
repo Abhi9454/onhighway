@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import '../HomePage/home_body_page_widget.dart';
+import '../OurPlansPage/plans_body_page_widget.dart';
 
-class HomePageHeadWidget extends StatelessWidget {
-  const HomePageHeadWidget({Key? key}) : super(key: key);
+import '../../config.dart';
+
+class PlansHeadPageWidget extends StatelessWidget {
+  const PlansHeadPageWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,8 @@ class HomePageHeadWidget extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: HomePageBodyWidget(), //Stateless Body Widget
+        child: PlansBodyPageWidget(),
+        //Stateless Body Widget
       ),
     );
   }
