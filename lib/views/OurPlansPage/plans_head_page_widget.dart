@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../OurPlansPage/plans_body_page_widget.dart';
 
-import '../../config.dart';
 
 class PlansHeadPageWidget extends StatelessWidget {
   const PlansHeadPageWidget({Key? key}) : super(key: key);

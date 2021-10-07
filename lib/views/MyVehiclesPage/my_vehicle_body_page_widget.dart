@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../MyVehiclesPage/Widget/my_vehicle_list_view_container.dart';
-import '../../config.dart';
 
 class MyVehicleBodyPageWidget extends StatelessWidget {
   const MyVehicleBodyPageWidget({Key? key}) : super(key: key);
