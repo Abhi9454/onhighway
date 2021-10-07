@@ -2,19 +2,18 @@ include: package:lint/analysis_options.yaml
 
 linter:
   rules:
-    always_put_required_named_parameters_first: false
-
-    avoid_classes_with_only_static_members: false
 
     sort_constructors_first: true
-
-    prefer_single_quotes: true
-
-    # Good packages document everything
-    public_member_api_docs: true
-
-    # Blindly follow the Flutter code style, which prefers types everywhere
+    public_member_api_docs: false
     always_specify_types: true
+    prefer_single_quotes: true
+    prefer_double_quotes: false
 
-    # Back to the 80s
-    lines_longer_than_80_chars: true
+    lines_longer_than_80_chars: false
+
+    always_put_required_named_parameters_first: true
+
+    avoid_classes_with_only_static_members: false
+    non_constant_identifier_names: false
+    always_declare_return_types: false
+    type_annotate_public_apis: false

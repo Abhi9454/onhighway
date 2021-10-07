@@ -1,10 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import '../RunningServicePage/running_service_head_page_widget.dart';
 import '../MyVehiclesPage/my_vehicle_head_page_widget.dart';
 import '../AddNewVehiclePage/add_new_vehicle_page_head_widget.dart';
-import '/views/RequestServicePage/request_service_head_page_widget.dart';
 import '/views/Widgets/app_body_options_navigation_widget.dart';
 import '/views/Widgets/app_footer.dart';
 import '../Widgets/app_body_payment_container_widget.dart';
@@ -27,7 +25,6 @@ class HomePageBodyWidget extends StatelessWidget {
             padding: const EdgeInsets.all(30.0),
             child: GestureDetector(
               onTap: () {
-                Get.to(RequestServiceHeadPageWidget());
               },
               child: Container(
                 color: AppConfig().secondary,
@@ -35,7 +32,7 @@ class HomePageBodyWidget extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text(
-                      'requestService'.tr,
+                      'requestService',
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.black, fontSize: 24),
                     ),
@@ -53,29 +50,26 @@ class HomePageBodyWidget extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Get.to(AddNewVehicleHeadPageWidget());
                   },
-                  child: AppBodyNavigationContainer('addVehicle'.tr, Icons.add),
+                  child: AppBodyNavigationContainer('addVehicle', Icons.add),
                 ),
                 SizedBox(
                   width: 5,
                 ),
                 GestureDetector(
                   onTap: () {
-                    Get.to(MyVehicleHeadPageWidget());
                   },
                   child: AppBodyNavigationContainer(
-                      'myVehicles'.tr, Icons.car_rental),
+                      'myVehicles', Icons.car_rental),
                 ),
                 SizedBox(
                   width: 5,
                 ),
                 GestureDetector(
                   onTap: () {
-                    Get.to(RunningServiceHeadPageWidget());
                   },
                   child: AppBodyNavigationContainer(
-                      'runningService'.tr, Icons.run_circle),
+                      'runningService', Icons.run_circle),
                 )
               ],
             ),

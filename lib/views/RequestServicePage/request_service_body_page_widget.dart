@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../MyVehiclesPage/my_vehicle_head_page_widget.dart';
-import '../AddNewVehiclePage/add_new_vehicle_page_head_widget.dart';
 import '../Widgets/poster_widget.dart';
-import '../Widgets/app_body_options_navigation_widget.dart';
 import '../Widgets/app_footer.dart';
 import '../../config.dart';
-import '../Widgets/app_body_payment_container_widget.dart';
-import '../Widgets/app_head_logo_widget.dart';
 
 class RequestServiceBodyPageWidget extends StatelessWidget {
   const RequestServiceBodyPageWidget({Key? key}) : super(key: key);
@@ -166,7 +160,7 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                 },
-                child: Text('Submit'.tr),
+                child: Text('Submit'),
                 style: ElevatedButton.styleFrom(
                   shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(5.0),

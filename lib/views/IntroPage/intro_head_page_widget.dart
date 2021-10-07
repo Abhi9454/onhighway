@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import '../LoginPage/login_page_widget.dart';
 import '../RegistrationPage/registration_page_widget.dart';
-import '/views/LoginPage/login_page_widget.dart';
 import '../../helpers/clipper_clip_path.dart';
 import '../../config.dart';
 
@@ -48,11 +47,15 @@ class IntroHeadPageWidget extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.7,
                     child: ElevatedButton(
                       onPressed: () {
-                        Get.to(LoginPageWidget());
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginPageWidget()));
                       },
                       child: Text(
-                        'signIn'.tr,
-                        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),
+                        'signIn',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18),
                       ),
                       style: ElevatedButton.styleFrom(
                           shape: new RoundedRectangleBorder(
@@ -62,19 +65,26 @@ class IntroHeadPageWidget extends StatelessWidget {
                           primary: Color(0XFF091e6d)),
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Container(
                     margin: const EdgeInsets.only(bottom: 80),
                     width: MediaQuery.of(context).size.width * 0.7,
                     child: ElevatedButton(
                       onPressed: () {
-                        Get.to(RegistrationPageWidget());
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    RegistrationPageWidget()));
                       },
                       child: Text(
-                        'signUp'.tr,
+                        'signUp',
                         style: TextStyle(
                             color: AppConfig().primary,
-                            fontWeight: FontWeight.bold,fontSize: 18),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18),
                       ),
                       style: ElevatedButton.styleFrom(
                           shape: new RoundedRectangleBorder(
@@ -93,5 +103,3 @@ class IntroHeadPageWidget extends StatelessWidget {
     );
   }
 }
-
-

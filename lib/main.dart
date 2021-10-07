@@ -1,94 +1,112 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
+import '../helpers/enum.dart';
+import '../viewModels/auth_view_model.dart';
+import '../../views/IntroPage/intro_head_page_widget.dart';
+import '/viewModels/home_page_view_model.dart';
+import 'package:provider/provider.dart';
 import '/views/OurPlansPage/plans_head_page_widget.dart';
 import '/views/ServiceHistoryPage/service_history_head_page_widget.dart';
-import 'locale/localisation_service.dart';
-import '/views/IntroPage/intro_head_page_widget.dart';
 import '../views/HomePage/home_head_page_widget.dart';
 import 'config.dart';
 
 void main() async {
-  await GetStorage.init();
-  final _box = GetStorage();
-  _box.writeIfNull("locale", "English");
-  runApp(
-    GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: AppConfig().appName,
-      locale: LocalizationService().getCurrentLocale(),
-      theme: ThemeData.light().copyWith(
-          primaryColor: AppConfig().primary,
-          scaffoldBackgroundColor: Colors.white,
-          accentColor: AppConfig().primary),
-      translations: LocalizationService(),
-      home: IntroHeadPageWidget(),
-    ),
-  );
+  runApp(MyApp());
 }
 
-class LandingPageController extends GetxController {
-  var tabIndex = 0.obs;
-
-  void changeTabIndex(int index) {
-    tabIndex.value = index;
-  }
-
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-}
-
-class LandingPage extends StatelessWidget {
-  buildBottomNavigationMenu(context, landingPageController) {
-    return Obx(() => MediaQuery(
-        data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-        child: BottomNavigationBar(
-          showUnselectedLabels: true,
-          showSelectedLabels: true,
-          onTap: landingPageController.changeTabIndex,
-          currentIndex: landingPageController.tabIndex.value,
-          selectedItemColor: AppConfig().secondary,
-          unselectedFontSize: 14,
-          type: BottomNavigationBarType.fixed,
-          items: [
-            BottomNavigationBarItem(
-                icon: const Icon(Icons.home),
-                label: "Home",
-                backgroundColor: AppConfig().primary),
-            BottomNavigationBarItem(
-                icon: const Icon(Icons.history),
-                label: "serviceHistory".tr,
-                backgroundColor: AppConfig().primary),
-            BottomNavigationBarItem(
-                icon: const Icon(Icons.support_agent),
-                label: "Our Plans",
-                backgroundColor: AppConfig().primary),
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        theme: ThemeData(
+            primaryColor: AppConfig().primary,
+            scaffoldBackgroundColor: Colors.white,
+            accentColor: AppConfig().primary),
+        debugShowCheckedModeBanner: false,
+        title: AppConfig().appName,
+        home: MultiProvider(
+          providers: [
+            ChangeNotifierProvider<HomePageViewModel>(
+              create: (_) => HomePageViewModel(),
+              child: const HomePageHeadWidget(),
+            ),
           ],
-        )));
+          child: HomePage(),
+        ));
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider<AuthViewModel>(
+      create: (context) => AuthViewModel(),
+      child: Consumer<AuthViewModel>(
+        builder: (context, model, _) {
+          model.loginStatus();
+          if(model.status == Status.failed){
+            return const IntroHeadPageWidget();
+          }
+          else{
+            return const NavigationTab();
+          }
+        },
+      ),
+    );
+  }
+}
+
+
+
+class NavigationTab extends StatefulWidget {
+  const NavigationTab({Key? key}) : super(key: key);
+
+  @override
+  _NavigationTabState createState() => _NavigationTabState();
+}
+
+class _NavigationTabState extends State<NavigationTab> {
+  int _currentIndex = 0;
+  final List<Widget> _children = <Widget>[
+    const HomePageHeadWidget(),
+    const ServiceHistoryHeadPageWidget(),
+    const PlansHeadPageWidget(),
+  ];
+
+  void onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    final LandingPageController landingPageController =
-        Get.put(LandingPageController(), permanent: false);
     return Scaffold(
-      bottomNavigationBar:
-      buildBottomNavigationMenu(context, landingPageController),
-      body: Obx(() => IndexedStack(
-        index: landingPageController.tabIndex.value,
-        children: [
-          HomePageHeadWidget(),
-          ServiceHistoryHeadPageWidget(),
-          PlansHeadPageWidget(),
+      body: _children[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: onTabTapped,
+        // new
+        currentIndex: _currentIndex,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        selectedItemColor: AppConfig().secondary,
+        unselectedFontSize: 14,
+        type: BottomNavigationBarType.fixed,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: const Icon(Icons.home),
+              label: "Home",
+              backgroundColor: AppConfig().primary),
+          BottomNavigationBarItem(
+              icon: const Icon(Icons.history),
+              label: "serviceHistory",
+              backgroundColor: AppConfig().primary),
+          BottomNavigationBarItem(
+              icon: const Icon(Icons.support_agent),
+              label: "Our Plans",
+              backgroundColor: AppConfig().primary),
         ],
-      )),
+      ),
     );
   }
 }

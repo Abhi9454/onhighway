@@ -5,16 +5,13 @@ class PosterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(30.0),
-      child: Container(
-        height: MediaQuery.of(context).size.height / 6,
-        child: Image(
-          image: AssetImage(
-            'images/poster.jpg',
-          ),
-          fit: BoxFit.contain,
+    return Container(
+      height: MediaQuery.of(context).size.height / 6,
+      child: Image(
+        image: AssetImage(
+          'images/poster.jpg',
         ),
+        fit: BoxFit.contain,
       ),
     );
   }

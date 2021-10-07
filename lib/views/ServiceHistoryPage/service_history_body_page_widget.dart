@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onhighway/views/ServiceHistoryPage/Widget/service_history_list_view_container_widget.dart';
+import '../ServiceHistoryPage/Widget/service_history_list_view_container_widget.dart';
 
 import '../../config.dart';
 

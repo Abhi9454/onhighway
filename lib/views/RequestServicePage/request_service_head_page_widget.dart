@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../RequestServicePage/request_service_body_page_widget.dart';
-import 'package:get/get.dart';
 import '../../config.dart';
 
 class RequestServiceHeadPageWidget extends StatelessWidget {
@@ -20,7 +19,7 @@ class RequestServiceHeadPageWidget extends StatelessWidget {
             onPressed: () => Navigator.of(context).pop(),
           ),
           title: Text(
-            'requestService'.tr,
+            'requestService',
             textAlign: TextAlign.left,
             style: TextStyle(color: Colors.black, fontSize: 22),
           ),

@@ -2,9 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
-import 'package:get/get.dart';
-import 'package:onhighway/main.dart';
-import '../IntroPage/intro_head_page_widget.dart';
 import '../../config.dart';
 import '../HomePage/widget/home_text_widget.dart';
 import '/views/Widgets/app_head_logo_widget.dart';
@@ -88,9 +85,8 @@ class LoginPageWidget extends StatelessWidget {
                         width: MediaQuery.of(context).size.width * 0.5,
                         child: ElevatedButton(
                           onPressed: () {
-                            Get.offAll(() => LandingPage());
                           },
-                          child: Text('signIn'.tr),
+                          child: Text('signIn'),
                           style: ElevatedButton.styleFrom(
                             shape: new RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(5.0),

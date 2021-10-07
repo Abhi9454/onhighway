@@ -3,7 +3,6 @@ import '../Widgets/app_footer.dart';
 import '../Widgets/poster_widget.dart';
 import '../../config.dart';
 import '../Widgets/app_head_logo_widget.dart';
-import 'package:get/get.dart';
 
 class AddNewVehicleBodyWidget extends StatelessWidget {
   const AddNewVehicleBodyWidget({Key? key}) : super(key: key);
@@ -176,7 +175,7 @@ class AddNewVehicleBodyWidget extends StatelessWidget {
                       ElevatedButton(
                         onPressed: () {
                         },
-                        child: Text('Submit'.tr),
+                        child: Text('Submit'),
                         style: ElevatedButton.styleFrom(
                           shape: new RoundedRectangleBorder(
                             borderRadius: new BorderRadius.circular(5.0),

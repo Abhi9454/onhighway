@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get_storage/get_storage.dart';
-import '../../locale/localisation_service.dart';
 import '../../../config.dart';
 
 class AppBodyPaymentContainer extends StatelessWidget {
@@ -10,7 +8,6 @@ class AppBodyPaymentContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final _box = GetStorage();
     return Container(
       color: AppConfig().onPrimary,
       height: MediaQuery.of(context).size.height / 5,
@@ -35,12 +32,6 @@ class AppBodyPaymentContainer extends StatelessWidget {
                   child: Text('Change Language',textAlign: TextAlign.center,style: TextStyle(color: Colors.white,fontWeight: FontWeight.normal),),
                   onPressed: () {
                     print('Pressed Locale button');
-                    if(_box.read('locale') == 'English'){
-                      LocalizationService().changeLocale('Hindi');
-                    }
-                    else{
-                      LocalizationService().changeLocale('English');
-                    }
                   },
                   style: OutlinedButton.styleFrom(
                     side: BorderSide(color: Colors.white),
