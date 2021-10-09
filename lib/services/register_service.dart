@@ -13,7 +13,7 @@ class RegisterService {
         'apiToken' : AppConfig().apiKey,
         'userName' : name,
         'userEmail' : email,
-        'userMobile' : mobileNumber,
+        'userMobile' : int.parse(mobileNumber),
         'userPassword' : userPassword
       });
       final Response<dynamic> response =

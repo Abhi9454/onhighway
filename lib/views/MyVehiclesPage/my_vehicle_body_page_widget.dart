@@ -18,12 +18,14 @@ class MyVehicleBodyPageWidget extends StatelessWidget {
         physics: NeverScrollableScrollPhysics(),
         itemBuilder: (BuildContext context, int index) {
           return MyVehicleListViewContainer(
-              vehicleId: myVehicleModel.vehicleDetails[index].vehicleId,
-              vehicleType: myVehicleModel.vehicleDetails[index].vehicleType,
-              vehicleFuelType:
-                  myVehicleModel.vehicleDetails[index].vehicleFuelType,
-              vehicleListName:
-                  myVehicleModel.vehicleDetails[index].vehicleListName);
+            vehicleId: myVehicleModel.vehicleDetails[index].vehicleId,
+            vehicleType: myVehicleModel.vehicleDetails[index].vehicleType,
+            vehicleFuelType:
+                myVehicleModel.vehicleDetails[index].vehicleFuelType,
+            vehicleListName:
+                myVehicleModel.vehicleDetails[index].vehicleListName,
+            vehicleModel: myVehicleModel.vehicleDetails[index].vehicleModel,
+          );
         });
   }
 }

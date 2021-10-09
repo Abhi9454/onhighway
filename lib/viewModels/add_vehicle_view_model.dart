@@ -35,7 +35,6 @@ class AddVehicleViewModel extends ChangeNotifier {
 
   Future<void> _setVehicleAdd(Map<String, dynamic> vehicleAddStatus) async {
     _vehicleAddStatus = vehicleAddStatus;
-    print(_vehicleAddStatus);
     if (_vehicleAddStatus['success'] == 'false') {
       _status = Status.failed;
       vehicleAddErrorMessage = _vehicleAddStatus['message'];
@@ -55,7 +54,6 @@ class AddVehicleViewModel extends ChangeNotifier {
   }
 
   addVehicle(String vehicleNumber) async {
-    print(selectedVehicleModelId.toString());
     try {
       _status = Status.loading;
       notifyListeners();

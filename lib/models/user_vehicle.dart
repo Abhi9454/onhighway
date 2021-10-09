@@ -1,6 +1,6 @@
 class UserVehicleModel {
-  final int userId;
-  final int vehicleId;
+  final String userId;
+  final String vehicleId;
   final String vehicleType;
   final String vehicleBrand;
   final String vehicleModel;
@@ -27,6 +27,6 @@ class UserVehicleModel {
         vehicleModel: json['vehicleModel'],
         vehicleRegNo: json['vehicleRegNo'],
         vehicleFuelType: json['vehicleFuelType'],
-        vehicleListName: json['vehicleFuelType']);
+        vehicleListName: json['vehicleListName']);
   }
 }

@@ -6,6 +6,7 @@ import '../helpers/http_service.dart';
 
 class MyVehiclesListService {
   final HttpService httpService = HttpService();
+  Dio dio = new Dio();
 
   Future<List<UserVehicleModel>> myVehiclesList(
       int userId, String userToken) async {
@@ -15,11 +16,13 @@ class MyVehiclesListService {
         'userToken': userToken,
         'userId': userId,
       };
-      final Response<dynamic> response = await httpService.requestSource(
-          AppConfig().apiUrl + '/user_vehicles', 'GET',
-          data: userVehicleList);
+      final Response<dynamic> response = await dio.get(
+          AppConfig().apiUrl + '/user_vehicles',
+          queryParameters: userVehicleList);
       print(response.data.toString());
-      return (response.data as List).map((e) => UserVehicleModel.fromJson(e)).toList();
+      return (response.data as List)
+          .map((e) => UserVehicleModel.fromJson(e))
+          .toList();
     } on DioError catch (error) {
       if (error.type == DioErrorType.receiveTimeout ||
           error.type == DioErrorType.connectTimeout) {

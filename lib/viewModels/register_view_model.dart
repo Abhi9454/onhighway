@@ -49,7 +49,7 @@ class RegisterPageViewModel extends ChangeNotifier {
       _registerStatus = RegisterStatus.loading;
       notifyListeners();
       _setUserDetails(
-          await _registerService.register(name, mobileNumber, email, password));
+          await _registerService.register(name, email, mobileNumber, password));
     } on ShowError catch (error) {
       _registerStatus = RegisterStatus.error;
       _setError(error);

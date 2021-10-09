@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:onhighway/viewModels/my_vehicles_view_model.dart';
 import 'package:onhighway/views/AddNewVehiclePage/add_new_vehicle_page_head_widget.dart';
 import 'package:onhighway/views/MyVehiclesPage/my_vehicle_head_page_widget.dart';
+import 'package:provider/provider.dart';
 import '/views/Widgets/app_body_options_navigation_widget.dart';
 import '/views/Widgets/app_footer.dart';
 import '../Widgets/app_body_payment_container_widget.dart';
@@ -64,7 +66,13 @@ class HomePageBodyWidget extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => MyVehicleHeadPageWidget()));
+                            builder: (context) => MultiProvider(providers: <
+                                    ChangeNotifierProvider<
+                                        MyVehiclesListViewModel>>[
+                                  ChangeNotifierProvider<
+                                          MyVehiclesListViewModel>(
+                                      create: (_) => MyVehiclesListViewModel())
+                                ], child: MyVehicleHeadPageWidget())));
                   },
                   child: AppBodyNavigationContainer(
                       'myVehicles', Icons.car_rental),
