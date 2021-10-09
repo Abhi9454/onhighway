@@ -1,0 +1,2444 @@
+{
+  "vehicleModels": [
+    {
+      "model_id": "1",
+      "vehicle_type": "Car",
+      "model_brand_id": "1",
+      "model_name": "Ashok Leyland Stile",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "2",
+      "vehicle_type": "Car",
+      "model_brand_id": "2",
+      "model_name": "Aston Martin DB11",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "3",
+      "vehicle_type": "Car",
+      "model_brand_id": "2",
+      "model_name": "Aston Martin DB9",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "4",
+      "vehicle_type": "Car",
+      "model_brand_id": "2",
+      "model_name": "Aston Martin Rapide",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "5",
+      "vehicle_type": "Car",
+      "model_brand_id": "2",
+      "model_name": "Aston Martin Vantage",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "6",
+      "vehicle_type": "Car",
+      "model_brand_id": "3",
+      "model_name": "Audi A3",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "7",
+      "vehicle_type": "Car",
+      "model_brand_id": "3",
+      "model_name": "Audi A3 Cabriolet",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "8",
+      "vehicle_type": "Car",
+      "model_brand_id": "3",
+      "model_name": "Audi A4",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "9",
+      "vehicle_type": "Car",
+      "model_brand_id": "3",
+      "model_name": "Audi A6",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "10",
+      "vehicle_type": "Car",
+      "model_brand_id": "3",
+      "model_name": "Audi A7",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "11",
+      "vehicle_type": "Car",
+      "model_brand_id": "3",
+      "model_name": "Audi A8",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "12",
+      "vehicle_type": "Car",
+      "model_brand_id": "3",
+      "model_name": "Audi Q3",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "13",
+      "vehicle_type": "Car",
+      "model_brand_id": "3",
+      "model_name": "Audi Q5",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "14",
+      "vehicle_type": "Car",
+      "model_brand_id": "3",
+      "model_name": "Audi Q7",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "15",
+      "vehicle_type": "Car",
+      "model_brand_id": "3",
+      "model_name": "Audi R8",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "16",
+      "vehicle_type": "Car",
+      "model_brand_id": "3",
+      "model_name": "Audi RS5",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "17",
+      "vehicle_type": "Car",
+      "model_brand_id": "3",
+      "model_name": "Audi RS7",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "18",
+      "vehicle_type": "Car",
+      "model_brand_id": "3",
+      "model_name": "Audi S5",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "19",
+      "vehicle_type": "Car",
+      "model_brand_id": "3",
+      "model_name": "Audi TT",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "20",
+      "vehicle_type": "Car",
+      "model_brand_id": "5",
+      "model_name": "BMW 1 Series",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "21",
+      "vehicle_type": "Car",
+      "model_brand_id": "5",
+      "model_name": "BMW 3 Series",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "22",
+      "vehicle_type": "Car",
+      "model_brand_id": "5",
+      "model_name": "BMW 5 Series",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "23",
+      "vehicle_type": "Car",
+      "model_brand_id": "5",
+      "model_name": "BMW 6 Series",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "24",
+      "vehicle_type": "Car",
+      "model_brand_id": "5",
+      "model_name": "BMW 7 Series",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "25",
+      "vehicle_type": "Car",
+      "model_brand_id": "5",
+      "model_name": "BMW M Series",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "26",
+      "vehicle_type": "Car",
+      "model_brand_id": "5",
+      "model_name": "BMW X1",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "27",
+      "vehicle_type": "Car",
+      "model_brand_id": "5",
+      "model_name": "BMW X3",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "28",
+      "vehicle_type": "Car",
+      "model_brand_id": "5",
+      "model_name": "BMW X5",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "29",
+      "vehicle_type": "Car",
+      "model_brand_id": "5",
+      "model_name": "BMW X6",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "30",
+      "vehicle_type": "Car",
+      "model_brand_id": "5",
+      "model_name": "BMW Z4",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "31",
+      "vehicle_type": "Car",
+      "model_brand_id": "4",
+      "model_name": "Bentley Continental",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "32",
+      "vehicle_type": "Car",
+      "model_brand_id": "4",
+      "model_name": "Bentley Flying Spur",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "33",
+      "vehicle_type": "Car",
+      "model_brand_id": "4",
+      "model_name": "Bentley Mulsanne",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "34",
+      "vehicle_type": "Car",
+      "model_brand_id": "6",
+      "model_name": "Bugatti Veyron",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "35",
+      "vehicle_type": "Car",
+      "model_brand_id": "7",
+      "model_name": "Cadillac STS",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "36",
+      "vehicle_type": "Car",
+      "model_brand_id": "8",
+      "model_name": "Chevrolet Aveo",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "37",
+      "vehicle_type": "Car",
+      "model_brand_id": "8",
+      "model_name": "Chevrolet Aveo U-VA",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "38",
+      "vehicle_type": "Car",
+      "model_brand_id": "8",
+      "model_name": "Chevrolet Beat",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "39",
+      "vehicle_type": "Car",
+      "model_brand_id": "8",
+      "model_name": "Chevrolet Captiva",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "40",
+      "vehicle_type": "Car",
+      "model_brand_id": "8",
+      "model_name": "Chevrolet Cruze",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "41",
+      "vehicle_type": "Car",
+      "model_brand_id": "8",
+      "model_name": "Chevrolet Enjoy",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "42",
+      "vehicle_type": "Car",
+      "model_brand_id": "8",
+      "model_name": "Chevrolet Forester",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "43",
+      "vehicle_type": "Car",
+      "model_brand_id": "8",
+      "model_name": "Chevrolet Optra",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "44",
+      "vehicle_type": "Car",
+      "model_brand_id": "8",
+      "model_name": "Chevrolet Optra Magnum",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "45",
+      "vehicle_type": "Car",
+      "model_brand_id": "8",
+      "model_name": "Chevrolet OptraSRV",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "46",
+      "vehicle_type": "Car",
+      "model_brand_id": "8",
+      "model_name": "Chevrolet Sail",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "47",
+      "vehicle_type": "Car",
+      "model_brand_id": "8",
+      "model_name": "Chevrolet Sail Hatchback",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "48",
+      "vehicle_type": "Car",
+      "model_brand_id": "8",
+      "model_name": "Chevrolet Spark",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "49",
+      "vehicle_type": "Car",
+      "model_brand_id": "8",
+      "model_name": "Chevrolet Tavera",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "50",
+      "vehicle_type": "Car",
+      "model_brand_id": "8",
+      "model_name": "Chevrolet Tavera Neo",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "51",
+      "vehicle_type": "Car",
+      "model_brand_id": "8",
+      "model_name": "Chevrolet Trailblazer",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "52",
+      "vehicle_type": "Car",
+      "model_brand_id": "9",
+      "model_name": "Daewoo Matiz",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "53",
+      "vehicle_type": "Car",
+      "model_brand_id": "9",
+      "model_name": "Daewoo Nexia",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "54",
+      "vehicle_type": "Car",
+      "model_brand_id": "10",
+      "model_name": "Datsun GO",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "55",
+      "vehicle_type": "Car",
+      "model_brand_id": "10",
+      "model_name": "Datsun GO Plus",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "56",
+      "vehicle_type": "Car",
+      "model_brand_id": "10",
+      "model_name": "Datsun RediGO",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "57",
+      "vehicle_type": "Car",
+      "model_brand_id": "11",
+      "model_name": "Ferrari California",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "58",
+      "vehicle_type": "Car",
+      "model_brand_id": "12",
+      "model_name": "Fiat 500",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "59",
+      "vehicle_type": "Car",
+      "model_brand_id": "12",
+      "model_name": "Fiat Adventure",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "60",
+      "vehicle_type": "Car",
+      "model_brand_id": "12",
+      "model_name": "Fiat Avventura",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "61",
+      "vehicle_type": "Car",
+      "model_brand_id": "12",
+      "model_name": "Fiat Grande Punto",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "62",
+      "vehicle_type": "Car",
+      "model_brand_id": "12",
+      "model_name": "Fiat Linea",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "63",
+      "vehicle_type": "Car",
+      "model_brand_id": "12",
+      "model_name": "Fiat Linea Classic",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "64",
+      "vehicle_type": "Car",
+      "model_brand_id": "12",
+      "model_name": "Fiat Palio",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "65",
+      "vehicle_type": "Car",
+      "model_brand_id": "12",
+      "model_name": "Fiat Palio D",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "66",
+      "vehicle_type": "Car",
+      "model_brand_id": "12",
+      "model_name": "Fiat Palio NV",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "67",
+      "vehicle_type": "Car",
+      "model_brand_id": "12",
+      "model_name": "Fiat Palio Stile",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "68",
+      "vehicle_type": "Car",
+      "model_brand_id": "12",
+      "model_name": "Fiat Petra",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "69",
+      "vehicle_type": "Car",
+      "model_brand_id": "12",
+      "model_name": "Fiat Premier Padmini",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "70",
+      "vehicle_type": "Car",
+      "model_brand_id": "12",
+      "model_name": "Fiat Punto",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "71",
+      "vehicle_type": "Car",
+      "model_brand_id": "12",
+      "model_name": "Fiat Punto EVO",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "72",
+      "vehicle_type": "Car",
+      "model_brand_id": "12",
+      "model_name": "Fiat Punto Pure",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "73",
+      "vehicle_type": "Car",
+      "model_brand_id": "12",
+      "model_name": "Fiat Siena",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "74",
+      "vehicle_type": "Car",
+      "model_brand_id": "12",
+      "model_name": "Fiat Uno",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "75",
+      "vehicle_type": "Car",
+      "model_brand_id": "13",
+      "model_name": "Force Gurkha",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "76",
+      "vehicle_type": "Car",
+      "model_brand_id": "13",
+      "model_name": "Force One",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "77",
+      "vehicle_type": "Car",
+      "model_brand_id": "13",
+      "model_name": "Force Trax Cruiser",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "78",
+      "vehicle_type": "Car",
+      "model_brand_id": "14",
+      "model_name": "Ford Classic",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "79",
+      "vehicle_type": "Car",
+      "model_brand_id": "14",
+      "model_name": "Ford Ecosport",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "80",
+      "vehicle_type": "Car",
+      "model_brand_id": "14",
+      "model_name": "Ford Endeavour",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "81",
+      "vehicle_type": "Car",
+      "model_brand_id": "14",
+      "model_name": "Ford Escort",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "82",
+      "vehicle_type": "Car",
+      "model_brand_id": "14",
+      "model_name": "Ford Fiesta",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "83",
+      "vehicle_type": "Car",
+      "model_brand_id": "14",
+      "model_name": "Ford Fiesta Classic",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "84",
+      "vehicle_type": "Car",
+      "model_brand_id": "14",
+      "model_name": "Ford Figo",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "85",
+      "vehicle_type": "Car",
+      "model_brand_id": "14",
+      "model_name": "Ford Aspire",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "86",
+      "vehicle_type": "Car",
+      "model_brand_id": "14",
+      "model_name": "Ford Fusion",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "87",
+      "vehicle_type": "Car",
+      "model_brand_id": "14",
+      "model_name": "Ford Ikon",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "88",
+      "vehicle_type": "Car",
+      "model_brand_id": "14",
+      "model_name": "Ford Mondeo",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "89",
+      "vehicle_type": "Car",
+      "model_brand_id": "15",
+      "model_name": "Hindustan Motors Contessa",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "90",
+      "vehicle_type": "Car",
+      "model_brand_id": "16",
+      "model_name": "Honda Accord",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "91",
+      "vehicle_type": "Car",
+      "model_brand_id": "16",
+      "model_name": "Honda Amaze",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "92",
+      "vehicle_type": "Car",
+      "model_brand_id": "16",
+      "model_name": "Honda BR-V",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "93",
+      "vehicle_type": "Car",
+      "model_brand_id": "16",
+      "model_name": "Honda Brio",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "94",
+      "vehicle_type": "Car",
+      "model_brand_id": "16",
+      "model_name": "Honda CR-V",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "95",
+      "vehicle_type": "Car",
+      "model_brand_id": "16",
+      "model_name": "Honda City",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "96",
+      "vehicle_type": "Car",
+      "model_brand_id": "16",
+      "model_name": "Honda City ZX",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "97",
+      "vehicle_type": "Car",
+      "model_brand_id": "16",
+      "model_name": "Honda Civic",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "98",
+      "vehicle_type": "Car",
+      "model_brand_id": "16",
+      "model_name": "Honda Jazz",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "99",
+      "vehicle_type": "Car",
+      "model_brand_id": "16",
+      "model_name": "Honda Mobilio",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "100",
+      "vehicle_type": "Car",
+      "model_brand_id": "17",
+      "model_name": "Hyundai Accent",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "101",
+      "vehicle_type": "Car",
+      "model_brand_id": "17",
+      "model_name": "Hyundai Creta",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "102",
+      "vehicle_type": "Car",
+      "model_brand_id": "17",
+      "model_name": "Hyundai EON",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "103",
+      "vehicle_type": "Car",
+      "model_brand_id": "17",
+      "model_name": "Hyundai Elantra",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "104",
+      "vehicle_type": "Car",
+      "model_brand_id": "17",
+      "model_name": "Hyundai Elite i20",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "105",
+      "vehicle_type": "Car",
+      "model_brand_id": "17",
+      "model_name": "Hyundai Getz",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "106",
+      "vehicle_type": "Car",
+      "model_brand_id": "17",
+      "model_name": "Hyundai Grand i10",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "107",
+      "vehicle_type": "Car",
+      "model_brand_id": "17",
+      "model_name": "Hyundai Santa Fe",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "108",
+      "vehicle_type": "Car",
+      "model_brand_id": "17",
+      "model_name": "Hyundai Santro",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "109",
+      "vehicle_type": "Car",
+      "model_brand_id": "17",
+      "model_name": "Hyundai Santro Xing",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "110",
+      "vehicle_type": "Car",
+      "model_brand_id": "17",
+      "model_name": "Hyundai Sonata",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "111",
+      "vehicle_type": "Car",
+      "model_brand_id": "17",
+      "model_name": "Hyundai Sonata Embera",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "112",
+      "vehicle_type": "Car",
+      "model_brand_id": "17",
+      "model_name": "Hyundai Sonata Transform",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "113",
+      "vehicle_type": "Car",
+      "model_brand_id": "17",
+      "model_name": "Hyundai Terracan",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "114",
+      "vehicle_type": "Car",
+      "model_brand_id": "17",
+      "model_name": "Hyundai Tucson",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "115",
+      "vehicle_type": "Car",
+      "model_brand_id": "17",
+      "model_name": "Hyundai Verna",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "116",
+      "vehicle_type": "Car",
+      "model_brand_id": "17",
+      "model_name": "Hyundai Xcent",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "117",
+      "vehicle_type": "Car",
+      "model_brand_id": "17",
+      "model_name": "Hyundai i10",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "118",
+      "vehicle_type": "Car",
+      "model_brand_id": "17",
+      "model_name": "Hyundai i20 Active",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "119",
+      "vehicle_type": "Car",
+      "model_brand_id": "18",
+      "model_name": "ICML Rhino Rx",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "120",
+      "vehicle_type": "Car",
+      "model_brand_id": "19",
+      "model_name": "Isuzu D-Max",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "121",
+      "vehicle_type": "Car",
+      "model_brand_id": "19",
+      "model_name": "Isuzu MU 7",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "122",
+      "vehicle_type": "Car",
+      "model_brand_id": "20",
+      "model_name": "Jaguar XF",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "123",
+      "vehicle_type": "Car",
+      "model_brand_id": "20",
+      "model_name": "Jaguar XJ",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "124",
+      "vehicle_type": "Car",
+      "model_brand_id": "21",
+      "model_name": "Jeep Grand Cherokee",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "125",
+      "vehicle_type": "Car",
+      "model_brand_id": "21",
+      "model_name": "Jeep Kaiser",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "126",
+      "vehicle_type": "Car",
+      "model_brand_id": "22",
+      "model_name": "Lamborghini Aventador",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "127",
+      "vehicle_type": "Car",
+      "model_brand_id": "22",
+      "model_name": "Lamborghini Gallardo",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "128",
+      "vehicle_type": "Car",
+      "model_brand_id": "22",
+      "model_name": "Lamborghini Murcielago",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "129",
+      "vehicle_type": "Car",
+      "model_brand_id": "23",
+      "model_name": "Land Rover Discovery 4",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "130",
+      "vehicle_type": "Car",
+      "model_brand_id": "23",
+      "model_name": "Land Rover Discovery Sport",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "131",
+      "vehicle_type": "Car",
+      "model_brand_id": "23",
+      "model_name": "Land Rover Freelander 2",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "132",
+      "vehicle_type": "Car",
+      "model_brand_id": "23",
+      "model_name": "Land Rover Range Rover",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "133",
+      "vehicle_type": "Car",
+      "model_brand_id": "23",
+      "model_name": "Land Rover Range Rover 2013-2014",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "134",
+      "vehicle_type": "Car",
+      "model_brand_id": "23",
+      "model_name": "Land Rover Range Rover Evoque",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "135",
+      "vehicle_type": "Car",
+      "model_brand_id": "23",
+      "model_name": "Land Rover Range Rover Sport",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "136",
+      "vehicle_type": "Car",
+      "model_brand_id": "24",
+      "model_name": "Lexus LX",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "137",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra Armada",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "138",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra Bolero",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "139",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra Compact XUV",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "140",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra Verito",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "141",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra Ingenio",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "142",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra Jeep",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "143",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra KUV 100",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "144",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra Logan",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "145",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra Marshal",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "146",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra NuvoSport",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "147",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra Quanto",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "148",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra Renault Logan",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "149",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra Scorpio",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "150",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra Ssangyong Rexton",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "151",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra Supro",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "152",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra TUV 300",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "153",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra Thar",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "154",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra Verito Vibe",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "155",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra Willys",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "156",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra XUV500",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "157",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra Xylo",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "158",
+      "vehicle_type": "Car",
+      "model_brand_id": "25",
+      "model_name": "Mahindra e2o",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "159",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti 1000",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "160",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti 800",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "161",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti A-Star",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "162",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Alto",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "163",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Alto 800",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "164",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Alto K10",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "165",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Baleno",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "166",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Baleno 1999-2007",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "167",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Celerio",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "168",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Ciaz",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "169",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Eeco",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "170",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Ertiga",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "171",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Esteem",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "172",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Estilo",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "173",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Grand Vitara",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "174",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Gypsy",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "175",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Kizashi",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "176",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Omni",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "177",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Ritz",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "178",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti SX4",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "179",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti S Cross",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "180",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Swift",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "181",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Swift Dzire",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "182",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Versa",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "183",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Vitara Brezza",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "184",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Wagon R",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "185",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Wagon R Stingray",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "186",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Zen",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "187",
+      "vehicle_type": "Car",
+      "model_brand_id": "26",
+      "model_name": "Maruti Zen Estilo",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "188",
+      "vehicle_type": "Car",
+      "model_brand_id": "27",
+      "model_name": "Maserati Quattroporte",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "189",
+      "vehicle_type": "Car",
+      "model_brand_id": "28",
+      "model_name": "Mercedes-Benz A Class",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "190",
+      "vehicle_type": "Car",
+      "model_brand_id": "28",
+      "model_name": "Mercedes-Benz B Class",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "191",
+      "vehicle_type": "Car",
+      "model_brand_id": "28",
+      "model_name": "Mercedes-Benz CLA",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "192",
+      "vehicle_type": "Car",
+      "model_brand_id": "28",
+      "model_name": "Mercedes-Benz CLS-Class",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "193",
+      "vehicle_type": "Car",
+      "model_brand_id": "28",
+      "model_name": "Mercedes-Benz E-Class",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "194",
+      "vehicle_type": "Car",
+      "model_brand_id": "28",
+      "model_name": "Mercedes-Benz G",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "195",
+      "vehicle_type": "Car",
+      "model_brand_id": "28",
+      "model_name": "Mercedes-Benz GL-Class",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "196",
+      "vehicle_type": "Car",
+      "model_brand_id": "28",
+      "model_name": "Mercedes-Benz GLA Class",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "197",
+      "vehicle_type": "Car",
+      "model_brand_id": "28",
+      "model_name": "Mercedes-Benz GLC",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "198",
+      "vehicle_type": "Car",
+      "model_brand_id": "28",
+      "model_name": "Mercedes-Benz GLE",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "199",
+      "vehicle_type": "Car",
+      "model_brand_id": "28",
+      "model_name": "Mercedes-Benz M-Class",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "200",
+      "vehicle_type": "Car",
+      "model_brand_id": "28",
+      "model_name": "Mercedes-Benz C-Class",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "201",
+      "vehicle_type": "Car",
+      "model_brand_id": "28",
+      "model_name": "Mercedes-Benz R-Class",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "202",
+      "vehicle_type": "Car",
+      "model_brand_id": "28",
+      "model_name": "Mercedes-Benz S-Class",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "203",
+      "vehicle_type": "Car",
+      "model_brand_id": "28",
+      "model_name": "Mercedes-Benz SL-Class",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "204",
+      "vehicle_type": "Car",
+      "model_brand_id": "28",
+      "model_name": "Mercedes-Benz SLK-Class",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "205",
+      "vehicle_type": "Car",
+      "model_brand_id": "28",
+      "model_name": "Mercedes-Benz Viano",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "206",
+      "vehicle_type": "Car",
+      "model_brand_id": "29",
+      "model_name": "Mini 5 DOOR",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "207",
+      "vehicle_type": "Car",
+      "model_brand_id": "29",
+      "model_name": "Mini Cooper",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "208",
+      "vehicle_type": "Car",
+      "model_brand_id": "29",
+      "model_name": "Mini Cooper Convertible",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "209",
+      "vehicle_type": "Car",
+      "model_brand_id": "29",
+      "model_name": "Mini Cooper Countryman",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "210",
+      "vehicle_type": "Car",
+      "model_brand_id": "30",
+      "model_name": "Mitsubishi Cedia",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "211",
+      "vehicle_type": "Car",
+      "model_brand_id": "30",
+      "model_name": "Mitsubishi Lancer",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "212",
+      "vehicle_type": "Car",
+      "model_brand_id": "30",
+      "model_name": "Mitsubishi Montero",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "213",
+      "vehicle_type": "Car",
+      "model_brand_id": "30",
+      "model_name": "Mitsubishi Outlander",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "214",
+      "vehicle_type": "Car",
+      "model_brand_id": "30",
+      "model_name": "Mitsubishi Pajero",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "215",
+      "vehicle_type": "Car",
+      "model_brand_id": "31",
+      "model_name": "Nissan Evalia",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "216",
+      "vehicle_type": "Car",
+      "model_brand_id": "31",
+      "model_name": "Nissan Micra",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "217",
+      "vehicle_type": "Car",
+      "model_brand_id": "31",
+      "model_name": "Nissan Micra Active",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "218",
+      "vehicle_type": "Car",
+      "model_brand_id": "31",
+      "model_name": "Nissan Sunny",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "219",
+      "vehicle_type": "Car",
+      "model_brand_id": "31",
+      "model_name": "Nissan Sunny 2011-2014",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "220",
+      "vehicle_type": "Car",
+      "model_brand_id": "31",
+      "model_name": "Nissan Teana",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "221",
+      "vehicle_type": "Car",
+      "model_brand_id": "31",
+      "model_name": "Nissan Terrano",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "222",
+      "vehicle_type": "Car",
+      "model_brand_id": "31",
+      "model_name": "Nissan X-Trail",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "223",
+      "vehicle_type": "Car",
+      "model_brand_id": "32",
+      "model_name": "Opel Astra",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "224",
+      "vehicle_type": "Car",
+      "model_brand_id": "32",
+      "model_name": "Opel Corsa",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "225",
+      "vehicle_type": "Car",
+      "model_brand_id": "33",
+      "model_name": "Porsche 911",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "226",
+      "vehicle_type": "Car",
+      "model_brand_id": "33",
+      "model_name": "Porsche Boxster",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "227",
+      "vehicle_type": "Car",
+      "model_brand_id": "33",
+      "model_name": "Porsche Cayenne",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "228",
+      "vehicle_type": "Car",
+      "model_brand_id": "33",
+      "model_name": "Porsche Cayman",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "229",
+      "vehicle_type": "Car",
+      "model_brand_id": "33",
+      "model_name": "Porsche Panamera",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "230",
+      "vehicle_type": "Car",
+      "model_brand_id": "34",
+      "model_name": "Premier 118 NE",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "231",
+      "vehicle_type": "Car",
+      "model_brand_id": "34",
+      "model_name": "Premier Rio",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "232",
+      "vehicle_type": "Car",
+      "model_brand_id": "35",
+      "model_name": "Renault Duster",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "233",
+      "vehicle_type": "Car",
+      "model_brand_id": "35",
+      "model_name": "Renault Fluence",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "234",
+      "vehicle_type": "Car",
+      "model_brand_id": "35",
+      "model_name": "Renault KWID",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "235",
+      "vehicle_type": "Car",
+      "model_brand_id": "35",
+      "model_name": "Renault Koleos",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "236",
+      "vehicle_type": "Car",
+      "model_brand_id": "35",
+      "model_name": "Renault Lodgy",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "237",
+      "vehicle_type": "Car",
+      "model_brand_id": "35",
+      "model_name": "Renault Pulse",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "238",
+      "vehicle_type": "Car",
+      "model_brand_id": "35",
+      "model_name": "Renault Scala",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "239",
+      "vehicle_type": "Car",
+      "model_brand_id": "36",
+      "model_name": "Reva i",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "240",
+      "vehicle_type": "Car",
+      "model_brand_id": "37",
+      "model_name": "Rolls Royce Wraith",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "241",
+      "vehicle_type": "Car",
+      "model_brand_id": "38",
+      "model_name": "Skoda Fabia",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "242",
+      "vehicle_type": "Car",
+      "model_brand_id": "38",
+      "model_name": "Skoda Laura",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "243",
+      "vehicle_type": "Car",
+      "model_brand_id": "38",
+      "model_name": "Skoda Octavia",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "244",
+      "vehicle_type": "Car",
+      "model_brand_id": "38",
+      "model_name": "Skoda Rapid",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "245",
+      "vehicle_type": "Car",
+      "model_brand_id": "38",
+      "model_name": "Skoda Superb",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "246",
+      "vehicle_type": "Car",
+      "model_brand_id": "38",
+      "model_name": "Skoda Yeti",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "247",
+      "vehicle_type": "Car",
+      "model_brand_id": "39",
+      "model_name": "Tata Aria",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "248",
+      "vehicle_type": "Car",
+      "model_brand_id": "39",
+      "model_name": "Tata Bolt",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "249",
+      "vehicle_type": "Car",
+      "model_brand_id": "39",
+      "model_name": "Tata Estate",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "250",
+      "vehicle_type": "Car",
+      "model_brand_id": "39",
+      "model_name": "Tata Indica",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "251",
+      "vehicle_type": "Car",
+      "model_brand_id": "39",
+      "model_name": "Tata Indica V2",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "252",
+      "vehicle_type": "Car",
+      "model_brand_id": "39",
+      "model_name": "Tata Indica Vista",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "253",
+      "vehicle_type": "Car",
+      "model_brand_id": "39",
+      "model_name": "Tata Indigo",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "254",
+      "vehicle_type": "Car",
+      "model_brand_id": "39",
+      "model_name": "Tata Indigo CS",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "255",
+      "vehicle_type": "Car",
+      "model_brand_id": "39",
+      "model_name": "Tata Indigo eCS",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "256",
+      "vehicle_type": "Car",
+      "model_brand_id": "39",
+      "model_name": "Tata Manza",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "257",
+      "vehicle_type": "Car",
+      "model_brand_id": "39",
+      "model_name": "Tata Nano",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "258",
+      "vehicle_type": "Car",
+      "model_brand_id": "39",
+      "model_name": "Tata New Safari",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "259",
+      "vehicle_type": "Car",
+      "model_brand_id": "39",
+      "model_name": "Tata Safari Storme",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "260",
+      "vehicle_type": "Car",
+      "model_brand_id": "39",
+      "model_name": "Tata Spacio",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "261",
+      "vehicle_type": "Car",
+      "model_brand_id": "39",
+      "model_name": "Tata Sumo",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "262",
+      "vehicle_type": "Car",
+      "model_brand_id": "39",
+      "model_name": "Tata TL",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "263",
+      "vehicle_type": "Car",
+      "model_brand_id": "39",
+      "model_name": "Tata Tiago",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "264",
+      "vehicle_type": "Car",
+      "model_brand_id": "39",
+      "model_name": "Tata Venture",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "265",
+      "vehicle_type": "Car",
+      "model_brand_id": "39",
+      "model_name": "Tata Winger",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "266",
+      "vehicle_type": "Car",
+      "model_brand_id": "39",
+      "model_name": "Tata Xenon XT",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "267",
+      "vehicle_type": "Car",
+      "model_brand_id": "39",
+      "model_name": "Tata Zest",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "268",
+      "vehicle_type": "Car",
+      "model_brand_id": "40",
+      "model_name": "Toyota Alphard",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "269",
+      "vehicle_type": "Car",
+      "model_brand_id": "40",
+      "model_name": "Toyota Camry",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "270",
+      "vehicle_type": "Car",
+      "model_brand_id": "40",
+      "model_name": "Toyota Commuter",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "271",
+      "vehicle_type": "Car",
+      "model_brand_id": "40",
+      "model_name": "Toyota Corolla",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "272",
+      "vehicle_type": "Car",
+      "model_brand_id": "40",
+      "model_name": "Toyota Corolla Altis",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "273",
+      "vehicle_type": "Car",
+      "model_brand_id": "40",
+      "model_name": "Toyota Crown",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "274",
+      "vehicle_type": "Car",
+      "model_brand_id": "40",
+      "model_name": "Toyota Estima Emina",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "275",
+      "vehicle_type": "Car",
+      "model_brand_id": "40",
+      "model_name": "Toyota Etios",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "276",
+      "vehicle_type": "Car",
+      "model_brand_id": "40",
+      "model_name": "Toyota Etios Cross",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "277",
+      "vehicle_type": "Car",
+      "model_brand_id": "40",
+      "model_name": "Toyota Etios Liva",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "278",
+      "vehicle_type": "Car",
+      "model_brand_id": "40",
+      "model_name": "Toyota Fortuner",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "279",
+      "vehicle_type": "Car",
+      "model_brand_id": "40",
+      "model_name": "Toyota Innova",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "280",
+      "vehicle_type": "Car",
+      "model_brand_id": "40",
+      "model_name": "Toyota Innova Crysta",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "281",
+      "vehicle_type": "Car",
+      "model_brand_id": "40",
+      "model_name": "Toyota Land Cruiser",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "282",
+      "vehicle_type": "Car",
+      "model_brand_id": "40",
+      "model_name": "Toyota Land Cruiser Prado",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "283",
+      "vehicle_type": "Car",
+      "model_brand_id": "40",
+      "model_name": "Toyota MR2",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "284",
+      "vehicle_type": "Car",
+      "model_brand_id": "40",
+      "model_name": "Toyota MRS",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "285",
+      "vehicle_type": "Car",
+      "model_brand_id": "40",
+      "model_name": "Toyota Majesta",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "286",
+      "vehicle_type": "Car",
+      "model_brand_id": "40",
+      "model_name": "Toyota Prius",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "287",
+      "vehicle_type": "Car",
+      "model_brand_id": "40",
+      "model_name": "Toyota Qualis",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "288",
+      "vehicle_type": "Car",
+      "model_brand_id": "40",
+      "model_name": "Toyota prado",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "289",
+      "vehicle_type": "Car",
+      "model_brand_id": "41",
+      "model_name": "Volkswagen Ameo",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "290",
+      "vehicle_type": "Car",
+      "model_brand_id": "41",
+      "model_name": "Volkswagen Beetle",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "291",
+      "vehicle_type": "Car",
+      "model_brand_id": "41",
+      "model_name": "Volkswagen CrossPolo",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "292",
+      "vehicle_type": "Car",
+      "model_brand_id": "41",
+      "model_name": "Volkswagen Jetta",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "293",
+      "vehicle_type": "Car",
+      "model_brand_id": "41",
+      "model_name": "Volkswagen Passat",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "294",
+      "vehicle_type": "Car",
+      "model_brand_id": "41",
+      "model_name": "Volkswagen Phaeton",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "295",
+      "vehicle_type": "Car",
+      "model_brand_id": "41",
+      "model_name": "Volkswagen Polo",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "296",
+      "vehicle_type": "Car",
+      "model_brand_id": "41",
+      "model_name": "Volkswagen Touareg",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "297",
+      "vehicle_type": "Car",
+      "model_brand_id": "41",
+      "model_name": "Volkswagen Vento",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "298",
+      "vehicle_type": "Car",
+      "model_brand_id": "42",
+      "model_name": "Volvo S 80",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "299",
+      "vehicle_type": "Car",
+      "model_brand_id": "42",
+      "model_name": "Volvo S60",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "300",
+      "vehicle_type": "Car",
+      "model_brand_id": "42",
+      "model_name": "Volvo V40",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "301",
+      "vehicle_type": "Car",
+      "model_brand_id": "42",
+      "model_name": "Volvo V40 Cross Country",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "302",
+      "vehicle_type": "Car",
+      "model_brand_id": "42",
+      "model_name": "Volvo XC 90",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "303",
+      "vehicle_type": "Car",
+      "model_brand_id": "42",
+      "model_name": "Volvo XC60",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "304",
+      "vehicle_type": "Bus",
+      "model_brand_id": "43",
+      "model_name": "Volvo A1",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "model_id": "305",
+      "vehicle_type": "Truck",
+      "model_brand_id": "44",
+      "model_name": "Tata ACE12",
+      "model_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    }
+  ]
+}

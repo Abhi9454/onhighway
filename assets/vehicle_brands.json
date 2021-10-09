@@ -1,0 +1,312 @@
+{
+  "vehicleBrands": [
+    {
+      "brand_id": "1",
+      "vehicle_type": "Car",
+      "brand_name": "Ashok Leyland",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "2",
+      "vehicle_type": "Car",
+      "brand_name": "Aston Martin",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "3",
+      "vehicle_type": "Car",
+      "brand_name": "Audi",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "4",
+      "vehicle_type": "Car",
+      "brand_name": "Bentley",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "5",
+      "vehicle_type": "Car",
+      "brand_name": "BMW",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "6",
+      "vehicle_type": "Car",
+      "brand_name": "Bugatti",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "7",
+      "vehicle_type": "Car",
+      "brand_name": "Cadillac",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "8",
+      "vehicle_type": "Car",
+      "brand_name": "Chevrolet",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "9",
+      "vehicle_type": "Car",
+      "brand_name": "Daewoo",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "10",
+      "vehicle_type": "Car",
+      "brand_name": "Datsun",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "11",
+      "vehicle_type": "Car",
+      "brand_name": "Ferrari",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "12",
+      "vehicle_type": "Car",
+      "brand_name": "Fiat",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "13",
+      "vehicle_type": "Car",
+      "brand_name": "Force",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "14",
+      "vehicle_type": "Car",
+      "brand_name": "Ford",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "15",
+      "vehicle_type": "Car",
+      "brand_name": "Hindustan",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "16",
+      "vehicle_type": "Car",
+      "brand_name": "Honda",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "17",
+      "vehicle_type": "Car",
+      "brand_name": "Hyundai",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "18",
+      "vehicle_type": "Car",
+      "brand_name": "ICML",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "19",
+      "vehicle_type": "Car",
+      "brand_name": "Isuzu",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "20",
+      "vehicle_type": "Car",
+      "brand_name": "Jaguar",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "21",
+      "vehicle_type": "Car",
+      "brand_name": "Jeep",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "22",
+      "vehicle_type": "Car",
+      "brand_name": "Lamborghini",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "23",
+      "vehicle_type": "Car",
+      "brand_name": "Land Rover",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "24",
+      "vehicle_type": "Car",
+      "brand_name": "Lexus",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "25",
+      "vehicle_type": "Car",
+      "brand_name": "Mahindra",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "26",
+      "vehicle_type": "Car",
+      "brand_name": "Maruti",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "27",
+      "vehicle_type": "Car",
+      "brand_name": "Maserati",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "28",
+      "vehicle_type": "Car",
+      "brand_name": "Mercedes-Benz",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "29",
+      "vehicle_type": "Car",
+      "brand_name": "Mini",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "30",
+      "vehicle_type": "Car",
+      "brand_name": "Mitsubishi",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "31",
+      "vehicle_type": "Car",
+      "brand_name": "Nissan",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "32",
+      "vehicle_type": "Car",
+      "brand_name": "Opel",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "33",
+      "vehicle_type": "Car",
+      "brand_name": "Porsche",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "34",
+      "vehicle_type": "Car",
+      "brand_name": "Premier",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "35",
+      "vehicle_type": "Car",
+      "brand_name": "Renault",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "36",
+      "vehicle_type": "Car",
+      "brand_name": "Reva",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "37",
+      "vehicle_type": "Car",
+      "brand_name": "Rolls Royce",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "38",
+      "vehicle_type": "Car",
+      "brand_name": "Skoda",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "39",
+      "vehicle_type": "Car",
+      "brand_name": "Tata",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "40",
+      "vehicle_type": "Car",
+      "brand_name": "Toyota",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "41",
+      "vehicle_type": "Car",
+      "brand_name": "Volkswagen",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "42",
+      "vehicle_type": "Car",
+      "brand_name": "Volvo",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "43",
+      "vehicle_type": "Bus",
+      "brand_name": "Volvo",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    },
+    {
+      "brand_id": "44",
+      "vehicle_type": "Truck",
+      "brand_name": "Tata",
+      "brand_status": "Active",
+      "entry_date": "2021-08-01 10:10:10"
+    }
+  ]
+}

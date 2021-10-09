@@ -1,23 +1,34 @@
 import 'package:flutter/material.dart';
+import './.././../helpers/enum.dart';
+import '.././../viewModels/add_vehicle_view_model.dart';
 import '../Widgets/app_footer.dart';
 import '../Widgets/poster_widget.dart';
 import '../../config.dart';
 import '../Widgets/app_head_logo_widget.dart';
 
 class AddNewVehicleBodyWidget extends StatelessWidget {
-  const AddNewVehicleBodyWidget({Key? key}) : super(key: key);
+  AddNewVehicleBodyWidget(
+      {required this.addVehicleContext, required this.vehicleModel});
 
+  final BuildContext addVehicleContext;
+  final AddVehicleViewModel vehicleModel;
+  final TextEditingController vehicleNumberController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    String vehicleType = "Select Vehicle Type";
-    String vehicleFuelType = 'Select Fuel Type';
-
-
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         const AppHeadLogoWidget(),
+        vehicleModel.status == Status.trueResponse
+            ? Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Text(
+                  'Vehicle Added Successfully',
+                  style: TextStyle(color: AppConfig().primary, fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+            )
+            : SizedBox(),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
@@ -48,12 +59,16 @@ class AddNewVehicleBodyWidget extends StatelessWidget {
                         child: DropdownButton<String>(
                           isExpanded: true,
                           focusColor: Colors.white,
-                          value: vehicleType,
+                          value: vehicleModel.vehicleType,
                           //elevation: 5,
                           style: TextStyle(color: Colors.white),
                           iconEnabledColor: Colors.black,
-                          items: ['Select Vehicle Type','Truck', 'Car', 'Bus']
-                              .map<DropdownMenuItem<String>>((String typeValue) {
+                          items: [
+                            'Select Vehicle Type',
+                            'Truck',
+                            'Car',
+                            'Bus'
+                          ].map<DropdownMenuItem<String>>((String typeValue) {
                             return DropdownMenuItem<String>(
                               value: typeValue,
                               child: Text(
@@ -63,8 +78,10 @@ class AddNewVehicleBodyWidget extends StatelessWidget {
                             );
                           }).toList(),
                           onChanged: (String? newValue) {
-                            print(newValue);
-                            vehicleType = newValue!;
+                            if (newValue! != 'Select Vehicle Type') {
+                              vehicleModel.setVehicleType(newValue);
+                              vehicleModel.fetchVehicleBrands();
+                            }
                           },
                           hint: Text(
                             "Select Vehicle Type",
@@ -79,20 +96,37 @@ class AddNewVehicleBodyWidget extends StatelessWidget {
                         height: 15,
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(
-                            left: 15.0, right: 15, top: 5.0, bottom: 5.0),
-                        child: TextFormField(
-                          autofocus: false,
-                          style:
-                          TextStyle(color: Colors.black, fontSize: 18),
-                          decoration: const InputDecoration(
-                            hintText: 'Vehicle Brand',
-                              enabledBorder: const OutlineInputBorder(
-                                borderSide: const BorderSide(color: Colors.grey, width: 0.0),
+                        padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+                        child: DropdownButton<String>(
+                          isExpanded: true,
+                          focusColor: Colors.white,
+                          value: vehicleModel.selectedVehicleBrandName,
+                          //elevation: 5,
+                          style: TextStyle(color: Colors.white),
+                          iconEnabledColor: Colors.black,
+                          items: vehicleModel.vehicleBrandsOnType
+                              .map<DropdownMenuItem<String>>(
+                                  (String typeValue) {
+                            return DropdownMenuItem<String>(
+                              value: typeValue,
+                              child: Text(
+                                typeValue,
+                                style: TextStyle(color: Colors.black),
                               ),
-                              focusedBorder: const OutlineInputBorder(
-                                borderSide: const BorderSide(color: Colors.grey, width: 0.0),
-                              )
+                            );
+                          }).toList(),
+                          onChanged: (String? newValue) {
+                            if (newValue! != 'Select Vehicle Brands') {
+                              vehicleModel.setVehicleBrand(newValue);
+                              vehicleModel.fetchVehicleModel();
+                            }
+                          },
+                          hint: Text(
+                            'Select Vehicle Brands',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500),
                           ),
                         ),
                       ),
@@ -100,53 +134,52 @@ class AddNewVehicleBodyWidget extends StatelessWidget {
                         height: 15,
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(
-                            left: 15.0, right: 15, top: 5.0, bottom: 5.0),
-                        child: TextFormField(
-                          autofocus: false,
-                          style:
-                          TextStyle(color: Colors.black, fontSize: 18),
-                          decoration: const InputDecoration(
-                            hintText: 'Vehicle Model',
-                              enabledBorder: const OutlineInputBorder(
-                                borderSide: const BorderSide(color: Colors.grey, width: 0.0),
+                        padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+                        child: DropdownButton<String>(
+                          isExpanded: true,
+                          focusColor: Colors.white,
+                          value: vehicleModel.selectedVehicleModelName,
+                          //elevation: 5,
+                          style: TextStyle(color: Colors.white),
+                          iconEnabledColor: Colors.black,
+                          items: vehicleModel.vehicleModelOnType
+                              .map<DropdownMenuItem<String>>(
+                                  (String typeValue) {
+                            return DropdownMenuItem<String>(
+                              value: typeValue,
+                              child: Text(
+                                typeValue,
+                                style: TextStyle(color: Colors.black),
                               ),
-                              focusedBorder: const OutlineInputBorder(
-                                borderSide: const BorderSide(color: Colors.grey, width: 0.0),
-                              )
+                            );
+                          }).toList(),
+                          onChanged: (String? newValue) {
+                            if (newValue! != 'Select Vehicle Models') {
+                              vehicleModel.setVehicleModel(newValue);
+                            }
+                          },
+                          hint: Text(
+                            'Select Vehicle Models',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500),
                           ),
                         ),
                       ),
-                      const SizedBox(height: 15,),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            left: 15.0, right: 15, top: 5.0, bottom: 5.0),
-                        child: TextFormField(
-                          autofocus: false,
-                          style:
-                          TextStyle(color: Colors.black, fontSize: 18),
-                          decoration: const InputDecoration(
-                            hintText: 'Vehicle Number',
-                              enabledBorder: const OutlineInputBorder(
-                                borderSide: const BorderSide(color: Colors.grey, width: 0.0),
-                              ),
-                              focusedBorder: const OutlineInputBorder(
-                                borderSide: const BorderSide(color: Colors.grey, width: 0.0),
-                              )
-                          ),
-                        ),
+                      const SizedBox(
+                        height: 15,
                       ),
-                      const SizedBox(height: 15,),
                       Padding(
                         padding: const EdgeInsets.only(left: 15.0, right: 15.0),
                         child: DropdownButton<String>(
                           isExpanded: true,
                           focusColor: Colors.white,
-                          value: vehicleFuelType,
+                          value: vehicleModel.vehicleFuelType,
                           //elevation: 5,
                           style: TextStyle(color: Colors.white),
                           iconEnabledColor: Colors.black,
-                          items:['Select Fuel Type','Petrol', 'Diesel', 'CNG']
+                          items: ['Select Fuel Type', 'Petrol', 'Diesel', 'CNG']
                               .map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
@@ -157,8 +190,7 @@ class AddNewVehicleBodyWidget extends StatelessWidget {
                             );
                           }).toList(),
                           onChanged: (String? newValue) {
-                            print(newValue);
-                            vehicleType = newValue!;
+                            vehicleModel.setVehicleFuelType(newValue!);
                           },
                           hint: Text(
                             "Select Fuel Type",
@@ -170,10 +202,60 @@ class AddNewVehicleBodyWidget extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(
+                        height: 15,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15.0, right: 15),
+                        child: TextFormField(
+                          autofocus: false,
+                          controller: vehicleNumberController,
+                          style: TextStyle(color: Colors.black, fontSize: 15),
+                          decoration: const InputDecoration(
+                            hintText: 'Vehicle Number',
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
                         height: 10,
                       ),
                       ElevatedButton(
                         onPressed: () {
+                          if (vehicleModel.selectedVehicleModelName != 'Select Model Name' &&
+                              vehicleModel.selectedVehicleBrandName !=
+                                  'Select Brand Name' &&
+                              vehicleModel.vehicleFuelType !=
+                                  'Select Fuel Type' &&
+                              vehicleModel.vehicleType !=
+                                  'Select Vehicle Type' &&
+                              vehicleNumberController.text.isNotEmpty) {
+                            if (vehicleNumberController.text.length < 8 ||
+                                vehicleNumberController.text.length > 12) {
+                              final snackBar = SnackBar(
+                                content: const Text(
+                                  'Enter valid vehicle Number',
+                                  style: TextStyle(
+                                      fontSize: 15, color: Colors.white),
+                                ),
+                                backgroundColor: (AppConfig().primary),
+                              );
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackBar);
+                            } else {
+                              vehicleModel
+                                  .addVehicle(vehicleNumberController.text);
+                            }
+                          } else {
+                            final snackBar = SnackBar(
+                              content: const Text(
+                                'Invalid Details',
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.white),
+                              ),
+                              backgroundColor: (AppConfig().primary),
+                            );
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(snackBar);
+                          }
                         },
                         child: Text('Submit'),
                         style: ElevatedButton.styleFrom(

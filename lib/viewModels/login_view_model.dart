@@ -24,7 +24,7 @@ class LoginPageViewModel extends ChangeNotifier {
       _loginStatus = LoginStatus.failed;
     }
     else{
-     sharedPreferences.setString('userId', userDetails['userId']);
+     sharedPreferences.setInt('userId', userDetails['userId']);
      sharedPreferences.setString('userName', userDetails['userName']);
      sharedPreferences.setString('userMobile', userDetails['userMobile']);
      sharedPreferences.setString('userEmail', userDetails['userEmail']);

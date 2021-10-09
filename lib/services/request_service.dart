@@ -3,25 +3,25 @@ import '../helpers/error_handler.dart';
 import '../config.dart';
 import '../helpers/http_service.dart';
 
-class AddVehicleService {
+class RequestNewService {
   final HttpService httpService = HttpService();
 
 
-  Future<Map<String, dynamic>> addVehicle(int userId, String userToken, String vehicleType, int vehicleBrand, int vehicleModel, String vehicleFuelType, String vehicleNumber) async {
+  Future<Map<String, dynamic>> requestService(int userId, String userToken, int vehicleId, String serviceTypeId, String serviceAddress, String serviceText, String serviceLatLag) async {
     try {
       final FormData formData = FormData.fromMap(<String, dynamic>{
         'apiToken' : AppConfig().apiKey,
         'userToken' : userToken,
         'userId' : userId,
-        'vehicleType' : vehicleType,
-        'vehicleBrand' : vehicleBrand,
-        'vehicleModel' : vehicleModel,
-        'vehicleFuelType' : vehicleFuelType,
-        'vehicleNumber' : vehicleNumber
+        'vehicleId' : vehicleId,
+        'serviceTypeId' : serviceTypeId,
+        'serviceAddress' : serviceAddress,
+        'serviceText' : serviceText,
+        'serviceLatLag' : serviceLatLag
       });
       final Response<dynamic> response =
       await httpService.requestSource(
-          AppConfig().apiUrl + '/user_add_vehicle', 'POST', formData: formData);
+          AppConfig().apiUrl + '/user_create_service_request', 'POST', formData: formData);
       return response.data as Map<String,dynamic>;
     } on DioError catch (error) {
       if (error.type == DioErrorType.receiveTimeout ||

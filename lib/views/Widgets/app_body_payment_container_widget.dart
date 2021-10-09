@@ -37,6 +37,17 @@ class AppBodyPaymentContainer extends StatelessWidget {
                     side: BorderSide(color: Colors.white),
                     padding: const EdgeInsets.all(10)
                   ),
+                ),
+                SizedBox(width: 10,),
+                OutlinedButton(
+                  child: Text('Log out',textAlign: TextAlign.center,style: TextStyle(color: Colors.white,fontWeight: FontWeight.normal),),
+                  onPressed: () {
+                    print('Pressed Locale button');
+                  },
+                  style: OutlinedButton.styleFrom(
+                      side: BorderSide(color: Colors.white),
+                      padding: const EdgeInsets.all(10)
+                  ),
                 )
               ],
             ),
