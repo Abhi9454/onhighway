@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onhighway/config.dart';
+import '../../config.dart';
 import '../HomePage/widget/home_text_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 

@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
+import '../../main.dart';
 import '../../helpers/enum.dart';
 import '../../viewModels/login_view_model.dart';
-import '../HomePage/home_head_page_widget.dart';
 import 'package:provider/provider.dart';
 import '../../config.dart';
 import '../HomePage/widget/home_text_widget.dart';
@@ -23,7 +23,7 @@ class LoginPageWidget extends StatelessWidget {
       child: Consumer<LoginPageViewModel>(
         builder: (con, model, _) {
           if (model.loginStatus == LoginStatus.success) {
-            return HomePageHeadWidget();
+            return HomePage();
           } else {
             return Scaffold(
               appBar: PreferredSize(

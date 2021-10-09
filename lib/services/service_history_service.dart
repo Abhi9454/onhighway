@@ -1,14 +1,14 @@
 import 'package:dio/dio.dart';
-import '../models/user_vehicle.dart';
+import '../models/user_service.dart';
 import '../helpers/error_handler.dart';
 import '../config.dart';
 import '../helpers/http_service.dart';
 
-class MyVehiclesListService {
+class ServiceHistory {
   final HttpService httpService = HttpService();
   Dio dio = new Dio();
 
-  Future<List<UserVehicleModel>> myVehiclesList(
+  Future<List<UserServiceModel>> serviceHistory(
       String userId, String userToken) async {
     try {
       final Map<String, dynamic> userVehicleList = {
@@ -17,10 +17,10 @@ class MyVehiclesListService {
         'userId': userId,
       };
       final Response<dynamic> response = await dio.get(
-          AppConfig().apiUrl + '/user_vehicles',
+          AppConfig().apiUrl + '/user_service_history',
           queryParameters: userVehicleList);
       return (response.data as List)
-          .map((e) => UserVehicleModel.fromJson(e))
+          .map((e) => UserServiceModel.fromJson(e))
           .toList();
     } on DioError catch (error) {
       if (error.type == DioErrorType.receiveTimeout ||

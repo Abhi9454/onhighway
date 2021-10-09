@@ -7,7 +7,7 @@ class AddVehicleService {
   final HttpService httpService = HttpService();
 
 
-  Future<Map<String, dynamic>> addVehicle(int userId, String userToken, String vehicleType, int vehicleBrand, int vehicleModel, String vehicleFuelType, String vehicleNumber) async {
+  Future<Map<String, dynamic>> addVehicle(String userId, String userToken, String vehicleType, int vehicleBrand, int vehicleModel, String vehicleFuelType, String vehicleNumber) async {
     try {
       final FormData formData = FormData.fromMap(<String, dynamic>{
         'apiToken' : AppConfig().apiKey,

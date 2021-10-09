@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../main.dart';
 import '../HomePage/widget/home_text_widget.dart';
 import '../Widgets/app_head_logo_widget.dart';
 import '../../config.dart';
 import '../../helpers/enum.dart';
 import '../../viewModels/register_view_model.dart';
-import '../HomePage/home_head_page_widget.dart';
 import 'package:provider/provider.dart';
 
 class RegistrationPageWidget extends StatelessWidget {
@@ -25,7 +25,7 @@ class RegistrationPageWidget extends StatelessWidget {
       child: Consumer<RegisterPageViewModel>(
         builder: (con, registerModel, _) {
           if (registerModel.registerStatus == RegisterStatus.success) {
-            return HomePageHeadWidget();
+            return HomePage();
           } else {
             return Scaffold(
               appBar: PreferredSize(

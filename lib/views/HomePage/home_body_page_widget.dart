@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:onhighway/viewModels/my_vehicles_view_model.dart';
-import 'package:onhighway/views/AddNewVehiclePage/add_new_vehicle_page_head_widget.dart';
-import 'package:onhighway/views/MyVehiclesPage/my_vehicle_head_page_widget.dart';
+import '../../viewModels/home_page_view_model.dart';
+import '../../viewModels/my_vehicles_view_model.dart';
+import '../../views/AddNewVehiclePage/add_new_vehicle_page_head_widget.dart';
+import '../../views/MyVehiclesPage/my_vehicle_head_page_widget.dart';
 import 'package:provider/provider.dart';
 import '/views/Widgets/app_body_options_navigation_widget.dart';
 import '/views/Widgets/app_footer.dart';
@@ -12,7 +13,9 @@ import '../Widgets/poster_widget.dart';
 import '../../config.dart';
 
 class HomePageBodyWidget extends StatelessWidget {
-  const HomePageBodyWidget({Key? key}) : super(key: key);
+  HomePageBodyWidget({required this.homePageModel});
+
+  final HomePageViewModel homePageModel;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,7 @@ class HomePageBodyWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         AppHeadLogoWidget(),
-        AppBodyPaymentContainer(),
+        AppBodyPaymentContainer(homePageModel: homePageModel,),
         SizedBox(
           child: Padding(
             padding: const EdgeInsets.all(30.0),

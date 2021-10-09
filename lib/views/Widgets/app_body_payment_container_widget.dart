@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import '../../viewModels/home_page_view_model.dart';
 import '../../../config.dart';
 
 class AppBodyPaymentContainer extends StatelessWidget {
-  const AppBodyPaymentContainer({Key? key}) : super(key: key);
+  AppBodyPaymentContainer({required this.homePageModel});
 
+  final HomePageViewModel homePageModel;
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
       color: AppConfig().onPrimary,
       height: MediaQuery.of(context).size.height / 5,
@@ -42,7 +43,7 @@ class AppBodyPaymentContainer extends StatelessWidget {
                 OutlinedButton(
                   child: Text('Log out',textAlign: TextAlign.center,style: TextStyle(color: Colors.white,fontWeight: FontWeight.normal),),
                   onPressed: () {
-                    print('Pressed Locale button');
+                    homePageModel.logout();
                   },
                   style: OutlinedButton.styleFrom(
                       side: BorderSide(color: Colors.white),

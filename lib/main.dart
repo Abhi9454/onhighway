@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../viewModels/service_history_view_model.dart';
 import '../helpers/enum.dart';
 import '../viewModels/auth_view_model.dart';
 import '../../views/IntroPage/intro_head_page_widget.dart';
@@ -30,6 +31,10 @@ class MyApp extends StatelessWidget {
               create: (_) => HomePageViewModel(),
               child: const HomePageHeadWidget(),
             ),
+            ChangeNotifierProvider<ServiceHistoryViewModel>(
+              create: (_) => ServiceHistoryViewModel(),
+              child: ServiceHistoryHeadPageWidget(),
+            ),
           ],
           child: HomePage(),
         ));
@@ -44,10 +49,9 @@ class HomePage extends StatelessWidget {
       child: Consumer<AuthViewModel>(
         builder: (context, model, _) {
           model.loginStatus();
-          if(model.status == Status.failed){
+          if (model.status == Status.failed) {
             return const IntroHeadPageWidget();
-          }
-          else{
+          } else {
             return const NavigationTab();
           }
         },
@@ -55,8 +59,6 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-
 
 class NavigationTab extends StatefulWidget {
   const NavigationTab({Key? key}) : super(key: key);
