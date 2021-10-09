@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../locale/app_localization.dart';
 import '../../viewModels/service_history_view_model.dart';
 import '../helpers/enum.dart';
 import '../viewModels/auth_view_model.dart';
@@ -8,7 +9,9 @@ import 'package:provider/provider.dart';
 import '/views/OurPlansPage/plans_head_page_widget.dart';
 import '/views/ServiceHistoryPage/service_history_head_page_widget.dart';
 import '../views/HomePage/home_head_page_widget.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'config.dart';
+import 'locale/current_data.dart';
 
 void main() async {
   runApp(MyApp());
@@ -18,26 +21,44 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        theme: ThemeData(
-            primaryColor: AppConfig().primary,
-            scaffoldBackgroundColor: Colors.white,
-            accentColor: AppConfig().primary),
-        debugShowCheckedModeBanner: false,
-        title: AppConfig().appName,
-        home: MultiProvider(
-          providers: [
-            ChangeNotifierProvider<HomePageViewModel>(
-              create: (_) => HomePageViewModel(),
-              child: const HomePageHeadWidget(),
+    return ChangeNotifierProvider(
+      create: (context) => CurrentData(),
+      child: Consumer<CurrentData>(
+        builder: (context, currentDataModel, _) {
+          return MaterialApp(
+            theme: ThemeData(
+                primaryColor: AppConfig().primary,
+                scaffoldBackgroundColor: Colors.white,
+                accentColor: AppConfig().primary),
+            debugShowCheckedModeBanner: false,
+            title: AppConfig().appName,
+            locale: Provider.of<CurrentData>(context).locale,
+            localizationsDelegates: [
+              const AppLocalizationDelegate(),
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+            supportedLocales: [
+              const Locale('en', 'US'), // English
+              const Locale('hi', 'IN'), // Hindi
+            ],
+            home: MultiProvider(
+              providers: [
+                ChangeNotifierProvider<HomePageViewModel>(
+                  create: (_) => HomePageViewModel(),
+                  child: const HomePageHeadWidget(),
+                ),
+                ChangeNotifierProvider<ServiceHistoryViewModel>(
+                  create: (_) => ServiceHistoryViewModel(),
+                  child: ServiceHistoryHeadPageWidget(),
+                ),
+              ],
+              child: HomePage(),
             ),
-            ChangeNotifierProvider<ServiceHistoryViewModel>(
-              create: (_) => ServiceHistoryViewModel(),
-              child: ServiceHistoryHeadPageWidget(),
-            ),
-          ],
-          child: HomePage(),
-        ));
+          );
+        },
+      ),
+    );
   }
 }
 

@@ -13,6 +13,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations: # Language Support
+    sdk: flutter
 
   cupertino_icons: ^1.0.2
   lint: ^1.0.0

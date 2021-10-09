@@ -3,6 +3,7 @@ import '../LoginPage/login_page_widget.dart';
 import '../RegistrationPage/registration_page_widget.dart';
 import '../../helpers/clipper_clip_path.dart';
 import '../../config.dart';
+import '../../locale/app_localization.dart';
 
 class IntroHeadPageWidget extends StatelessWidget {
   const IntroHeadPageWidget({Key? key}) : super(key: key);
@@ -53,7 +54,7 @@ class IntroHeadPageWidget extends StatelessWidget {
                                 builder: (context) => LoginPageWidget()));
                       },
                       child: Text(
-                        'signIn',
+                        AppLocalization.of(context)!.translate('signIn'),
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 18),
                       ),
@@ -80,7 +81,7 @@ class IntroHeadPageWidget extends StatelessWidget {
                                     RegistrationPageWidget()));
                       },
                       child: Text(
-                        'signUp',
+                        AppLocalization.of(context)!.translate('signUp'),
                         style: TextStyle(
                             color: AppConfig().primary,
                             fontWeight: FontWeight.bold,

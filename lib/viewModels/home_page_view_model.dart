@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:onhighway/locale/current_data.dart';
 import '../helpers/read_user_details.dart';
 import '../helpers/enum.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -7,6 +8,7 @@ class HomePageViewModel extends ChangeNotifier {
   late SharedPreferences _preferences;
   UserDetails _userDetails = new UserDetails();
 
+  CurrentData _currentData = new CurrentData();
   HomePageUserStatus _userStatus = HomePageUserStatus.pendingVerification;
 
   HomePageUserStatus get userStatus => _userStatus;
@@ -17,6 +19,10 @@ class HomePageViewModel extends ChangeNotifier {
       _userStatus = HomePageUserStatus.userNotVerified;
     }
     notifyListeners();
+  }
+
+  changeLocale(String language){
+    _currentData.changeLocale(language);
   }
 
   logout() async {
