@@ -8,6 +8,7 @@ class HomePageViewModel extends ChangeNotifier {
   late SharedPreferences _preferences;
   UserDetails _userDetails = new UserDetails();
 
+  late Locale currentLocale ;
   CurrentData _currentData = new CurrentData();
   HomePageUserStatus _userStatus = HomePageUserStatus.pendingVerification;
 
@@ -23,6 +24,12 @@ class HomePageViewModel extends ChangeNotifier {
 
   changeLocale(String language){
     _currentData.changeLocale(language);
+    notifyListeners();
+  }
+
+  Locale getCurrentLocale(){
+    currentLocale = _currentData.getLocale;
+    return currentLocale;
   }
 
   logout() async {

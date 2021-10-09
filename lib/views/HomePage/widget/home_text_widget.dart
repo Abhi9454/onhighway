@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onhighway/config.dart';
+import '../../../config.dart';
 class HomeTextWidget extends StatelessWidget {
   HomeTextWidget(this.linkText);
 

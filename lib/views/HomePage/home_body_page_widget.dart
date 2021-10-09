@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../locale/app_localization.dart';
 import '../../viewModels/home_page_view_model.dart';
 import '../../viewModels/my_vehicles_view_model.dart';
 import '../../views/AddNewVehiclePage/add_new_vehicle_page_head_widget.dart';
@@ -35,7 +36,7 @@ class HomePageBodyWidget extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text(
-                      'requestService',
+                      AppLocalization.of(context)!.translate('requestService'),
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.black, fontSize: 24),
                     ),
@@ -59,7 +60,7 @@ class HomePageBodyWidget extends StatelessWidget {
                             builder: (context) =>
                                 AddNewVehicleHeadPageWidget()));
                   },
-                  child: AppBodyNavigationContainer('addVehicle', Icons.add),
+                  child: AppBodyNavigationContainer(AppLocalization.of(context)!.translate('addVehicle'), Icons.add),
                 ),
                 SizedBox(
                   width: 5,
@@ -78,15 +79,14 @@ class HomePageBodyWidget extends StatelessWidget {
                                 ], child: MyVehicleHeadPageWidget())));
                   },
                   child: AppBodyNavigationContainer(
-                      'myVehicles', Icons.car_rental),
+                      AppLocalization.of(context)!.translate('myVehicle'), Icons.car_rental),
                 ),
                 SizedBox(
                   width: 5,
                 ),
                 GestureDetector(
                   onTap: () {},
-                  child: AppBodyNavigationContainer(
-                      'runningService', Icons.run_circle),
+                  child: AppBodyNavigationContainer(AppLocalization.of(context)!.translate('runningService'), Icons.run_circle),
                 )
               ],
             ),

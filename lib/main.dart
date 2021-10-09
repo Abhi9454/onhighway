@@ -26,36 +26,23 @@ class MyApp extends StatelessWidget {
       child: Consumer<CurrentData>(
         builder: (context, currentDataModel, _) {
           return MaterialApp(
-            theme: ThemeData(
-                primaryColor: AppConfig().primary,
-                scaffoldBackgroundColor: Colors.white,
-                accentColor: AppConfig().primary),
-            debugShowCheckedModeBanner: false,
-            title: AppConfig().appName,
-            locale: Provider.of<CurrentData>(context).locale,
-            localizationsDelegates: [
-              const AppLocalizationDelegate(),
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-            ],
-            supportedLocales: [
-              const Locale('en', 'US'), // English
-              const Locale('hi', 'IN'), // Hindi
-            ],
-            home: MultiProvider(
-              providers: [
-                ChangeNotifierProvider<HomePageViewModel>(
-                  create: (_) => HomePageViewModel(),
-                  child: const HomePageHeadWidget(),
-                ),
-                ChangeNotifierProvider<ServiceHistoryViewModel>(
-                  create: (_) => ServiceHistoryViewModel(),
-                  child: ServiceHistoryHeadPageWidget(),
-                ),
+              theme: ThemeData(
+                  primaryColor: AppConfig().primary,
+                  scaffoldBackgroundColor: Colors.white,
+                  accentColor: AppConfig().primary),
+              debugShowCheckedModeBanner: false,
+              title: AppConfig().appName,
+              locale: Provider.of<CurrentData>(context).locale,
+              localizationsDelegates: [
+                const AppLocalizationDelegate(),
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
               ],
-              child: HomePage(),
-            ),
-          );
+              supportedLocales: [
+                const Locale('en', 'US'), // English
+                const Locale('hi', 'IN'), // Hindi
+              ],
+              home: HomePage());
         },
       ),
     );
@@ -91,8 +78,14 @@ class NavigationTab extends StatefulWidget {
 class _NavigationTabState extends State<NavigationTab> {
   int _currentIndex = 0;
   final List<Widget> _children = <Widget>[
-    const HomePageHeadWidget(),
-    const ServiceHistoryHeadPageWidget(),
+    ChangeNotifierProvider<HomePageViewModel>(
+      create: (_) => HomePageViewModel(),
+      child: const HomePageHeadWidget(),
+    ),
+    ChangeNotifierProvider<ServiceHistoryViewModel>(
+      create: (_) => ServiceHistoryViewModel(),
+      child: ServiceHistoryHeadPageWidget(),
+    ),
     const PlansHeadPageWidget(),
   ];
 
@@ -122,7 +115,7 @@ class _NavigationTabState extends State<NavigationTab> {
               backgroundColor: AppConfig().primary),
           BottomNavigationBarItem(
               icon: const Icon(Icons.history),
-              label: "serviceHistory",
+              label: AppLocalization.of(context)!.translate('serviceHistory'),
               backgroundColor: AppConfig().primary),
           BottomNavigationBarItem(
               icon: const Icon(Icons.support_agent),
