@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:onhighway/locale/current_data.dart';
 import '../../viewModels/home_page_view_model.dart';
 import '../../../config.dart';
 
