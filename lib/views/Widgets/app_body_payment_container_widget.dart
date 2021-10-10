@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:onhighway/locale/AppLanguage.dart';
+import 'package:provider/provider.dart';
 import '../../viewModels/home_page_view_model.dart';
 import '../../../config.dart';
 
@@ -31,13 +33,13 @@ class AppBodyPaymentContainer extends StatelessWidget {
                 SizedBox(width: 10,),
                 OutlinedButton(
                   child: Text('Change Language',textAlign: TextAlign.center,style: TextStyle(color: Colors.white,fontWeight: FontWeight.normal),),
-                  onPressed: () {
-                    print('Pressed Locale button' + homePageModel.getCurrentLocale().toString());
-                    if(homePageModel.getCurrentLocale().toString() == 'en_US'){
-                      homePageModel.changeLocale('Hindi');
+                  onPressed: () async {
+                    String locale  = await homePageModel.getCurrentLocale();
+                    if(locale == 'en'){
+                      Provider.of<AppLanguage>(context,listen: false).changeLanguage(Locale("hi"));
                     }
                     else{
-                      homePageModel.changeLocale('English');
+                      Provider.of<AppLanguage>(context,listen: false).changeLanguage(Locale("en"));
                     }
                   },
                   style: OutlinedButton.styleFrom(

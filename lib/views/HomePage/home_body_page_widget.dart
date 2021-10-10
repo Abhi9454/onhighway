@@ -36,7 +36,7 @@ class HomePageBodyWidget extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text(
-                      AppLocalization.of(context)!.translate('requestService'),
+                      AppLocalizations.of(context)!.translate('requestService')!,
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.black, fontSize: 24),
                     ),
@@ -60,7 +60,7 @@ class HomePageBodyWidget extends StatelessWidget {
                             builder: (context) =>
                                 AddNewVehicleHeadPageWidget()));
                   },
-                  child: AppBodyNavigationContainer(AppLocalization.of(context)!.translate('addVehicle'), Icons.add),
+                  child: AppBodyNavigationContainer(AppLocalizations.of(context)!.translate('addVehicle')!, Icons.add),
                 ),
                 SizedBox(
                   width: 5,
@@ -79,14 +79,14 @@ class HomePageBodyWidget extends StatelessWidget {
                                 ], child: MyVehicleHeadPageWidget())));
                   },
                   child: AppBodyNavigationContainer(
-                      AppLocalization.of(context)!.translate('myVehicle'), Icons.car_rental),
+                      AppLocalizations.of(context)!.translate('myVehicle')!, Icons.car_rental),
                 ),
                 SizedBox(
                   width: 5,
                 ),
                 GestureDetector(
                   onTap: () {},
-                  child: AppBodyNavigationContainer(AppLocalization.of(context)!.translate('runningService'), Icons.run_circle),
+                  child: AppBodyNavigationContainer(AppLocalizations.of(context)!.translate('runningService')!, Icons.run_circle),
                 )
               ],
             ),

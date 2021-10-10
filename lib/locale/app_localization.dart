@@ -1,74 +1,59 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart' show SynchronousFuture;
+import 'package:flutter/services.dart';
 
-class AppLocalization {
-  AppLocalization(this.locale);
+class AppLocalizations {
+
+  AppLocalizations(this.locale);
 
   final Locale locale;
 
-  static AppLocalization? of(BuildContext context) {
-    return Localizations.of<AppLocalization>(context, AppLocalization);
+  // Helper method to keep the code in the widgets concise
+  // Localizations are accessed using an InheritedWidget "of" syntax
+  static AppLocalizations? of(BuildContext context) {
+    return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  static Map<String, Map<String, String>> _localizedValues = {
-    'en': {
-      'signIn': 'Sign In',
-      'signUp': 'Sign Up',
-      'myProfile': 'My Profile',
-      'serviceHistory': 'Service History',
-      'changeLanguage': 'Change Language',
-      'paymentPending': 'Pending Payment',
-      'payNow': 'Pay Now',
-      'requestService': 'Request a new service',
-      'runningService': 'Running services',
-      'addVehicle': 'Add a new vehicle',
-      'myVehicle': 'My Vehicles',
-      'visitWebsite': 'Visit Website',
-      'contactSupport': 'Contact Support',
-      'plansFeatures': 'Plans and Features',
-      'chooseService': 'Choose Service'
-    },
-    'hi': {
-      'signIn': 'लॉगइन करें',
-      'signUp': 'रजिस्टर करें',
-      'myProfile': 'मेरी प्रोफाइल',
-      'serviceHistory': 'पिछले विवरण',
-      'changeLanguage': 'भाषा चुनें',
-      'paymentPending': 'बकाया राशि',
-      'payNow': 'अभी भुगतान करें',
-      'requestService': 'नयी सेवा का अनुरोध करें',
-      'runningService': 'अनुरोध सेवा',
-      'addVehicle': 'नया वाहन जोड़ें',
-      'myVehicle': 'मेर वाहन',
-      'visitWebsite': 'वेबसाइट',
-      'contactSupport': 'हमसे संपर्क करें',
-      'plansFeatures': 'योजनाएं और विशेषताएं',
-      'chooseService': 'सेवाओं का चयन करें'
-    },
-  };
+  // Static member to have a simple access to the delegate from the MaterialApp
+  static const LocalizationsDelegate<AppLocalizations> delegate =
+  _AppLocalizationsDelegate();
 
-  String translate(String key) {
-    return _localizedValues[locale.languageCode]![key] ?? '** $key not found';
+  late Map<String, String> _localizedStrings;
+
+  Future<bool> load() async {
+    String jsonString =
+    await rootBundle.loadString('assets/${locale.languageCode}.json');
+    Map<String, dynamic> jsonMap = json.decode(jsonString);
+
+    _localizedStrings = jsonMap.map((key, value) {
+      return MapEntry(key, value.toString());
+    });
+    return true;
+  }
+
+  String? translate(String key) {
+    return _localizedStrings[key];
   }
 }
 
-class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization> {
-  const AppLocalizationDelegate();
+class _AppLocalizationsDelegate
+    extends LocalizationsDelegate<AppLocalizations> {
+  const _AppLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) => ['en', 'hi'].contains(locale.languageCode);
-
-  @override
-  Future<AppLocalization> load(Locale locale) {
-    // Returning a SynchronousFuture here because an async "load" operation
-    // isn't needed to produce an instance of DemoLocalizations.
-    return SynchronousFuture<AppLocalization>(
-      AppLocalization(locale),
-    );
+  bool isSupported(Locale locale) {
+    return ['en', 'hi'].contains(locale.languageCode);
   }
 
   @override
-  bool shouldReload(AppLocalizationDelegate old) => false;
+  Future<AppLocalizations> load(Locale locale) async {
+    AppLocalizations localizations = new AppLocalizations(locale);
+    await localizations.load();
+    return localizations;
+  }
+
+  @override
+  bool shouldReload(_AppLocalizationsDelegate old) => false;
 }

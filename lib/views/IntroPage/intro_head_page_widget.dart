@@ -54,7 +54,7 @@ class IntroHeadPageWidget extends StatelessWidget {
                                 builder: (context) => LoginPageWidget()));
                       },
                       child: Text(
-                        AppLocalization.of(context)!.translate('signIn'),
+                        AppLocalizations.of(context)!.translate('signIn')!,
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 18),
                       ),
@@ -81,7 +81,7 @@ class IntroHeadPageWidget extends StatelessWidget {
                                     RegistrationPageWidget()));
                       },
                       child: Text(
-                        AppLocalization.of(context)!.translate('signUp'),
+                        AppLocalizations.of(context)!.translate('signUp')!,
                         style: TextStyle(
                             color: AppConfig().primary,
                             fontWeight: FontWeight.bold,

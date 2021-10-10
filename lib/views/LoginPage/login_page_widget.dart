@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
+import 'package:onhighway/locale/app_localization.dart';
 import '../../main.dart';
 import '../../helpers/enum.dart';
 import '../../viewModels/login_view_model.dart';
@@ -142,7 +143,9 @@ class LoginPageWidget extends StatelessWidget {
                                                 .showSnackBar(snackBar);
                                           }
                                         },
-                                        child: Text('signIn'),
+                                        child: Text(
+                                            AppLocalizations.of(context)!
+                                                .translate('signIn')!),
                                         style: ElevatedButton.styleFrom(
                                           shape: new RoundedRectangleBorder(
                                             borderRadius:

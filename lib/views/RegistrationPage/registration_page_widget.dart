@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:onhighway/locale/app_localization.dart';
 import '../../main.dart';
 import '../HomePage/widget/home_text_widget.dart';
 import '../Widgets/app_head_logo_widget.dart';
@@ -261,7 +262,9 @@ class RegistrationPageWidget extends StatelessWidget {
                                                 .showSnackBar(snackBar);
                                           }
                                         },
-                                        child: Text('signUp'),
+                                        child: Text(
+                                            AppLocalizations.of(context)!
+                                                .translate('signUp')!),
                                         style: ElevatedButton.styleFrom(
                                           shape: new RoundedRectangleBorder(
                                             borderRadius:

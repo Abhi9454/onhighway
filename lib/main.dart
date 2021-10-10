@@ -11,19 +11,28 @@ import '/views/ServiceHistoryPage/service_history_head_page_widget.dart';
 import '../views/HomePage/home_head_page_widget.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'config.dart';
-import 'locale/current_data.dart';
+import 'locale/AppLanguage.dart';
 
 void main() async {
-  runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  AppLanguage appLanguage = AppLanguage();
+  await appLanguage.fetchLocale();
+  runApp(MyApp(
+    appLanguage: appLanguage,
+  ));
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+
+  final AppLanguage appLanguage;
+
+  MyApp({required this.appLanguage});
+
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => CurrentData(),
-      child: Consumer<CurrentData>(
+    return ChangeNotifierProvider<AppLanguage>(
+      create: (_) => appLanguage,
+      child: Consumer<AppLanguage>(
         builder: (context, currentDataModel, _) {
           return MaterialApp(
               theme: ThemeData(
@@ -32,15 +41,15 @@ class MyApp extends StatelessWidget {
                   accentColor: AppConfig().primary),
               debugShowCheckedModeBanner: false,
               title: AppConfig().appName,
-              locale: Provider.of<CurrentData>(context).locale,
+              locale: currentDataModel.appLocal,
+              supportedLocales: [
+                const Locale('en', ''), // English
+                const Locale('hi', ''), // Hindi
+              ],
               localizationsDelegates: [
-                const AppLocalizationDelegate(),
+                AppLocalizations.delegate,
                 GlobalMaterialLocalizations.delegate,
                 GlobalWidgetsLocalizations.delegate,
-              ],
-              supportedLocales: [
-                const Locale('en', 'US'), // English
-                const Locale('hi', 'IN'), // Hindi
               ],
               home: HomePage());
         },
@@ -115,7 +124,7 @@ class _NavigationTabState extends State<NavigationTab> {
               backgroundColor: AppConfig().primary),
           BottomNavigationBarItem(
               icon: const Icon(Icons.history),
-              label: AppLocalization.of(context)!.translate('serviceHistory'),
+              label: AppLocalizations.of(context)!.translate('serviceHistory'),
               backgroundColor: AppConfig().primary),
           BottomNavigationBarItem(
               icon: const Icon(Icons.support_agent),
