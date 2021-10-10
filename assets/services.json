@@ -1,0 +1,166 @@
+{
+  "serviceType": [
+    {
+      "id": "1",
+      "servicetype": "Truck",
+      "name": "Patti-Kamani",
+      "status": "Active"
+    },
+    {
+      "id": "2",
+      "servicetype": "Truck",
+      "name": "Diesel",
+      "status": "Active"
+    },
+    {
+      "id": "3",
+      "servicetype": "Truck",
+      "name": "Truck Towing",
+      "status": "Active"
+    },
+    {
+      "id": "4",
+      "servicetype": "Truck",
+      "name": "Tire Puncture",
+      "status": "Deactivate"
+    },
+    {
+      "id": "5",
+      "servicetype": "Truck",
+      "name": "Accident Assistance",
+      "status": "Active"
+    },
+    {
+      "id": "6",
+      "servicetype": "Truck",
+      "name": "Police Assistance",
+      "status": "Active"
+    },
+    {
+      "id": "7",
+      "servicetype": "Truck",
+      "name": "Medical Assistance",
+      "status": "Active"
+    },
+    {
+      "id": "8",
+      "servicetype": "Truck",
+      "name": "Hotel & Stay Assistance",
+      "status": "Active"
+    },
+    {
+      "id": "9",
+      "servicetype": "Car",
+      "name": "Shockup",
+      "status": "Active"
+    },
+    {
+      "id": "10",
+      "servicetype": "Car",
+      "name": "Diesel",
+      "status": "Active"
+    },
+    {
+      "id": "11",
+      "servicetype": "Car",
+      "name": "Petrol",
+      "status": "Active"
+    },
+    {
+      "id": "12",
+      "servicetype": "Car",
+      "name": "Car Towing",
+      "status": "Active"
+    },
+    {
+      "id": "13",
+      "servicetype": "Car",
+      "name": "Tire Puncture",
+      "status": "Active"
+    },
+    {
+      "id": "14",
+      "servicetype": "Car",
+      "name": "Accident Assistance",
+      "status": "Active"
+    },
+    {
+      "id": "15",
+      "servicetype": "Car",
+      "name": "Police Assistance",
+      "status": "Active"
+    },
+    {
+      "id": "16",
+      "servicetype": "Car",
+      "name": "Medical Assistance",
+      "status": "Active"
+    },
+    {
+      "id": "17",
+      "servicetype": "Car",
+      "name": "Hotel & Stay Assistance",
+      "status": "Active"
+    },
+    {
+      "id": "18",
+      "servicetype": "Bus",
+      "name": "Patti- Kamani",
+      "status": "Active"
+    },
+    {
+      "id": "19",
+      "servicetype": "Bus",
+      "name": "Diesel",
+      "status": "Active"
+    },
+    {
+      "id": "20",
+      "servicetype": "Bus",
+      "name": "Bus Towing",
+      "status": "Active"
+    },
+    {
+      "id": "21",
+      "servicetype": "Bus",
+      "name": "Tire Puncture",
+      "status": "Active"
+    },
+    {
+      "id": "22",
+      "servicetype": "Bus",
+      "name": "Accident Assistance",
+      "status": "Active"
+    },
+    {
+      "id": "23",
+      "servicetype": "Bus",
+      "name": "Police Assistance",
+      "status": "Active"
+    },
+    {
+      "id": "24",
+      "servicetype": "Bus",
+      "name": "Medical Assistance",
+      "status": "Active"
+    },
+    {
+      "id": "25",
+      "servicetype": "Bus",
+      "name": "Hotel & Stay Assistance",
+      "status": "Deactivate"
+    },
+    {
+      "id": "26",
+      "servicetype": "Car",
+      "name": "Driver Service",
+      "status": "Deactivate"
+    },
+    {
+      "id": "27",
+      "servicetype": "Truck",
+      "name": "food",
+      "status": "Deactivate"
+    }
+  ]
+}

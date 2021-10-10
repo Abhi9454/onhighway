@@ -56,7 +56,6 @@ class AddVehicleViewModel extends ChangeNotifier {
   addVehicle(String vehicleNumber) async {
     try {
       _status = Status.loading;
-      notifyListeners();
       _setVehicleAdd(
         await _addVehicleService.addVehicle(
             await _userDetails.getId(),
