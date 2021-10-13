@@ -23,7 +23,6 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-
   final AppLanguage appLanguage;
 
   MyApp({required this.appLanguage});
@@ -38,10 +37,11 @@ class MyApp extends StatelessWidget {
               theme: ThemeData(
                   primaryColor: AppConfig().primary,
                   scaffoldBackgroundColor: Colors.white,
-                  accentColor: AppConfig().primary),
+                  colorScheme: ColorScheme.fromSwatch()
+                      .copyWith(secondary: AppConfig().primary)),
               debugShowCheckedModeBanner: false,
               title: AppConfig().appName,
-              locale: currentDataModel.appLocal,
+              //locale: currentDataModel.appLocal,
               supportedLocales: [
                 const Locale('en', ''), // English
                 const Locale('hi', ''), // Hindi
@@ -51,7 +51,12 @@ class MyApp extends StatelessWidget {
                 GlobalMaterialLocalizations.delegate,
                 GlobalWidgetsLocalizations.delegate,
               ],
-              home: HomePage());
+              home: MultiProvider(providers: [
+                ChangeNotifierProvider(create: (context) => HomePageViewModel()),
+                ChangeNotifierProvider(create: (context) => ServiceHistoryViewModel()),
+              ],
+                child: HomePage(),
+              ));
         },
       ),
     );

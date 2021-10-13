@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:onhighway/views/RequestServicePage/request_service_head_page_widget.dart';
 import '../../../config.dart';
 
 class MyVehicleListViewContainer extends StatelessWidget {
   MyVehicleListViewContainer(
-      {required this.vehicleId,required this.vehicleType, required this.vehicleFuelType, required this.vehicleListName,required this.vehicleModel});
+      {required this.vehicleId,
+      required this.vehicleType,
+      required this.vehicleFuelType,
+      required this.vehicleListName,
+      required this.vehicleModel});
 
   final String vehicleId;
   final String vehicleType;
@@ -14,7 +19,7 @@ class MyVehicleListViewContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         print(vehicleId.toString());
       },
       child: Padding(
@@ -27,7 +32,9 @@ class MyVehicleListViewContainer extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('$vehicleType | $vehicleFuelType',style: TextStyle(fontWeight: FontWeight.normal, fontSize: 15)),
+                  Text('$vehicleType | $vehicleFuelType',
+                      style: TextStyle(
+                          fontWeight: FontWeight.normal, fontSize: 15)),
                   const SizedBox(
                     height: 2,
                   ),
@@ -44,50 +51,27 @@ class MyVehicleListViewContainer extends StatelessWidget {
                     '$vehicleListName',
                     maxLines: 2,
                     textAlign: TextAlign.left,
-                    style: TextStyle(fontWeight: FontWeight.normal, fontSize: 15),
+                    style:
+                        TextStyle(fontWeight: FontWeight.normal, fontSize: 15),
                   ),
                   const SizedBox(
                     height: 2,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                        child: Row(
-                          children: [
-                            ElevatedButton(
-                              onPressed: () {},
-                              child: Text(
-                                'Delete',
-                                style: TextStyle(fontSize: 15),
-                              ),
-                              style: ElevatedButton.styleFrom(primary: Colors.red),
-                            ),
-                            const SizedBox(
-                              width: 3,
-                            ),
-                            ElevatedButton(
-                              onPressed: () {},
-                              child: Text(
-                                'Hold',
-                                style: TextStyle(fontSize: 15),
-                              ),
-                              style: ElevatedButton.styleFrom(
-                                  primary: AppConfig().secondary),
-                            )
-                          ],
-                        ),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          'Need Service',
-                          style: TextStyle(fontSize: 15),
-                        ),
-                        style: ElevatedButton.styleFrom(primary: AppConfig().primary),
-                      ),
-                    ],
-                  )
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  RequestServiceHeadPageWidget()));
+                    },
+                    child: Text(
+                      'Need Service',
+                      style: TextStyle(fontSize: 15),
+                    ),
+                    style:
+                        ElevatedButton.styleFrom(primary: AppConfig().primary),
+                  ),
                 ],
               ),
             ),

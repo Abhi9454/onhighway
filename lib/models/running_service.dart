@@ -1,4 +1,4 @@
-class UserServiceModel {
+class UserRunningService {
   final String userId;
   final String serviceReqId;
   final String vehicleListName;
@@ -13,10 +13,8 @@ class UserServiceModel {
   final String serviceLatLng;
   final String serviceStatus;
   final String serviceDate;
-  final String serviceAmount;
-  final String serviceInvoice;
 
-  UserServiceModel(
+  UserRunningService(
       {required this.userId,
         required this.serviceReqId,
         required this.vehicleListName,
@@ -31,12 +29,10 @@ class UserServiceModel {
         required this.serviceLatLng,
         required this.serviceStatus,
         required this.serviceDate,
-        required this.serviceAmount,
-        required this.serviceInvoice
       });
 
-  factory UserServiceModel.fromJson(Map<String, dynamic> json) {
-    return UserServiceModel(
+  factory UserRunningService.fromJson(Map<String, dynamic> json) {
+    return UserRunningService(
         userId: json['userId'],
         serviceReqId: json['serviceReqId'],
         vehicleListName: json['vehicleListName'],
@@ -51,8 +47,6 @@ class UserServiceModel {
         serviceLatLng: json['serviceLatLng'],
         serviceStatus: json['serviceStatus'],
         serviceDate: json['serviceDate'],
-        serviceAmount: json['serviceAmount'],
-        serviceInvoice: json['serviceInvoice']
     );
   }
 }

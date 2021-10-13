@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:onhighway/locale/AppLanguage.dart';
+import 'package:onhighway/viewModels/my_profile_view_model.dart';
+import 'package:onhighway/views/MyProfilePage/my_profile_page.dart';
+import 'package:onhighway/views/SelectLanguagePage/select_language_page_widget.dart';
 import 'package:provider/provider.dart';
 import '../../viewModels/home_page_view_model.dart';
 import '../../../config.dart';
@@ -22,41 +25,61 @@ class AppBodyPaymentContainer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 OutlinedButton(
-                  child: Text('My Profile',style: TextStyle(color: Colors.white,fontWeight: FontWeight.normal),),
+                  child: Text(
+                    'My Profile',
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.normal),
+                  ),
                   onPressed: () {
-                    print('Pressed');
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MultiProvider(providers: <
+                                    ChangeNotifierProvider<MyProfileViewModel>>[
+                                  ChangeNotifierProvider<MyProfileViewModel>(
+                                      create: (_) => MyProfileViewModel())
+                                ], child: MyProfilePageWidget())));
                   },
                   style: OutlinedButton.styleFrom(
                     side: BorderSide(color: Colors.white),
                   ),
                 ),
-                SizedBox(width: 10,),
+                SizedBox(
+                  width: 10,
+                ),
                 OutlinedButton(
-                  child: Text('Change Language',textAlign: TextAlign.center,style: TextStyle(color: Colors.white,fontWeight: FontWeight.normal),),
+                  child: Text(
+                    'Change Language',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.normal),
+                  ),
                   onPressed: () async {
-                    String locale  = await homePageModel.getCurrentLocale();
-                    if(locale == 'en'){
-                      Provider.of<AppLanguage>(context,listen: false).changeLanguage(Locale("hi"));
-                    }
-                    else{
-                      Provider.of<AppLanguage>(context,listen: false).changeLanguage(Locale("en"));
-                    }
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SelectLanguagePageWidget()));
                   },
                   style: OutlinedButton.styleFrom(
-                    side: BorderSide(color: Colors.white),
-                    padding: const EdgeInsets.all(10)
-                  ),
+                      side: BorderSide(color: Colors.white),
+                      padding: const EdgeInsets.all(10)),
                 ),
-                SizedBox(width: 10,),
+                SizedBox(
+                  width: 10,
+                ),
                 OutlinedButton(
-                  child: Text('Log out',textAlign: TextAlign.center,style: TextStyle(color: Colors.white,fontWeight: FontWeight.normal),),
+                  child: Text(
+                    'Log out',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.normal),
+                  ),
                   onPressed: () {
                     homePageModel.logout();
                   },
                   style: OutlinedButton.styleFrom(
                       side: BorderSide(color: Colors.white),
-                      padding: const EdgeInsets.all(10)
-                  ),
+                      padding: const EdgeInsets.all(10)),
                 )
               ],
             ),
@@ -69,23 +92,25 @@ class AppBodyPaymentContainer extends StatelessWidget {
                 Container(
                   child: Text(
                     'Pending Payment : Rs. 3409',
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.white
-                    ),
+                    style: TextStyle(fontSize: 18, color: Colors.white),
                   ),
                 ),
-                SizedBox(width: 10,),
+                SizedBox(
+                  width: 10,
+                ),
                 Container(
                   width: MediaQuery.of(context).size.width * 0.30,
                   child: OutlinedButton(
-                    child: Text('PAY NOW',textAlign: TextAlign.center,style: TextStyle(color: Colors.black),),
+                    child: Text(
+                      'PAY NOW',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.black),
+                    ),
                     onPressed: () {
                       print('Pressed');
                     },
                     style: OutlinedButton.styleFrom(
-                        backgroundColor: AppConfig().secondary
-                    ),
+                        backgroundColor: AppConfig().secondary),
                   ),
                 )
               ],

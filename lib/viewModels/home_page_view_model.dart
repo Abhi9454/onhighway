@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import '../locale/AppLanguage.dart';
 import '../helpers/read_user_details.dart';
 import '../helpers/enum.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -25,6 +26,12 @@ class HomePageViewModel extends ChangeNotifier {
     _preferences = await SharedPreferences.getInstance();
     currentLocale =  _preferences.getString('language_code').toString();
     return currentLocale;
+  }
+
+  changeLanguage(Locale locale) async{
+    AppLanguage _appLanguage = new AppLanguage();
+    _appLanguage.changeLanguage(locale);
+    notifyListeners();
   }
 
   logout() async {

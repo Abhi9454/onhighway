@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../config.dart';
-import '../HomePage/widget/home_text_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AppFooter extends StatelessWidget {
@@ -38,14 +37,14 @@ class AppFooter extends StatelessWidget {
               onTap: () {
                 _launchInBrowser(AppConfig().webSiteLink);
               },
-              child: HomeTextWidget('visitWebsite'),
+              child: Text('Visit Website', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
             ),
-            HomeTextWidget('  |  '),
+            Text(' | ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
             GestureDetector(
               onTap: () {
                 _makePhoneCall(AppConfig().customerSupportNumber);
               },
-              child: HomeTextWidget('contactSupport'),
+              child: Text('Contact Support', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
             ),
           ],
         ),

@@ -1,38 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import '../../../viewModels/running_service_view_model.dart';
 
 import '../../../config.dart';
 
-class ServiceHistoryListViewContainerWidget extends StatelessWidget {
-  ServiceHistoryListViewContainerWidget(
+class RunningServiceListViewContainer extends StatelessWidget {
+  RunningServiceListViewContainer(
       {required this.serviceDate,
-      required this.serviceAmount,
       required this.vehicleListName,
       required this.serviceText,
       required this.serviceStatus,
       required this.serviceReqId,
-        required this.serviceInvoiceUrl
-      });
+      required this.model});
 
   final String serviceDate;
-  final String serviceAmount;
   final String vehicleListName;
   final String serviceText;
   final String serviceStatus;
   final String serviceReqId;
-  final String serviceInvoiceUrl;
-
-  Future<void> _launchInBrowser(String url) async {
-    if (await canLaunch(url)) {
-      await launch(
-        url,
-        forceSafariVC: false,
-        forceWebView: false,
-      );
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
+  final RunningServiceViewModel model;
 
   @override
   Widget build(BuildContext context) {
@@ -44,11 +29,12 @@ class ServiceHistoryListViewContainerWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Service Date : $serviceDate'),
-              const SizedBox(
-                height: 5,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Service Date : $serviceDate'),
+                ],
               ),
-              Text('Amount : Rs. $serviceAmount'),
               const SizedBox(
                 height: 5,
               ),
@@ -79,21 +65,16 @@ class ServiceHistoryListViewContainerWidget extends StatelessWidget {
               const SizedBox(
                 height: 5,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      _launchInBrowser(serviceInvoiceUrl);
-                    },
-                    child: Text(
-                      'Invoice',
-                      style: TextStyle(fontSize: 13),
-                    ),
-                    style:
-                        ElevatedButton.styleFrom(primary: AppConfig().primary),
-                  ),
-                ],
+              ElevatedButton(
+                onPressed: () {
+                  print(serviceReqId.toString());
+                  model.deleteRequest(serviceReqId);
+                },
+                child: Text(
+                  'Delete Request',
+                  style: TextStyle(fontSize: 13),
+                ),
+                style: ElevatedButton.styleFrom(primary: AppConfig().secondary),
               ),
             ],
           ),

@@ -2,51 +2,57 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
-import 'package:onhighway/views/ForgetPasswordPage/forget_password_page_widget.dart';
-import '../../locale/app_localization.dart';
-import '../../main.dart';
+import '../../views/LoginPage/login_page_widget.dart';
+import '../../viewModels/forget_password_view_model.dart';
 import '../../helpers/enum.dart';
-import '../../viewModels/login_view_model.dart';
 import 'package:provider/provider.dart';
 import '../../config.dart';
 import '../HomePage/widget/home_text_widget.dart';
 import '/views/Widgets/app_head_logo_widget.dart';
 
-class LoginPageWidget extends StatelessWidget {
-  LoginPageWidget({Key? key}) : super(key: key);
+class ForgetPasswordPageWidget extends StatelessWidget {
+  ForgetPasswordPageWidget({Key? key}) : super(key: key);
 
   final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<LoginPageViewModel>(
-      create: (context) => LoginPageViewModel(),
-      child: Consumer<LoginPageViewModel>(
-        builder: (con, model, _) {
-          if (model.loginStatus == LoginStatus.success) {
-            return HomePage();
-          } else {
-            return Scaffold(
-              appBar: PreferredSize(
-                preferredSize: Size.fromHeight(50),
-                child: AppBar(
-                  backgroundColor: AppConfig().secondary,
-                  leading: IconButton(
-                    icon: Icon(CupertinoIcons.back, color: AppConfig().primary),
-                    onPressed: () => Navigator.of(context).pop(),
-                  ),
-                  title: Text(
-                    'Welcome Back',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(color: Colors.black, fontSize: 22),
-                  ),
-                ),
-              ),
-              body: SafeArea(
-                child: model.loginStatus == LoginStatus.loading
+    return ChangeNotifierProvider<ForgetPasswordViewModel>(
+      create: (context) => ForgetPasswordViewModel(),
+      child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(50),
+          child: AppBar(
+            backgroundColor: AppConfig().secondary,
+            leading: IconButton(
+              icon: Icon(CupertinoIcons.back, color: AppConfig().primary),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+            title: Text(
+              'Forget Password',
+              textAlign: TextAlign.left,
+              style: TextStyle(color: Colors.black, fontSize: 22),
+            ),
+          ),
+        ),
+        body: Consumer<ForgetPasswordViewModel>(builder: (con, model, _) {
+          return SafeArea(
+            child: model.loginStatus == LoginStatus.loading
+                ? SizedBox(
+                    child: Center(child: CircularProgressIndicator()),
+                  )
+                : model.loginStatus == LoginStatus.success
                     ? SizedBox(
-                        child: Center(child: CircularProgressIndicator()),
+                        child: Center(
+                            child: Padding(
+                              padding: const EdgeInsets.all(15.0),
+                              child: Text(
+                          model.replyStatus['message'].toString(),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                            )),
                       )
                     : SingleChildScrollView(
                         scrollDirection: Axis.vertical,
@@ -89,37 +95,6 @@ class LoginPageWidget extends StatelessWidget {
                                     SizedBox(
                                       height: 15,
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 15.0,
-                                          right: 15,
-                                          top: 5.0,
-                                          bottom: 5.0),
-                                      child: TextFormField(
-                                        autofocus: false,
-                                        obscureText: true,
-                                        controller: passwordController,
-                                        style: TextStyle(
-                                            color: Colors.black, fontSize: 18),
-                                        decoration: const InputDecoration(
-                                            hintText: 'Password',
-                                            enabledBorder:
-                                                const OutlineInputBorder(
-                                              borderSide: const BorderSide(
-                                                  color: Colors.grey,
-                                                  width: 0.0),
-                                            ),
-                                            focusedBorder:
-                                                const OutlineInputBorder(
-                                              borderSide: const BorderSide(
-                                                  color: Colors.grey,
-                                                  width: 0.0),
-                                            )),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 15,
-                                    ),
                                     Container(
                                       width: MediaQuery.of(context).size.width *
                                           0.5,
@@ -127,8 +102,8 @@ class LoginPageWidget extends StatelessWidget {
                                         onPressed: () {
                                           if (emailController.text.isNotEmpty &&
                                               emailController.text.isNotEmpty) {
-                                            model.login(emailController.text,
-                                                passwordController.text);
+                                            model.forgetPassword(
+                                                emailController.text);
                                           } else {
                                             final snackBar = SnackBar(
                                               content: const Text(
@@ -144,9 +119,7 @@ class LoginPageWidget extends StatelessWidget {
                                                 .showSnackBar(snackBar);
                                           }
                                         },
-                                        child: Text(
-                                            AppLocalizations.of(context)!
-                                                .translate('signIn')!),
+                                        child: Text('Send Reset Email'),
                                         style: ElevatedButton.styleFrom(
                                           shape: new RoundedRectangleBorder(
                                             borderRadius:
@@ -166,16 +139,16 @@ class LoginPageWidget extends StatelessWidget {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      ForgetPasswordPageWidget()));
+                                                      LoginPageWidget()));
                                         },
-                                        child:
-                                            HomeTextWidget('Forget Password')),
+                                        child: HomeTextWidget('Login')),
                                     SizedBox(
                                       height: 25,
                                     ),
                                     model.loginStatus == LoginStatus.failed
                                         ? Text(
-                                            'Login Failed. Try again',
+                                            model.replyStatus['message']
+                                                .toString(),
                                             style: TextStyle(
                                                 color: Colors.red,
                                                 fontSize: 18),
@@ -195,10 +168,8 @@ class LoginPageWidget extends StatelessWidget {
                           ],
                         ),
                       ),
-              ),
-            );
-          }
-        },
+          );
+        }),
       ),
     );
   }

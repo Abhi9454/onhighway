@@ -25,6 +25,7 @@ class AppLanguage extends ChangeNotifier {
       return;
     }
     if (type == Locale("hi")) {
+      print("hindi block");
       _appLocale = Locale("hi");
       await preferences.setString('language_code', 'hi');
       await preferences.setString('countryCode', '');

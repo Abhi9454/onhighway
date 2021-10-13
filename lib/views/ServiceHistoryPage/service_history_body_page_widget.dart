@@ -9,6 +9,8 @@ class ServiceHistoryBodyPageWidget extends StatelessWidget {
   final BuildContext serviceHistoryContext;
   final ServiceHistoryViewModel serviceHistoryModel;
 
+
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -27,6 +29,7 @@ class ServiceHistoryBodyPageWidget extends StatelessWidget {
             serviceText: serviceHistoryModel.serviceDetails[index].serviceText,
             vehicleListName:
                 serviceHistoryModel.serviceDetails[index].vehicleListName,
+            serviceInvoiceUrl: serviceHistoryModel.serviceDetails[index].serviceInvoice,
           );
         });
   }

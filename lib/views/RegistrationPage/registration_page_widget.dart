@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onhighway/locale/app_localization.dart';
+import 'package:onhighway/views/LoginPage/login_page_widget.dart';
 import '../../main.dart';
 import '../HomePage/widget/home_text_widget.dart';
 import '../Widgets/app_head_logo_widget.dart';
@@ -278,7 +279,16 @@ class RegistrationPageWidget extends StatelessWidget {
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    HomeTextWidget('Already a member? Sign In'),
+                                    GestureDetector(
+                                        onTap: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      LoginPageWidget()));
+                                        },
+                                        child: HomeTextWidget(
+                                            'Already a member? Sign In')),
                                     SizedBox(
                                       height: 25,
                                     ),

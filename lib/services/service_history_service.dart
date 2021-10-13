@@ -11,14 +11,14 @@ class ServiceHistory {
   Future<List<UserServiceModel>> serviceHistory(
       String userId, String userToken) async {
     try {
-      final Map<String, dynamic> userVehicleList = {
+      final FormData formData = FormData.fromMap(<String, dynamic>{
         'apiToken': AppConfig().apiKey,
         'userToken': userToken,
         'userId': userId,
-      };
-      final Response<dynamic> response = await dio.get(
-          AppConfig().apiUrl + '/user_service_history',
-          queryParameters: userVehicleList);
+      });
+      final Response<dynamic> response =
+      await httpService.requestSource(
+          AppConfig().apiUrl + '/user_service_history', 'POST', formData: formData);
       return (response.data as List)
           .map((e) => UserServiceModel.fromJson(e))
           .toList();
