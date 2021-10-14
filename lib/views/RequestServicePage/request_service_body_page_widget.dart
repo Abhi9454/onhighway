@@ -1,17 +1,27 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:onhighway/viewModels/request_service_view_model.dart';
 import '../Widgets/poster_widget.dart';
 import '../Widgets/app_footer.dart';
 import '../../config.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class RequestServiceBodyPageWidget extends StatelessWidget {
   RequestServiceBodyPageWidget({required this.requestServiceModel});
 
   final RequestServiceViewModel requestServiceModel;
   final TextEditingController serviceTextController = TextEditingController();
+  static const LatLng _center = const LatLng(28.7041, 77.1025);
+  late final Completer<GoogleMapController> _controller;
+
+  void _onMapCreated(GoogleMapController controller) {
+    _controller.complete(controller);
+  }
 
   @override
   Widget build(BuildContext context) {
+    _controller = Completer();
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -104,23 +114,52 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              Padding(
-                padding: const EdgeInsets.only(
-                    left: 15.0, right: 15, top: 5.0, bottom: 5.0),
-                child: TextFormField(
-                  autofocus: false,
-                  style: TextStyle(color: Colors.black, fontSize: 13),
-                  decoration: const InputDecoration(
-                      hintText: 'Enter Live Location/Address',
-                      enabledBorder: const OutlineInputBorder(
-                        borderSide:
-                            const BorderSide(color: Colors.grey, width: 0.0),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 15.0, right: 15, top: 5.0, bottom: 5.0),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.6,
+                      child: TextFormField(
+                        autofocus: false,
+                        style: TextStyle(color: Colors.black, fontSize: 13),
+                        decoration: const InputDecoration(
+                            hintText: 'Enter Live Location/Address',
+                            enabledBorder: const OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: Colors.grey, width: 0.0),
+                            ),
+                            focusedBorder: const OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: Colors.grey, width: 0.0),
+                            )),
                       ),
-                      focusedBorder: const OutlineInputBorder(
-                        borderSide:
-                            const BorderSide(color: Colors.grey, width: 0.0),
-                      )),
-                ),
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.2,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        GoogleMap(
+                          onMapCreated: _onMapCreated,
+                          initialCameraPosition: CameraPosition(
+                            target: _center,
+                            zoom: 11.0,
+                          ),
+                        );
+                      },
+                      child: Text('Select'),
+                      style: ElevatedButton.styleFrom(
+                        shape: new RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(5.0),
+                        ),
+                        primary: Color(0XFF091e6d),
+                        padding: const EdgeInsets.all(15.0)
+                      ),
+                    ),
+                  )
+                ],
               ),
               const SizedBox(
                 height: 15,
