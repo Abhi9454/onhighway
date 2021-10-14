@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:onhighway/viewModels/request_service_view_model.dart';
+import 'package:onhighway/views/RequestServicePage/request_service_head_page_widget.dart';
 import '../../viewModels/running_service_view_model.dart';
 import '../../views/RunningServicePage/running_service_head_page_widget.dart';
 import '../../locale/app_localization.dart';
@@ -26,19 +28,32 @@ class HomePageBodyWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         AppHeadLogoWidget(),
-        AppBodyPaymentContainer(homePageModel: homePageModel,),
+        AppBodyPaymentContainer(
+          homePageModel: homePageModel,
+        ),
         SizedBox(
           child: Padding(
             padding: const EdgeInsets.all(30.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => MultiProvider(providers: <
+                                ChangeNotifierProvider<
+                                    RequestServiceViewModel>>[
+                              ChangeNotifierProvider<RequestServiceViewModel>(
+                                  create: (_) => RequestServiceViewModel())
+                            ], child: RequestServiceHeadPageWidget())));
+              },
               child: Container(
                 color: AppConfig().secondary,
                 child: Center(
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text(
-                      AppLocalizations.of(context)!.translate('requestService')!,
+                      AppLocalizations.of(context)!
+                          .translate('requestService')!,
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.black, fontSize: 24),
                     ),
@@ -62,7 +77,9 @@ class HomePageBodyWidget extends StatelessWidget {
                             builder: (context) =>
                                 AddNewVehicleHeadPageWidget()));
                   },
-                  child: AppBodyNavigationContainer(AppLocalizations.of(context)!.translate('addVehicle')!, Icons.add),
+                  child: AppBodyNavigationContainer(
+                      AppLocalizations.of(context)!.translate('addVehicle')!,
+                      Icons.add),
                 ),
                 SizedBox(
                   width: 2,
@@ -81,7 +98,8 @@ class HomePageBodyWidget extends StatelessWidget {
                                 ], child: MyVehicleHeadPageWidget())));
                   },
                   child: AppBodyNavigationContainer(
-                      AppLocalizations.of(context)!.translate('myVehicle')!, Icons.car_rental),
+                      AppLocalizations.of(context)!.translate('myVehicle')!,
+                      Icons.car_rental),
                 ),
                 SizedBox(
                   width: 2,
@@ -92,20 +110,25 @@ class HomePageBodyWidget extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) => MultiProvider(providers: <
-                                ChangeNotifierProvider<
-                                    RunningServiceViewModel>>[
-                              ChangeNotifierProvider<
-                                  RunningServiceViewModel>(
-                                  create: (_) => RunningServiceViewModel())
-                            ], child: RunningServiceHeadPageWidget())));
+                                    ChangeNotifierProvider<
+                                        RunningServiceViewModel>>[
+                                  ChangeNotifierProvider<
+                                          RunningServiceViewModel>(
+                                      create: (_) => RunningServiceViewModel())
+                                ], child: RunningServiceHeadPageWidget())));
                   },
-                  child: AppBodyNavigationContainer(AppLocalizations.of(context)!.translate('runningService')!, Icons.run_circle),
+                  child: AppBodyNavigationContainer(
+                      AppLocalizations.of(context)!
+                          .translate('runningService')!,
+                      Icons.run_circle),
                 )
               ],
             ),
           ),
         ),
-        SizedBox(height: 10,),
+        SizedBox(
+          height: 10,
+        ),
         PosterWidget(),
         AppFooter()
       ],

@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:onhighway/viewModels/request_service_view_model.dart';
 import '../Widgets/poster_widget.dart';
 import '../Widgets/app_footer.dart';
 import '../../config.dart';
 
 class RequestServiceBodyPageWidget extends StatelessWidget {
-  const RequestServiceBodyPageWidget({Key? key}) : super(key: key);
+  RequestServiceBodyPageWidget({required this.requestServiceModel});
+
+  final RequestServiceViewModel requestServiceModel;
+  final TextEditingController serviceTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    String _chosenVehicle = 'Select your Vehicle';
-    String _serviceType = 'Select Service';
-
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -39,11 +40,11 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
                 child: DropdownButton<String>(
                   focusColor: Colors.white,
                   isExpanded: true,
-                  value: _chosenVehicle,
+                  value: requestServiceModel.selectedVehicleName,
                   //elevation: 5,
                   style: TextStyle(color: Colors.white),
                   iconEnabledColor: Colors.black,
-                  items: <String>['Select your Vehicle','Truck', 'Car', 'Bulldozer']
+                  items: requestServiceModel.vehicleListName
                       .map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
@@ -54,7 +55,9 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
                     );
                   }).toList(),
                   onChanged: (String? value) {
-                    print(value!);
+                    if (value != 'Select Vehicle') {
+                      requestServiceModel.setVehicleId(value!);
+                    }
                   },
                   hint: Text(
                     "Select Your Vehicle",
@@ -66,15 +69,15 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 15.0,right: 20),
+                padding: const EdgeInsets.only(left: 15.0, right: 20),
                 child: DropdownButton<String>(
                   focusColor: Colors.white,
                   isExpanded: true,
-                  value: _serviceType,
+                  value: requestServiceModel.selectedServiceType,
                   //elevation: 5,
                   style: TextStyle(color: Colors.white),
                   iconEnabledColor: Colors.black,
-                  items: <String>['Select Service','Shockup', 'Diesel', 'Petrol', 'Car Towing','Tire Puncture','Accident Assistance','Police Assistance','Medical Assistance','Hotel & Stay Assistance']
+                  items: requestServiceModel.serviceTypeSelectList
                       .map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
@@ -85,7 +88,9 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
                     );
                   }).toList(),
                   onChanged: (String? value) {
-                    print(value!);
+                    if (value != 'Select Service Type') {
+                      requestServiceModel.setServiceRequestId(value!);
+                    }
                   },
                   hint: Text(
                     "Select Service",
@@ -96,62 +101,69 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 15,),
+              const SizedBox(
+                height: 15,
+              ),
               Padding(
                 padding: const EdgeInsets.only(
                     left: 15.0, right: 15, top: 5.0, bottom: 5.0),
                 child: TextFormField(
                   autofocus: false,
-                  style:
-                  TextStyle(color: Colors.black, fontSize: 13),
+                  style: TextStyle(color: Colors.black, fontSize: 13),
                   decoration: const InputDecoration(
                       hintText: 'Enter Live Location/Address',
                       enabledBorder: const OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.grey, width: 0.0),
+                        borderSide:
+                            const BorderSide(color: Colors.grey, width: 0.0),
                       ),
                       focusedBorder: const OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.grey, width: 0.0),
-                      )
-                  ),
+                        borderSide:
+                            const BorderSide(color: Colors.grey, width: 0.0),
+                      )),
                 ),
               ),
-              const SizedBox(height: 15,),
+              const SizedBox(
+                height: 15,
+              ),
               Padding(
                 padding: const EdgeInsets.only(
                     left: 15.0, right: 15, top: 5.0, bottom: 5.0),
                 child: TextFormField(
                   autofocus: false,
-                  style:
-                  TextStyle(color: Colors.black, fontSize: 13),
+                  style: TextStyle(color: Colors.black, fontSize: 13),
                   decoration: const InputDecoration(
                       hintText: 'Enter Pincode',
                       enabledBorder: const OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.grey, width: 0.0),
+                        borderSide:
+                            const BorderSide(color: Colors.grey, width: 0.0),
                       ),
                       focusedBorder: const OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.grey, width: 0.0),
-                      )
-                  ),
+                        borderSide:
+                            const BorderSide(color: Colors.grey, width: 0.0),
+                      )),
                 ),
               ),
-              const SizedBox(height: 15,),
+              const SizedBox(
+                height: 15,
+              ),
               Padding(
                 padding: const EdgeInsets.only(
                     left: 15.0, right: 15, top: 5.0, bottom: 5.0),
                 child: TextFormField(
                   autofocus: false,
                   maxLines: 5,
-                  style:
-                  TextStyle(color: Colors.black, fontSize: 13),
+                  controller: serviceTextController,
+                  style: TextStyle(color: Colors.black, fontSize: 13),
                   decoration: const InputDecoration(
                       hintText: 'Enter Problem',
                       enabledBorder: const OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.grey, width: 0.0),
+                        borderSide:
+                            const BorderSide(color: Colors.grey, width: 0.0),
                       ),
                       focusedBorder: const OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.grey, width: 0.0),
-                      )
-                  ),
+                        borderSide:
+                            const BorderSide(color: Colors.grey, width: 0.0),
+                      )),
                 ),
               ),
               const SizedBox(
@@ -159,6 +171,23 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
+                  if (requestServiceModel.selectedServiceType !=
+                          'Select Service Type' &&
+                      requestServiceModel.selectedVehicleName !=
+                          'Select Vehicle' &&
+                      serviceTextController.text.isNotEmpty) {
+                    requestServiceModel.serviceRequest(
+                        '', serviceTextController.text, '');
+                  } else {
+                    final snackBar = SnackBar(
+                      content: const Text(
+                        'Invalid Details',
+                        style: TextStyle(fontSize: 15, color: Colors.white),
+                      ),
+                      backgroundColor: (AppConfig().primary),
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                  }
                 },
                 child: Text('Submit'),
                 style: ElevatedButton.styleFrom(
