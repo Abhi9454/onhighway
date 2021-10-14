@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
                       .copyWith(secondary: AppConfig().primary)),
               debugShowCheckedModeBanner: false,
               title: AppConfig().appName,
-              //locale: currentDataModel.appLocal,
+              locale: currentDataModel.appLocal,
               supportedLocales: [
                 const Locale('en', ''), // English
                 const Locale('hi', ''), // Hindi

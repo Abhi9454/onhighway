@@ -10,6 +10,7 @@ class AppLanguage extends ChangeNotifier {
   fetchLocale() async {
     preferences = await SharedPreferences.getInstance();
     String? currentLocale = preferences.getString('language_code');
+    print('current applanguage' + currentLocale.toString());
     if (currentLocale == null) {
       _appLocale = Locale('en');
       return Null;

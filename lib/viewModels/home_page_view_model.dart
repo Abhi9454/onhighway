@@ -5,7 +5,7 @@ import '../helpers/enum.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePageViewModel extends ChangeNotifier {
-  late SharedPreferences _preferences;
+  late SharedPreferences preferences;
   UserDetails _userDetails = new UserDetails();
 
   late String currentLocale;
@@ -23,8 +23,8 @@ class HomePageViewModel extends ChangeNotifier {
   }
 
   Future<String> getCurrentLocale() async{
-    _preferences = await SharedPreferences.getInstance();
-    currentLocale =  _preferences.getString('language_code').toString();
+    preferences = await SharedPreferences.getInstance();
+    currentLocale =  preferences.getString('language_code').toString();
     return currentLocale;
   }
 
@@ -35,8 +35,8 @@ class HomePageViewModel extends ChangeNotifier {
   }
 
   logout() async {
-    _preferences = await SharedPreferences.getInstance();
-    _preferences.clear();
+    preferences = await SharedPreferences.getInstance();
+    preferences.clear();
     _userStatus = HomePageUserStatus.userNotVerified;
     notifyListeners();
   }

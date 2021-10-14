@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:onhighway/helpers/enum.dart';
 import 'package:onhighway/viewModels/my_profile_view_model.dart';
 import 'package:onhighway/views/Widgets/app_head_logo_widget.dart';
-import '../../locale/AppLanguage.dart';
 import 'package:provider/provider.dart';
 
 import '../../config.dart';

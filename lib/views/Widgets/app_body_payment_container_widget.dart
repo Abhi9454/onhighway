@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:onhighway/locale/AppLanguage.dart';
 import 'package:onhighway/viewModels/my_profile_view_model.dart';
 import 'package:onhighway/views/MyProfilePage/my_profile_page.dart';
-import 'package:onhighway/views/SelectLanguagePage/select_language_page_widget.dart';
 import 'package:provider/provider.dart';
 import '../../viewModels/home_page_view_model.dart';
 import '../../../config.dart';
@@ -55,10 +54,18 @@ class AppBodyPaymentContainer extends StatelessWidget {
                         color: Colors.white, fontWeight: FontWeight.normal),
                   ),
                   onPressed: () async {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => SelectLanguagePageWidget()));
+                    // Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //         builder: (context) => SelectLanguagePageWidget()));
+                    String locale = await homePageModel.getCurrentLocale();
+                    if (locale == 'hi') {
+                      Provider.of<AppLanguage>(context, listen: false)
+                          .changeLanguage(Locale('en'));
+                    } else {
+                      Provider.of<AppLanguage>(context, listen: false)
+                          .changeLanguage(Locale('hi'));
+                    }
                   },
                   style: OutlinedButton.styleFrom(
                       side: BorderSide(color: Colors.white),
