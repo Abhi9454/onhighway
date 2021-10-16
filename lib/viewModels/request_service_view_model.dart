@@ -53,7 +53,8 @@ class RequestServiceViewModel extends ChangeNotifier {
 
   setLocation(String location) {
     _status = Status.loading;
-    latitudeLongitude = location;
+    print('Location is ' + location);
+    this.latitudeLongitude = location;
     _status = Status.success;
     notifyListeners();
   }
@@ -135,7 +136,7 @@ class RequestServiceViewModel extends ChangeNotifier {
             serviceRequestId,
             serviceAddress,
             serviceText,
-            '32.232,23.343'),
+            latitudeLongitude),
       );
     } on ShowError catch (error) {
       _status = Status.error;

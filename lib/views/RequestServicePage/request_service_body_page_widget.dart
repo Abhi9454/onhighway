@@ -16,7 +16,7 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    locationTextController.text = requestServiceModel.latitudeLongitude;
+  
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
