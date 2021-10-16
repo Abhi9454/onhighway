@@ -1,27 +1,19 @@
-import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:onhighway/viewModels/request_service_view_model.dart';
+import 'package:onhighway/views/GoogleMapView/google_map_page.dart';
 import '../Widgets/poster_widget.dart';
 import '../Widgets/app_footer.dart';
 import '../../config.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class RequestServiceBodyPageWidget extends StatelessWidget {
   RequestServiceBodyPageWidget({required this.requestServiceModel});
 
   final RequestServiceViewModel requestServiceModel;
   final TextEditingController serviceTextController = TextEditingController();
-  static const LatLng _center = const LatLng(28.7041, 77.1025);
-  late final Completer<GoogleMapController> _controller;
-
-  void _onMapCreated(GoogleMapController controller) {
-    _controller.complete(controller);
-  }
 
   @override
   Widget build(BuildContext context) {
-    _controller = Completer();
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -141,13 +133,11 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.2,
                     child: ElevatedButton(
                       onPressed: () {
-                        GoogleMap(
-                          onMapCreated: _onMapCreated,
-                          initialCameraPosition: CameraPosition(
-                            target: _center,
-                            zoom: 11.0,
-                          ),
-                        );
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    GoogleMapPageWidget()));
                       },
                       child: Text('Select'),
                       style: ElevatedButton.styleFrom(
