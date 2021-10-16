@@ -105,7 +105,9 @@ class RequestServiceViewModel extends ChangeNotifier {
       _setVehicleDetails(await _myVehiclesListService.myVehiclesList(
           await _userDetails.getId(), await _userDetails.getUserToken()));
       for (int i = 0; i < vehicleDetails.length; i++) {
-        vehicleListName.add(vehicleDetails[i].vehicleListName);
+        if(vehicleDetails[i].vehicleStatus == 'Active'){
+          vehicleListName.add(vehicleDetails[i].vehicleListName);
+        }
       }
       _status = Status.success;
     } on ShowError catch (error) {

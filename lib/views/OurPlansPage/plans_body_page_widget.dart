@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:onhighway/helpers/enum.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import '../../viewModels/our_plans_view_model.dart';
 import '../../views/Widgets/app_head_logo_widget.dart';
-import '../../config.dart';
 
 class PlansBodyPageWidget extends StatelessWidget {
   PlansBodyPageWidget({required this.model});
@@ -27,25 +25,7 @@ class PlansBodyPageWidget extends StatelessWidget {
     model.razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, _handlePaymentSuccess);
     model.razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, _handlePaymentError);
     model.razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, _handleExternalWallet);
-    return model.status == Status.success
-        ? SizedBox(
-            child: Center(
-              child: Text(
-                'Payment Successful',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-            ),
-          )
-        : model.status == Status.success
-            ? SizedBox(
-                child: Center(
-                  child: Text(
-                    'Payment Failed',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              )
-            : Column(
+    return Column(
                 children: [
                   AppHeadLogoWidget(),
                   Padding(
@@ -103,19 +83,6 @@ class PlansBodyPageWidget extends StatelessWidget {
                                 'Request Vehicle Service',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Center(
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  model.openCheckout();
-                                },
-                                child: Text('Pay Now'),
-                                style: ElevatedButton.styleFrom(
-                                    primary: AppConfig().primary),
                               ),
                             ),
                           ],

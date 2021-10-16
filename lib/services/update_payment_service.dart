@@ -8,18 +8,20 @@ class UpdatePaymentService {
   Dio dio = new Dio();
 
   Future<Map<String,dynamic>> updatePaymentSuccessful(
-      String userId, String userToken, String paymentTxnId, String paymentStatus) async {
+      String userId, String userToken, String paymentTxnId, String gatewayTxnId) async {
     try {
       final FormData formData = FormData.fromMap(<String, dynamic>{
         'apiToken': AppConfig().apiKey,
         'userToken': userToken,
         'userId': userId,
         'paymentTxnId': paymentTxnId,
-        'paymentStatus' : paymentStatus
+        'gatewayTxnId': gatewayTxnId,
+        'paymentStatus' : 'Success'
       });
       final Response<dynamic> response =
       await httpService.requestSource(
           AppConfig().apiUrl + '/user_update_payment', 'POST', formData: formData);
+          print('Update Payment Details' + response.data.toString());
       return response.data as Map<String,dynamic>;
     } on DioError catch (error) {
       if (error.type == DioErrorType.receiveTimeout ||

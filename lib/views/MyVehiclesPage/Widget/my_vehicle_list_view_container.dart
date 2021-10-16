@@ -1,26 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:onhighway/views/RequestServicePage/request_service_head_page_widget.dart';
+import 'package:onhighway/viewModels/my_vehicles_view_model.dart';
+import '../../../models/user_vehicle.dart';
 import '../../../config.dart';
 
 class MyVehicleListViewContainer extends StatelessWidget {
   MyVehicleListViewContainer(
-      {required this.vehicleId,
-      required this.vehicleType,
-      required this.vehicleFuelType,
-      required this.vehicleListName,
-      required this.vehicleModel});
+      {required this.myVehicleModel, required this.myVehicleViewModel});
 
-  final String vehicleId;
-  final String vehicleType;
-  final String vehicleFuelType;
-  final String vehicleListName;
-  final String vehicleModel;
+  final UserVehicleModel myVehicleModel;
+  final MyVehiclesListViewModel myVehicleViewModel;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print(vehicleId.toString());
+        print(myVehicleModel.vehicleId);
       },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -32,23 +26,44 @@ class MyVehicleListViewContainer extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('$vehicleType | $vehicleFuelType',
+                  Text(myVehicleModel.vehicleType + ' | ' + myVehicleModel.vehicleFuelType + ' | ' + myVehicleModel.paymentType,
                       style: TextStyle(
-                          fontWeight: FontWeight.normal, fontSize: 15)),
+                          fontWeight: FontWeight.bold, fontSize: 16)),
+                  const SizedBox(
+                    height: 2,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        myVehicleModel.vehicleModel,
+                        maxLines: 2,
+                        textAlign: TextAlign.left,
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
+                      Text(
+                        myVehicleModel.vehicleStatus,
+                        maxLines: 2,
+                        textAlign: TextAlign.left,
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color : myVehicleModel.vehicleStatus == 'Active' ? Colors.green : Colors.red),
+                      ),
+                    ],
+                  ),
                   const SizedBox(
                     height: 2,
                   ),
                   Text(
-                    '$vehicleModel',
+                    myVehicleModel.vehicleListName,
                     maxLines: 2,
                     textAlign: TextAlign.left,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    style:
+                        TextStyle(fontWeight: FontWeight.normal, fontSize: 15),
                   ),
                   const SizedBox(
                     height: 2,
                   ),
                   Text(
-                    '$vehicleListName',
+                    'Renewal Date : '+myVehicleModel.vehicleRenewalDate,
                     maxLines: 2,
                     textAlign: TextAlign.left,
                     style:
@@ -58,15 +73,14 @@ class MyVehicleListViewContainer extends StatelessWidget {
                     height: 2,
                   ),
                   ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  RequestServiceHeadPageWidget()));
+                    onPressed: () async{
+                      await myVehicleViewModel.initPayment(myVehicleModel.vehicleId, myVehicleModel.paymentType);
+                      if(myVehicleViewModel.paymentTransactionId.isNotEmpty){
+                        myVehicleViewModel.openCheckout(myVehicleModel.paymentAmount);
+                      }
                     },
                     child: Text(
-                      'Need Service',
+                      'Pay Rs.' + myVehicleModel.paymentAmount.toString(),
                       style: TextStyle(fontSize: 15),
                     ),
                     style:

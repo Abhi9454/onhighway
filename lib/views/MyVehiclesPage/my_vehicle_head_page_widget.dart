@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:onhighway/views/TransactionStatusPage/transaction_status_page.dart';
 import './../../helpers/enum.dart';
 import './././../../viewModels/my_vehicles_view_model.dart';
 import 'package:provider/provider.dart';
@@ -12,7 +13,7 @@ class MyVehicleHeadPageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Provider.of<MyVehiclesListViewModel>(context,listen: false).fetchList();
+    Provider.of<MyVehiclesListViewModel>(context, listen: false).fetchList();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
@@ -58,15 +59,20 @@ class MyVehicleHeadPageWidget extends StatelessWidget {
                               ),
                             ),
                           )
-                        : myVehicleModel.status == Status.success
-                            ? SingleChildScrollView(
-                                scrollDirection: Axis.vertical,
-                                child: MyVehicleBodyPageWidget(
-                                    addVehicleContext: con,
-                                    myVehicleModel: myVehicleModel),
-                                //Stateless Body Widget
-                              )
-                            : SizedBox(),
+                        : myVehicleModel.status == Status.success &&
+                                myVehicleModel.transactionStatus ==
+                                    TransactionStatus.success
+                            ? TransactionStatusPageWidget(
+                                transactionStatus: 'Transaction Successful')
+                            : myVehicleModel.status == Status.success
+                                ? SingleChildScrollView(
+                                    scrollDirection: Axis.vertical,
+                                    child: MyVehicleBodyPageWidget(
+                                        addVehicleContext: con,
+                                        myVehicleModel: myVehicleModel),
+                                    //Stateless Body Widget
+                                  )
+                                : SizedBox(),
           );
         },
       ),

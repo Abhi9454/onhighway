@@ -7,16 +7,25 @@ class UserVehicleModel {
   final String vehicleRegNo;
   final String vehicleFuelType;
   final String vehicleListName;
+  final String vehicleStatus;
+  final String vehicleRenewalDate;
+  final String paymentType;
+  final int paymentAmount;
 
-  UserVehicleModel(
-      {required this.userId,
-      required this.vehicleId,
-      required this.vehicleType,
-      required this.vehicleBrand,
-      required this.vehicleModel,
-      required this.vehicleRegNo,
-      required this.vehicleFuelType,
-      required this.vehicleListName});
+  UserVehicleModel({
+    required this.userId,
+    required this.vehicleId,
+    required this.vehicleType,
+    required this.vehicleBrand,
+    required this.vehicleModel,
+    required this.vehicleRegNo,
+    required this.vehicleFuelType,
+    required this.vehicleListName,
+    required this.vehicleStatus,
+    required this.vehicleRenewalDate,
+    required this.paymentType,
+    required this.paymentAmount
+  });
 
   factory UserVehicleModel.fromJson(Map<String, dynamic> json) {
     return UserVehicleModel(
@@ -27,6 +36,11 @@ class UserVehicleModel {
         vehicleModel: json['vehicleModel'],
         vehicleRegNo: json['vehicleRegNo'],
         vehicleFuelType: json['vehicleFuelType'],
-        vehicleListName: json['vehicleListName']);
+        vehicleListName: json['vehicleListName'],
+        vehicleStatus: json['vehicleStatus'],
+        vehicleRenewalDate: json['vehicleRenewalDate'],
+        paymentType: json['paymentType'],
+        paymentAmount : json['paymentAmount']
+        );
   }
 }
