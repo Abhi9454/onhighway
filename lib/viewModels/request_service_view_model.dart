@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:onhighway/models/service_type.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../helpers/read_user_details.dart';
 import 'package:flutter/services.dart';
 import '../helpers/error_handler.dart';
@@ -52,13 +51,10 @@ class RequestServiceViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  setLocation() async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-    String? latLan = preferences.getString('location');
-    if (latLan!= null) {
-      latitudeLongitude = latLan;
-      preferences.remove('location');
-    }
+  setLocation(String location) {
+    _status = Status.loading;
+    latitudeLongitude = location;
+    _status = Status.success;
     notifyListeners();
   }
 

@@ -13,7 +13,6 @@ class RequestServiceHeadPageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Provider.of<RequestServiceViewModel>(context, listen: false).init();
-    Provider.of<RequestServiceViewModel>(context,listen: false).setLocation();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(

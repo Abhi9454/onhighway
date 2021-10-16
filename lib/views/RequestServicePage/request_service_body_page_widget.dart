@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../viewModels/google_map_view_model.dart';
 import '../../viewModels/request_service_view_model.dart';
 import '../../views/GoogleMapView/google_map_page.dart';
-import 'package:provider/provider.dart';
 import '../Widgets/poster_widget.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../Widgets/app_footer.dart';
 import '../../config.dart';
 import '../../helpers/enum.dart';
@@ -16,8 +13,6 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
   final TextEditingController serviceTextController = TextEditingController();
   final TextEditingController locationTextController = TextEditingController();
   final TextEditingController addressController = TextEditingController();
-
-  static final kInitialPosition = LatLng(28.7041, 77.1025);
 
   @override
   Widget build(BuildContext context) {
@@ -161,13 +156,8 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => MultiProvider(providers: <
-                                        ChangeNotifierProvider<
-                                            GoogleMapViewModel>>[
-                                      ChangeNotifierProvider<
-                                              GoogleMapViewModel>(
-                                          create: (_) => GoogleMapViewModel())
-                                    ], child: GoogleMapPageWidget())));
+                                builder: (context) =>
+                                    GoogleMapPageWidget()));
                       },
                       child: Text('Select'),
                       style: ElevatedButton.styleFrom(
