@@ -1,22 +1,46 @@
-
 import 'package:flutter/material.dart';
-import 'package:onhighway/viewModels/request_service_view_model.dart';
-import 'package:onhighway/views/GoogleMapView/google_map_page.dart';
+import '../../viewModels/google_map_view_model.dart';
+import '../../viewModels/request_service_view_model.dart';
+import '../../views/GoogleMapView/google_map_page.dart';
+import 'package:provider/provider.dart';
 import '../Widgets/poster_widget.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../Widgets/app_footer.dart';
 import '../../config.dart';
+import '../../helpers/enum.dart';
 
 class RequestServiceBodyPageWidget extends StatelessWidget {
   RequestServiceBodyPageWidget({required this.requestServiceModel});
 
   final RequestServiceViewModel requestServiceModel;
   final TextEditingController serviceTextController = TextEditingController();
+  final TextEditingController locationTextController = TextEditingController();
+  final TextEditingController addressController = TextEditingController();
+
+  static final kInitialPosition = LatLng(28.7041, 77.1025);
 
   @override
   Widget build(BuildContext context) {
+    locationTextController.text = requestServiceModel.latitudeLongitude;
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
+        requestServiceModel.status == Status.trueResponse
+            ? Center(
+                child: Text(
+                  'Request Added Successfully',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+              )
+            : SizedBox(),
+            requestServiceModel.status == Status.errorResponse
+            ? Center(
+                child: Text(
+                  'Something went wrong',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+              )
+            : SizedBox(),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
@@ -115,9 +139,10 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.6,
                       child: TextFormField(
                         autofocus: false,
+                        controller: locationTextController,
                         style: TextStyle(color: Colors.black, fontSize: 13),
                         decoration: const InputDecoration(
-                            hintText: 'Enter Live Location/Address',
+                            hintText: 'Enter Location/Address',
                             enabledBorder: const OutlineInputBorder(
                               borderSide: const BorderSide(
                                   color: Colors.grey, width: 0.0),
@@ -136,17 +161,21 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    GoogleMapPageWidget()));
+                                builder: (context) => MultiProvider(providers: <
+                                        ChangeNotifierProvider<
+                                            GoogleMapViewModel>>[
+                                      ChangeNotifierProvider<
+                                              GoogleMapViewModel>(
+                                          create: (_) => GoogleMapViewModel())
+                                    ], child: GoogleMapPageWidget())));
                       },
                       child: Text('Select'),
                       style: ElevatedButton.styleFrom(
-                        shape: new RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(5.0),
-                        ),
-                        primary: Color(0XFF091e6d),
-                        padding: const EdgeInsets.all(15.0)
-                      ),
+                          shape: new RoundedRectangleBorder(
+                            borderRadius: new BorderRadius.circular(5.0),
+                          ),
+                          primary: Color(0XFF091e6d),
+                          padding: const EdgeInsets.all(15.0)),
                     ),
                   )
                 ],
@@ -159,9 +188,10 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
                     left: 15.0, right: 15, top: 5.0, bottom: 5.0),
                 child: TextFormField(
                   autofocus: false,
+                  controller: addressController,
                   style: TextStyle(color: Colors.black, fontSize: 13),
                   decoration: const InputDecoration(
-                      hintText: 'Enter Pincode',
+                      hintText: 'Enter Address',
                       enabledBorder: const OutlineInputBorder(
                         borderSide:
                             const BorderSide(color: Colors.grey, width: 0.0),
@@ -204,9 +234,10 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
                           'Select Service Type' &&
                       requestServiceModel.selectedVehicleName !=
                           'Select Vehicle' &&
-                      serviceTextController.text.isNotEmpty) {
+                      serviceTextController.text.isNotEmpty &&
+                      addressController.text.isNotEmpty) {
                     requestServiceModel.serviceRequest(
-                        '', serviceTextController.text, '');
+                        addressController.text, serviceTextController.text);
                   } else {
                     final snackBar = SnackBar(
                       content: const Text(

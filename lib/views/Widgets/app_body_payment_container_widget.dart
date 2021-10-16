@@ -98,7 +98,7 @@ class AppBodyPaymentContainer extends StatelessWidget {
               children: [
                 Container(
                   child: Text(
-                    'Pending Payment : Rs. 3409',
+                    'Pending Payment : Rs. 0',
                     style: TextStyle(fontSize: 18, color: Colors.white),
                   ),
                 ),

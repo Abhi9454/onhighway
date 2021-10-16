@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:onhighway/models/service_type.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../helpers/read_user_details.dart';
-import '../models/service_request.dart';
 import 'package:flutter/services.dart';
 import '../helpers/error_handler.dart';
 import '../helpers/enum.dart';
@@ -15,6 +15,8 @@ class RequestServiceViewModel extends ChangeNotifier {
   UserDetails _userDetails = new UserDetails();
   MyVehiclesListService _myVehiclesListService = new MyVehiclesListService();
   late String serviceAddErrorMessage;
+
+  String latitudeLongitude = '';
 
   List<ServiceType> serviceType = [];
 
@@ -50,15 +52,25 @@ class RequestServiceViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  late List<ServiceRequest> _serviceAddStatus;
+  setLocation() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    String? latLan = preferences.getString('location');
+    if (latLan!= null) {
+      latitudeLongitude = latLan;
+      preferences.remove('location');
+    }
+    notifyListeners();
+  }
 
-  List<ServiceRequest> get serviceAddStatus => _serviceAddStatus;
+  late Map<String, dynamic> _serviceAddStatus;
 
-  Future<void> _setServiceAdd(List<ServiceRequest> serviceAddStatus) async {
+  Map<String, dynamic> get serviceAddStatus => _serviceAddStatus;
+
+  Future<void> _setServiceAdd(Map<String, dynamic> serviceAddStatus) async {
     _serviceAddStatus = serviceAddStatus;
-    if (_serviceAddStatus.isEmpty) {
-      _status = Status.failed;
-      serviceAddErrorMessage = 'Error Adding service';
+    if (_serviceAddStatus['success'] == 'false') {
+      _status = Status.errorResponse;
+      serviceAddErrorMessage = 'Something went wrong';
     } else {
       _status = Status.trueResponse;
     }
@@ -67,7 +79,6 @@ class RequestServiceViewModel extends ChangeNotifier {
 
   setVehicleId(String vehicleListName) {
     _status = Status.loading;
-    serviceType.clear();
     this.selectedVehicleName = vehicleListName;
     for (int i = 0; i < vehicleDetails.length; i++) {
       if (vehicleListName == vehicleDetails[i].vehicleListName) {
@@ -105,7 +116,7 @@ class RequestServiceViewModel extends ChangeNotifier {
       _setVehicleDetails(await _myVehiclesListService.myVehiclesList(
           await _userDetails.getId(), await _userDetails.getUserToken()));
       for (int i = 0; i < vehicleDetails.length; i++) {
-        if(vehicleDetails[i].vehicleStatus == 'Active'){
+        if (vehicleDetails[i].vehicleStatus == 'Active') {
           vehicleListName.add(vehicleDetails[i].vehicleListName);
         }
       }
@@ -117,8 +128,7 @@ class RequestServiceViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  serviceRequest(
-      String serviceAddress, String serviceText, String serviceLatLng) async {
+  serviceRequest(String serviceAddress, String serviceText) async {
     try {
       _status = Status.loading;
       _setServiceAdd(
@@ -129,7 +139,7 @@ class RequestServiceViewModel extends ChangeNotifier {
             serviceRequestId,
             serviceAddress,
             serviceText,
-            serviceLatLng),
+            '32.232,23.343'),
       );
     } on ShowError catch (error) {
       _status = Status.error;

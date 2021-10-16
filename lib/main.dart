@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onhighway/viewModels/google_map_view_model.dart';
 import '../../locale/app_localization.dart';
 import '../../viewModels/service_history_view_model.dart';
 import '../helpers/enum.dart';
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
               home: MultiProvider(providers: [
                 ChangeNotifierProvider(create: (context) => HomePageViewModel()),
                 ChangeNotifierProvider(create: (context) => ServiceHistoryViewModel()),
+                ChangeNotifierProvider(create: (context) => GoogleMapViewModel()),
               ],
                 child: HomePage(),
               ));

@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import '../../models/service_request.dart';
 import '../helpers/error_handler.dart';
 import '../config.dart';
 import '../helpers/http_service.dart';
@@ -7,7 +6,7 @@ import '../helpers/http_service.dart';
 class RequestNewService {
   final HttpService httpService = HttpService();
 
-  Future<List<ServiceRequest>> requestService(
+  Future<Map<String, dynamic>> requestService(
       String userId,
       String userToken,
       String vehicleId,
@@ -24,14 +23,13 @@ class RequestNewService {
         'serviceTypeId': serviceTypeId,
         'serviceAddress': serviceAddress,
         'serviceText': serviceText,
-        'serviceLatLag': serviceLatLag
+        'serviceLatLng': serviceLatLag
       });
       final Response<dynamic> response = await httpService.requestSource(
           AppConfig().apiUrl + '/user_create_service_request', 'POST',
           formData: formData);
-      return (response.data as List)
-          .map((e) => ServiceRequest.fromJson(e))
-          .toList();
+          print("request status "+response.data.toString());
+      return response.data as Map<String,dynamic>;
     } on DioError catch (error) {
       if (error.type == DioErrorType.receiveTimeout ||
           error.type == DioErrorType.connectTimeout) {

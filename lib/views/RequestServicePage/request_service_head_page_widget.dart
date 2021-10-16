@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:onhighway/helpers/enum.dart';
-import 'package:onhighway/viewModels/request_service_view_model.dart';
+import '../../helpers/enum.dart';
+import '../../viewModels/request_service_view_model.dart';
 import 'package:provider/provider.dart';
 import '../RequestServicePage/request_service_body_page_widget.dart';
 import '../../config.dart';
@@ -13,6 +13,7 @@ class RequestServiceHeadPageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Provider.of<RequestServiceViewModel>(context, listen: false).init();
+    Provider.of<RequestServiceViewModel>(context,listen: false).setLocation();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
