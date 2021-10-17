@@ -98,14 +98,15 @@ class AppBodyPaymentContainer extends StatelessWidget {
               children: [
                 Container(
                   child: Text(
-                    'Pending Payment : Rs. 0',
+                    'Pending Payment : Rs. ' +
+                        homePageModel.totalPendingAmount.toString(),
                     style: TextStyle(fontSize: 18, color: Colors.white),
                   ),
                 ),
                 SizedBox(
                   width: 10,
                 ),
-                Container(
+                homePageModel.totalPendingAmount > 0 ? Container(
                   width: MediaQuery.of(context).size.width * 0.30,
                   child: OutlinedButton(
                     child: Text(
@@ -119,7 +120,7 @@ class AppBodyPaymentContainer extends StatelessWidget {
                     style: OutlinedButton.styleFrom(
                         backgroundColor: AppConfig().secondary),
                   ),
-                )
+                ) : SizedBox()
               ],
             ),
           )

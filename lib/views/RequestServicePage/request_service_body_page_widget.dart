@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../../viewModels/request_service_view_model.dart';
-import '../../views/GoogleMapView/google_map_page.dart';
 import '../Widgets/poster_widget.dart';
 import '../Widgets/app_footer.dart';
+import 'package:google_maps_place_picker/google_maps_place_picker.dart';
 import '../../config.dart';
 import '../../helpers/enum.dart';
 
@@ -14,9 +15,10 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
   final TextEditingController locationTextController = TextEditingController();
   final TextEditingController addressController = TextEditingController();
 
+  static final kInitialPosition = LatLng(-33.8567844, 151.213108);
+
   @override
   Widget build(BuildContext context) {
-  
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -28,7 +30,7 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
                 ),
               )
             : SizedBox(),
-            requestServiceModel.status == Status.errorResponse
+        requestServiceModel.status == Status.errorResponse
             ? Center(
                 child: Text(
                   'Something went wrong',
@@ -152,12 +154,28 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
                   Container(
                     width: MediaQuery.of(context).size.width * 0.2,
                     child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    GoogleMapPageWidget()));
+                      onPressed: () async {
+                        // Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //         builder: (context) =>
+                        //             GoogleMapPageWidget()));
+                        var location = await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => PlacePicker(
+                              apiKey:
+                                  'AIzaSyDf-uGBawxBF5Kd4AlbilXKrLRCwdHAGT8', // Put YOUR OWN KEY here.
+                              onPlacePicked: (result) {
+                                print(result);
+                                Navigator.of(context).pop();
+                              },
+                              initialPosition: kInitialPosition,
+                              useCurrentLocation: true,
+                            ),
+                          ),
+                        );
+                        print("Location Picked is : "+location.toString());
                       },
                       child: Text('Select'),
                       style: ElevatedButton.styleFrom(

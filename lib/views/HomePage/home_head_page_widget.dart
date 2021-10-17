@@ -13,6 +13,7 @@ class HomePageHeadWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Provider.of<HomePageViewModel>(context, listen: false).init();
+    Provider.of<HomePageViewModel>(context, listen: false).pendingPayments();
     return Scaffold(
       backgroundColor: Colors.white,
       body: Consumer<HomePageViewModel>(
