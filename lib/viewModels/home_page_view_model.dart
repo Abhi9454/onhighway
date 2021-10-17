@@ -32,7 +32,6 @@ class HomePageViewModel extends ChangeNotifier {
     print('in function' + _pendingPayments['success'] );
     if (_pendingPayments['success'] == 'true') {
       this.totalPendingAmount = _pendingPayments['total_pending_amt'];
-      print('total pending amount' + totalPendingAmount.toString());
       _status = Status.success;
     } else {
       _status = Status.errorResponse;

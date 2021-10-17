@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onhighway/helpers/enum.dart';
 import 'package:onhighway/locale/AppLanguage.dart';
 import 'package:onhighway/viewModels/my_profile_view_model.dart';
 import 'package:onhighway/views/MyProfilePage/my_profile_page.dart';
@@ -91,39 +92,48 @@ class AppBodyPaymentContainer extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  child: Text(
-                    'Pending Payment : Rs. ' +
-                        homePageModel.totalPendingAmount.toString(),
-                    style: TextStyle(fontSize: 18, color: Colors.white),
-                  ),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                homePageModel.totalPendingAmount > 0 ? Container(
-                  width: MediaQuery.of(context).size.width * 0.30,
-                  child: OutlinedButton(
+          if (homePageModel.status == Status.error) Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Center(
                     child: Text(
-                      'PAY NOW',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.black),
-                    ),
-                    onPressed: () {
-                      print('Pressed');
-                    },
-                    style: OutlinedButton.styleFrom(
-                        backgroundColor: AppConfig().secondary),
+                    homePageModel.error.toString(),
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  )),
+              ) else Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        child: Text(
+                          'Pending Payment : Rs. ' +
+                              homePageModel.totalPendingAmount.toString(),
+                          style: TextStyle(fontSize: 18, color: Colors.white),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      homePageModel.totalPendingAmount > 0
+                          ? Container(
+                              width: MediaQuery.of(context).size.width * 0.30,
+                              child: OutlinedButton(
+                                child: Text(
+                                  'PAY NOW',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                                onPressed: () {
+                                  print('Pressed');
+                                },
+                                style: OutlinedButton.styleFrom(
+                                    backgroundColor: AppConfig().secondary),
+                              ),
+                            )
+                          : SizedBox()
+                    ],
                   ),
-                ) : SizedBox()
-              ],
-            ),
-          )
+                ),
         ],
       ),
     );
