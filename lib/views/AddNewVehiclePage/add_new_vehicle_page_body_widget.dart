@@ -211,7 +211,7 @@ class AddNewVehicleBodyWidget extends StatelessWidget {
                           controller: vehicleNumberController,
                           style: TextStyle(color: Colors.black, fontSize: 15),
                           decoration: const InputDecoration(
-                            hintText: 'Vehicle Number',
+                            hintText: 'Vehicle Number i.e. DL12MK1234 or dl12mk1234',
                           ),
                         ),
                       ),
