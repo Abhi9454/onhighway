@@ -1,4 +1,4 @@
-package com.service.onHighway.onhighway
+package com.img.onhighway
 
 import io.flutter.embedding.android.FlutterActivity
 
