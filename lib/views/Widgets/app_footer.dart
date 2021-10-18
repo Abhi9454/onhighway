@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onhighway/locale/app_localization.dart';
 import '../../config.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -37,14 +38,14 @@ class AppFooter extends StatelessWidget {
               onTap: () {
                 _launchInBrowser(AppConfig().webSiteLink);
               },
-              child: Text('Visit Website', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+              child: Text(AppLocalizations.of(context)!.translate('visitWebsite')!, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
             ),
             Text(' | ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
             GestureDetector(
               onTap: () {
                 _makePhoneCall(AppConfig().customerSupportNumber);
               },
-              child: Text('Contact Support', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+              child: Text(AppLocalizations.of(context)!.translate('contactSupport')!, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
             ),
           ],
         ),

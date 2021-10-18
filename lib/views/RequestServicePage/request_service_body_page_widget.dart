@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:geolocator/geolocator.dart';
 import '../../viewModels/request_service_view_model.dart';
 import '../Widgets/poster_widget.dart';
 import '../Widgets/app_footer.dart';
-import 'package:google_maps_place_picker/google_maps_place_picker.dart';
 import '../../config.dart';
 import '../../helpers/enum.dart';
 
@@ -15,10 +14,9 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
   final TextEditingController locationTextController = TextEditingController();
   final TextEditingController addressController = TextEditingController();
 
-  static final kInitialPosition = LatLng(-33.8567844, 151.213108);
-
   @override
   Widget build(BuildContext context) {
+    locationTextController.text = requestServiceModel.latitudeLongitude;
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -133,7 +131,7 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
                     padding: const EdgeInsets.only(
                         left: 15.0, right: 15, top: 5.0, bottom: 5.0),
                     child: Container(
-                      width: MediaQuery.of(context).size.width * 0.6,
+                      width: MediaQuery.of(context).size.width * 0.45,
                       child: TextFormField(
                         autofocus: false,
                         controller: locationTextController,
@@ -152,32 +150,17 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.2,
+                    width: MediaQuery.of(context).size.width * 0.35,
                     child: ElevatedButton(
                       onPressed: () async {
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //         builder: (context) =>
-                        //             GoogleMapPageWidget()));
-                        var location = await Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => PlacePicker(
-                              apiKey:
-                                  'AIzaSyDf-uGBawxBF5Kd4AlbilXKrLRCwdHAGT8', // Put YOUR OWN KEY here.
-                              onPlacePicked: (result) {
-                                print(result);
-                                Navigator.of(context).pop();
-                              },
-                              initialPosition: kInitialPosition,
-                              useCurrentLocation: true,
-                            ),
-                          ),
-                        );
-                        print("Location Picked is : "+location.toString());
+                        Position position = await Geolocator.getCurrentPosition(
+                            desiredAccuracy: LocationAccuracy.high);
+                        requestServiceModel.setLocation(
+                            position.latitude.toString() +
+                                ',' +
+                                position.longitude.toString());
                       },
-                      child: Text('Select'),
+                      child: Text('Get Location'),
                       style: ElevatedButton.styleFrom(
                           shape: new RoundedRectangleBorder(
                             borderRadius: new BorderRadius.circular(5.0),
@@ -244,8 +227,19 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
                           'Select Vehicle' &&
                       serviceTextController.text.isNotEmpty &&
                       addressController.text.isNotEmpty) {
-                    requestServiceModel.serviceRequest(
-                        addressController.text, serviceTextController.text);
+                    if (requestServiceModel.latitudeLongitude.isNotEmpty) {
+                      requestServiceModel.serviceRequest(
+                          addressController.text, serviceTextController.text);
+                    } else {
+                      final snackBar = SnackBar(
+                        content: const Text(
+                          'Location details not found',
+                          style: TextStyle(fontSize: 15, color: Colors.white),
+                        ),
+                        backgroundColor: (AppConfig().primary),
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    }
                   } else {
                     final snackBar = SnackBar(
                       content: const Text(

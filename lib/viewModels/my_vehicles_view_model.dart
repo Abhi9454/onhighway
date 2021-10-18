@@ -94,7 +94,7 @@ class MyVehiclesListViewModel extends ChangeNotifier {
 
   void openCheckout(int paymentValue) async {
     var options = {
-      'key': 'rzp_test_1DP5mmOlF5G5ag',
+      'key': 'rzp_live_86UIXIPrvhehHO',
       'amount': paymentValue * 100,
       'name': 'onHighway',
       'description': 'Joining Fees',

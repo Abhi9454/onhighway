@@ -24,7 +24,7 @@ class RegisterPageViewModel extends ChangeNotifier {
       registerErrorMessage = _userDetails['message'];
       print(_userDetails.toString());
     } else {
-      sharedPreferences.setInt('userId', userDetails['userId']);
+      sharedPreferences.setString('userId', userDetails['userId'].toString());
       sharedPreferences.setString('userName', userDetails['userName']);
       sharedPreferences.setString('userMobile', userDetails['userMobile']);
       sharedPreferences.setString('userEmail', userDetails['userEmail']);

@@ -94,6 +94,7 @@ class RequestServiceViewModel extends ChangeNotifier {
         this.serviceRequestId = serviceType[i].id;
       }
     }
+    print('service request id is'+ serviceRequestId);
     _status = Status.success;
     notifyListeners();
   }

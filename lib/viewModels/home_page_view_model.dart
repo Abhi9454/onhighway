@@ -10,6 +10,7 @@ class HomePageViewModel extends ChangeNotifier {
   late SharedPreferences preferences;
   HomePageService _homePageService = new HomePageService();
   UserDetails _userDetails = new UserDetails();
+  bool _disposed = false;
 
   int totalPendingAmount = 0;
 
@@ -86,4 +87,17 @@ class HomePageViewModel extends ChangeNotifier {
     }
     notifyListeners();
   }
+
+@override
+void dispose() {
+  _disposed = true;
+  super.dispose();
+}
+
+@override
+void notifyListeners() {
+  if (!_disposed) {
+    super.notifyListeners();
+  }
+}
 }

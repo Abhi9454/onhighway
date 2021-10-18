@@ -56,6 +56,23 @@ class RegistrationPageWidget extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             AppHeadLogoWidget(),
+                            registerModel.registerStatus ==
+                                            RegisterStatus.failed
+                                        ? Text(
+                                            registerModel.registerErrorMessage,
+                                            style: TextStyle(
+                                                color: Colors.red,
+                                                fontSize: 18),
+                                          )
+                                        : registerModel.registerStatus ==
+                                                RegisterStatus.error
+                                            ? Text(
+                                                registerModel.error.message,
+                                                style: TextStyle(
+                                                    color: Colors.red,
+                                                    fontSize: 18),
+                                              )
+                                            : SizedBox(),
                             Padding(
                               padding: const EdgeInsets.all(20.0),
                               child: Form(
@@ -292,23 +309,7 @@ class RegistrationPageWidget extends StatelessWidget {
                                     SizedBox(
                                       height: 25,
                                     ),
-                                    registerModel.registerStatus ==
-                                            RegisterStatus.failed
-                                        ? Text(
-                                            registerModel.registerErrorMessage,
-                                            style: TextStyle(
-                                                color: Colors.red,
-                                                fontSize: 18),
-                                          )
-                                        : registerModel.registerStatus ==
-                                                RegisterStatus.error
-                                            ? Text(
-                                                registerModel.error.message,
-                                                style: TextStyle(
-                                                    color: Colors.red,
-                                                    fontSize: 18),
-                                              )
-                                            : SizedBox()
+                                    
                                   ],
                                 ),
                               ),

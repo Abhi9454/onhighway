@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:onhighway/helpers/enum.dart';
 import 'package:onhighway/locale/AppLanguage.dart';
+import 'package:onhighway/locale/app_localization.dart';
 import 'package:onhighway/viewModels/my_profile_view_model.dart';
 import 'package:onhighway/views/MyProfilePage/my_profile_page.dart';
 import 'package:provider/provider.dart';
@@ -26,7 +27,7 @@ class AppBodyPaymentContainer extends StatelessWidget {
               children: [
                 OutlinedButton(
                   child: Text(
-                    'My Profile',
+                    AppLocalizations.of(context)!.translate('myProfile')!,
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.normal),
                   ),
@@ -49,7 +50,7 @@ class AppBodyPaymentContainer extends StatelessWidget {
                 ),
                 OutlinedButton(
                   child: Text(
-                    'Change Language',
+                    AppLocalizations.of(context)!.translate('changeLanguage')!,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.normal),
@@ -106,7 +107,7 @@ class AppBodyPaymentContainer extends StatelessWidget {
                     children: [
                       Container(
                         child: Text(
-                          'Pending Payment : Rs. ' +
+                          AppLocalizations.of(context)!.translate('paymentPending')! + ' Rs : ' +
                               homePageModel.totalPendingAmount.toString(),
                           style: TextStyle(fontSize: 18, color: Colors.white),
                         ),
@@ -114,23 +115,23 @@ class AppBodyPaymentContainer extends StatelessWidget {
                       SizedBox(
                         width: 10,
                       ),
-                      homePageModel.totalPendingAmount > 0
-                          ? Container(
-                              width: MediaQuery.of(context).size.width * 0.30,
-                              child: OutlinedButton(
-                                child: Text(
-                                  'PAY NOW',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(color: Colors.black),
-                                ),
-                                onPressed: () {
-                                  print('Pressed');
-                                },
-                                style: OutlinedButton.styleFrom(
-                                    backgroundColor: AppConfig().secondary),
-                              ),
-                            )
-                          : SizedBox()
+                      // homePageModel.totalPendingAmount > 0
+                      //     ? Container(
+                      //         width: MediaQuery.of(context).size.width * 0.30,
+                      //         child: OutlinedButton(
+                      //           child: Text(
+                      //             'PAY NOW',
+                      //             textAlign: TextAlign.center,
+                      //             style: TextStyle(color: Colors.black),
+                      //           ),
+                      //           onPressed: () {
+                      //             print('Pressed');
+                      //           },
+                      //           style: OutlinedButton.styleFrom(
+                      //               backgroundColor: AppConfig().secondary),
+                      //         ),
+                      //       )
+                      //     : SizedBox()
                     ],
                   ),
                 ),
