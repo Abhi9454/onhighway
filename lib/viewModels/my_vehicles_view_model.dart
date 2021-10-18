@@ -142,7 +142,7 @@ class MyVehiclesListViewModel extends ChangeNotifier {
   }
 
   paymentFailed() {
-    _status = Status.failed;
+    _status = Status.success;
     _transactionStatus = TransactionStatus.failed;
     notifyListeners();
   }

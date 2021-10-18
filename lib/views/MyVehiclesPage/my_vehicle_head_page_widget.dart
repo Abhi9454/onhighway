@@ -64,15 +64,20 @@ class MyVehicleHeadPageWidget extends StatelessWidget {
                                     TransactionStatus.success
                             ? TransactionStatusPageWidget(
                                 transactionStatus: 'Transaction Successful')
-                            : myVehicleModel.status == Status.success
-                                ? SingleChildScrollView(
-                                    scrollDirection: Axis.vertical,
-                                    child: MyVehicleBodyPageWidget(
-                                        addVehicleContext: con,
-                                        myVehicleModel: myVehicleModel),
-                                    //Stateless Body Widget
-                                  )
-                                : SizedBox(),
+                            : myVehicleModel.status == Status.success &&
+                                    myVehicleModel.transactionStatus ==
+                                        TransactionStatus.failed
+                                ? TransactionStatusPageWidget(
+                                    transactionStatus: 'Transaction Failed')
+                                : myVehicleModel.status == Status.success
+                                    ? SingleChildScrollView(
+                                        scrollDirection: Axis.vertical,
+                                        child: MyVehicleBodyPageWidget(
+                                            addVehicleContext: con,
+                                            myVehicleModel: myVehicleModel),
+                                        //Stateless Body Widget
+                                      )
+                                    : SizedBox(),
           );
         },
       ),
