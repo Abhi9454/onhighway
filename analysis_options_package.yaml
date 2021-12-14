@@ -17,3 +17,8 @@ linter:
     non_constant_identifier_names: false
     always_declare_return_types: false
     type_annotate_public_apis: false
+
+
+analyzer:
+  errors:
+    prefer_single_quotes: warning

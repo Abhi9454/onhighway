@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../viewModels/google_map_view_model.dart';
 import '../../locale/app_localization.dart';
 import '../../viewModels/service_history_view_model.dart';
@@ -127,7 +128,7 @@ class _NavigationTabState extends State<NavigationTab> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: const Icon(Icons.home),
-              label: "Home",
+              label: 'Home',
               backgroundColor: AppConfig().primary),
           BottomNavigationBarItem(
               icon: const Icon(Icons.history),
@@ -135,7 +136,7 @@ class _NavigationTabState extends State<NavigationTab> {
               backgroundColor: AppConfig().primary),
           BottomNavigationBarItem(
               icon: const Icon(Icons.support_agent),
-              label: "Our Plans",
+              label: 'Our Plans',
               backgroundColor: AppConfig().primary),
         ],
       ),

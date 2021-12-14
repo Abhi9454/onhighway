@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:onhighway/helpers/enum.dart';
-import 'package:onhighway/locale/AppLanguage.dart';
-import 'package:onhighway/locale/app_localization.dart';
-import 'package:onhighway/viewModels/my_profile_view_model.dart';
-import 'package:onhighway/views/MyProfilePage/my_profile_page.dart';
+import '../../helpers/enum.dart';
+import '../../locale/AppLanguage.dart';
+import '../../locale/app_localization.dart';
+import '../../viewModels/my_profile_view_model.dart';
+import '../../views/MyProfilePage/my_profile_page.dart';
 import 'package:provider/provider.dart';
 import '../../viewModels/home_page_view_model.dart';
 import '../../../config.dart';

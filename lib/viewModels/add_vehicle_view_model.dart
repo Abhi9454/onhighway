@@ -122,19 +122,15 @@ class AddVehicleViewModel extends ChangeNotifier {
     }
   }
 
-  fetchVehicleBrands() async {
+  fetchVehicleBrands(String vehicleType) async {
     _status = Status.loading;
     vehicleBrands.clear();
-    final String response =
-        await rootBundle.loadString('assets/vehicle_brands.json');
-    final data = await json.decode(response);
-    vehicleBrands = (data['vehicleBrands'] as List)
+    List<dynamic> data = await _addVehicleService.getVehicleBrand(vehicleType);
+    vehicleBrands = data
         .map((e) => VehicleBrand.fromJson(e))
         .toList();
     for (int i = 0; i < vehicleBrands.length; i++) {
-      if (vehicleBrands[i].vehicleType == vehicleType) {
-        vehicleBrandsOnType.add(vehicleBrands[i].brandName);
-      }
+      vehicleBrandsOnType.add(vehicleBrands[i].brandName);
     }
     _status = Status.success;
     notifyListeners();
@@ -143,17 +139,14 @@ class AddVehicleViewModel extends ChangeNotifier {
   fetchVehicleModel() async {
     _status = Status.loading;
     vehicleModels.clear();
-    final String response =
-        await rootBundle.loadString('assets/vehicle_models.json');
-    final data = await json.decode(response);
-    vehicleModels = (data['vehicleModels'] as List)
+    print(vehicleType + "is vehicle type" + selectedVehicleBrandId.toString());
+    List<dynamic> data = await _addVehicleService.getVehicleModels(vehicleType, selectedVehicleBrandId);
+    print(data.toString() + "is data for model");
+    vehicleModels = data
         .map((e) => VehicleModel.fromJson(e))
         .toList();
     for (int i = 0; i < vehicleModels.length; i++) {
-      if (vehicleModels[i].vehicleType == vehicleType &&
-          vehicleModels[i].modelBrandId == selectedVehicleBrandId.toString()) {
-        vehicleModelOnType.add(vehicleModels[i].modelName);
-      }
+      vehicleModelOnType.add(vehicleModels[i].modelName);
     }
     _status = Status.success;
     notifyListeners();

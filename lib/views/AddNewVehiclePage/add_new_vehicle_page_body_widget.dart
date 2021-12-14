@@ -80,7 +80,7 @@ class AddNewVehicleBodyWidget extends StatelessWidget {
                           onChanged: (String? newValue) {
                             if (newValue! != 'Select Vehicle Type') {
                               vehicleModel.setVehicleType(newValue);
-                              vehicleModel.fetchVehicleBrands();
+                              vehicleModel.fetchVehicleBrands(newValue);
                             }
                           },
                           hint: Text(

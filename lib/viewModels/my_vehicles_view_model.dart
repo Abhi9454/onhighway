@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import '../config.dart';
 import '../models/user_vehicle.dart';
 import '../helpers/read_user_details.dart';
 import '../services/my_vehicles_service.dart';
@@ -94,7 +95,7 @@ class MyVehiclesListViewModel extends ChangeNotifier {
 
   void openCheckout(int paymentValue) async {
     var options = {
-      'key': 'rzp_live_86UIXIPrvhehHO',
+      'key': AppConfig().razorPayApiKey,
       'amount': paymentValue * 100,
       'name': 'onHighway',
       'description': 'Joining Fees',

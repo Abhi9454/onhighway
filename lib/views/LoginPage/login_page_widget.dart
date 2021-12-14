@@ -71,7 +71,7 @@ class LoginPageWidget extends StatelessWidget {
                                         style: TextStyle(
                                             color: Colors.black, fontSize: 18),
                                         decoration: const InputDecoration(
-                                            hintText: 'Email',
+                                            hintText: 'Email/Mobile',
                                             enabledBorder:
                                                 const OutlineInputBorder(
                                               borderSide: const BorderSide(
