@@ -60,7 +60,7 @@ class PlansBodyPageWidget extends StatelessWidget {
                             ),
                             Center(
                               child: Text(
-                                'Rs. 3000',
+                                'Rs. 1499',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20),
                               ),
@@ -122,7 +122,7 @@ class PlansBodyPageWidget extends StatelessWidget {
                             ),
                             Center(
                               child: Text(
-                                'Rs. 1,000',
+                                'Rs. 999',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20),
                               ),

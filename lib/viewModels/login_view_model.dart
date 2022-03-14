@@ -9,6 +9,7 @@ import '../services/login_service.dart';
 class LoginPageViewModel extends ChangeNotifier {
   AuthenticateService _authenticateService = new AuthenticateService();
   LoginStatus _loginStatus = LoginStatus.pending;
+  String errorMessage = '';
 
   LoginStatus get loginStatus => _loginStatus;
 
@@ -20,7 +21,9 @@ class LoginPageViewModel extends ChangeNotifier {
   Future<void> _setUserDetails(Map<String, dynamic> userDetails) async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     _userDetails = userDetails;
+    print(_userDetails);
     if(_userDetails['success'] == 'false'){
+      errorMessage = _userDetails['message'];
       _loginStatus = LoginStatus.failed;
     }
     else{

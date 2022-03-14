@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
 import 'package:onhighway/views/ForgetPasswordPage/forget_password_page_widget.dart';
 import '../../locale/app_localization.dart';
 import '../../main.dart';
@@ -175,7 +173,7 @@ class LoginPageWidget extends StatelessWidget {
                                     ),
                                     model.loginStatus == LoginStatus.failed
                                         ? Text(
-                                            'Login Failed. Try again',
+                                            model.errorMessage,
                                             style: TextStyle(
                                                 color: Colors.red,
                                                 fontSize: 18),
