@@ -111,7 +111,7 @@ class PlansBodyPageWidget extends StatelessWidget {
                               height: 10,
                             ),
                             Text(
-                              'FROM NEXT MONTH CUSTOMER WILL GET REMINDER FOR MAKING MONTHLY PAYMENT OF RS. 1000/- AND ITS MANDATORY TO PAY TO REQUEST FOR ANY SERVICE',
+                              'FROM NEXT MONTH CUSTOMER WILL GET REMINDER FOR MAKING MONTHLY PAYMENT OF RS. 999/- AND ITS MANDATORY TO PAY TO REQUEST FOR ANY SERVICE',
                               maxLines: 5,
                               textAlign: TextAlign.center,
                               style: TextStyle(
