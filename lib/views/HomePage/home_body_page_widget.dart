@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onhighway/viewModels/request_service_view_model.dart';
+import 'package:onhighway/viewModels/vehicle_load_view_model.dart';
 import 'package:onhighway/views/RequestServicePage/request_service_head_page_widget.dart';
+import 'package:onhighway/views/VehicleLoadPage/vehicle_load_head_page_widget.dart';
 import '../../viewModels/running_service_view_model.dart';
 import '../../views/RunningServicePage/running_service_head_page_widget.dart';
 import '../../locale/app_localization.dart';
@@ -123,6 +125,40 @@ class HomePageBodyWidget extends StatelessWidget {
                       Icons.run_circle),
                 )
               ],
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        SizedBox(
+          child: Padding(
+            padding: const EdgeInsets.all(30.0),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => MultiProvider(providers: <
+                            ChangeNotifierProvider<
+                                VehicleLoadViewModel>>[
+                          ChangeNotifierProvider<VehicleLoadViewModel>(
+                              create: (_) => VehicleLoadViewModel())
+                        ], child: VehicleLoadHeadPageWidget())));
+              },
+              child: Container(
+                color: AppConfig().secondary,
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text(
+                      'View/Accept Load',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.black, fontSize: 24),
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
         ),
