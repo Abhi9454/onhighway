@@ -4,6 +4,8 @@ class VehicleLoad {
   final String weight;
   final String dimension;
   final String detail;
+  final String vendorName;
+  final String vendorMobileNumber;
   final String pickUpAddress;
   final String pickUpState;
   final String pickUpCity;
@@ -21,6 +23,8 @@ class VehicleLoad {
         required this.weight,
         required this.dimension,
         required this.detail,
+        required this.vendorName,
+        required this.vendorMobileNumber,
         required this.pickUpAddress,
         required this.pickUpState,
         required this.pickUpCity,
@@ -40,6 +44,8 @@ class VehicleLoad {
       weight: json['loadWeight'],
       dimension: json['loadDimension'],
       detail : json['loadDetails'],
+      vendorName: json['vendorName'],
+      vendorMobileNumber: json['vendorMobileNo'],
       pickUpAddress: json['pickupAddress'],
       pickUpState: json['pickupState'],
       pickUpCity: json['pickupCity'],

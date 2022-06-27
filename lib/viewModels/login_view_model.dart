@@ -1,15 +1,19 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import '../helpers/enum.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 import '../helpers/error_handler.dart';
 import '../services/login_service.dart';
+import '../services/notification.dart';
 
 
 class LoginPageViewModel extends ChangeNotifier {
   AuthenticateService _authenticateService = new AuthenticateService();
   LoginStatus _loginStatus = LoginStatus.pending;
   String errorMessage = '';
+  final firebaseMessaging = FCM();
 
   LoginStatus get loginStatus => _loginStatus;
 
@@ -50,8 +54,10 @@ class LoginPageViewModel extends ChangeNotifier {
   login(String email, String password) async {
     try {
       _loginStatus = LoginStatus.loading;
-      notifyListeners();
-      _setUserDetails(await _authenticateService.login(email, password));
+      String token = await firebaseMessaging.getToken();
+      firebaseMessaging.setNotification();
+      log('the token is '+token);
+      _setUserDetails(await _authenticateService.login(email, password, token));
     } on ShowError catch (error) {
       _loginStatus = LoginStatus.error;
       _setError(error);

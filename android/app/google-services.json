@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "688025341599",
+    "project_id": "onhighway-in",
+    "storage_bucket": "onhighway-in.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688025341599:android:bffb08d88a20795dfb1caa",
+        "android_client_info": {
+          "package_name": "com.bootspider.onHighwayVendor.onhighwayvendor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "688025341599-5385ctqfoosi4ptt6mc6c0qae3vve6q5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUPkfKWJQQiTIVqxpXA3Sl95wQS-GdDEM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "688025341599-5385ctqfoosi4ptt6mc6c0qae3vve6q5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688025341599:android:62aab9caf176ba1ffb1caa",
+        "android_client_info": {
+          "package_name": "com.img.onhighway"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "688025341599-5385ctqfoosi4ptt6mc6c0qae3vve6q5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUPkfKWJQQiTIVqxpXA3Sl95wQS-GdDEM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "688025341599-5385ctqfoosi4ptt6mc6c0qae3vve6q5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

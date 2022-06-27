@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
+import '../services/notification.dart';
 import '../services/register_service.dart';
 import '../helpers/enum.dart';
 
@@ -9,6 +12,7 @@ class RegisterPageViewModel extends ChangeNotifier {
   RegisterService _registerService = new RegisterService();
   RegisterStatus _registerStatus = RegisterStatus.pending;
   late String registerErrorMessage;
+  final firebaseMessaging = FCM();
 
   RegisterStatus get registerStatus => _registerStatus;
 
@@ -47,9 +51,10 @@ class RegisterPageViewModel extends ChangeNotifier {
       String name, String email, String mobileNumber, String password) async {
     try {
       _registerStatus = RegisterStatus.loading;
-      notifyListeners();
+      String token = await firebaseMessaging.getToken();
+      log('the token is '+token);
       _setUserDetails(
-          await _registerService.register(name, email, mobileNumber, password));
+          await _registerService.register(name, email, mobileNumber, password, token));
     } on ShowError catch (error) {
       _registerStatus = RegisterStatus.error;
       _setError(error);

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:onhighway/models/vehicle_load.dart';
-import 'package:onhighway/viewModels/vehicle_load_view_model.dart';
-import '../../../viewModels/running_service_view_model.dart';
+import '../../../models/vehicle_load.dart';
+import '../../../viewModels/vehicle_load_view_model.dart';
 
 import '../../../config.dart';
 
@@ -60,6 +59,24 @@ class VehicleListViewContainer extends StatelessWidget {
               ),
               Text(
                 'Dimensions : '+model.dimension ,
+                maxLines: 2,
+                textAlign: TextAlign.left,
+                style: TextStyle(fontWeight: FontWeight.normal, fontSize: 13),
+              ),
+              const SizedBox(
+                height: 2,
+              ),
+              Text(
+                'Vendor Name : '+model.vendorName ,
+                maxLines: 2,
+                textAlign: TextAlign.left,
+                style: TextStyle(fontWeight: FontWeight.normal, fontSize: 13),
+              ),
+              const SizedBox(
+                height: 2,
+              ),
+              Text(
+                'Vendor Mobile Number : '+model.vendorMobileNumber ,
                 maxLines: 2,
                 textAlign: TextAlign.left,
                 style: TextStyle(fontWeight: FontWeight.normal, fontSize: 13),

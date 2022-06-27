@@ -7,12 +7,13 @@ class AuthenticateService {
   final HttpService httpService = HttpService();
 
 
-  Future<Map<String, dynamic>> login(String email, String password) async {
+  Future<Map<String, dynamic>> login(String email, String password,String token) async {
     try {
       final FormData formData = FormData.fromMap(<String, dynamic>{
         'apiToken' : AppConfig().apiKey,
         'useremail' : email,
-        'password' : password
+        'password' : password,
+        'deviceToken' : token
       });
       final Response<dynamic> response =
       await httpService.requestSource(

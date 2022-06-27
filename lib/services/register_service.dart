@@ -7,14 +7,15 @@ class RegisterService {
   final HttpService httpService = HttpService();
 
 
-  Future<Map<String, dynamic>> register(String name, String email, String mobileNumber, String userPassword) async {
+  Future<Map<String, dynamic>> register(String name, String email, String mobileNumber, String userPassword, String deviceToken) async {
     try {
       final FormData formData = FormData.fromMap(<String, dynamic>{
         'apiToken' : AppConfig().apiKey,
         'userName' : name,
         'userEmail' : email,
         'userMobile' : int.parse(mobileNumber),
-        'userPassword' : userPassword
+        'userPassword' : userPassword,
+        'deviceToken' : deviceToken
       });
       final Response<dynamic> response =
       await httpService.requestSource(
