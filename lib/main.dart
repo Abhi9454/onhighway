@@ -162,7 +162,7 @@ class _NavigationTabState extends State<NavigationTab> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: const Icon(Icons.home),
-              label: 'Home',
+              label: AppLocalizations.of(context)!.translate('home'),
               backgroundColor: AppConfig().primary),
           BottomNavigationBarItem(
               icon: const Icon(Icons.history),
@@ -170,7 +170,7 @@ class _NavigationTabState extends State<NavigationTab> {
               backgroundColor: AppConfig().primary),
           BottomNavigationBarItem(
               icon: const Icon(Icons.support_agent),
-              label: 'Our Plans',
+              label: AppLocalizations.of(context)!.translate('ourPlans'),
               backgroundColor: AppConfig().primary),
         ],
       ),

@@ -13,5 +13,22 @@
   "visitWebsite": "वेबसाइट",
   "contactSupport": "हमसे संपर्क करें",
   "plansFeatures" : "योजनाएं और विशेषताएं",
-  "chooseService" : "सेवाओं का चयन करें"
+  "chooseService" : "सेवाओं का चयन करें",
+  "viewLoad": "नया लोड देखें",
+  "ourPlans": "हमारी योजनाएँ",
+  "home": "होम",
+  "acceptLoad" : "लोड एक्सेप्ट करें",
+  "enterDetail": "अपना डिटेल डालें",
+  "chooseVehicle" : "गाड़ी चुने",
+  "chooseModel": "गाड़ी का मॉडल चुने",
+  "chooseBrand": "गाड़ी का ब्रांड कौन सा है",
+  "joiningFees" : "पंजीकरण शुल्क",
+  "acceptedLoad": "स्वीकृत लोड",
+  "joiningText" : "जब आप हमारे ऐप के साथ अपने ट्रक, बस, कार को पंजीकृत करते है तो सभी सेवाएं केवल एकमुश्त शुल्क का भुगतान करने के बाद ही अनुरोध कर सकते हैं",
+  "lifeTimeRegister" : "गाड़ी का लाइफटाइम रजिस्ट्रेशन",
+  "serviceFees": "सर्विस जारी रखने की फीस",
+  "requestVehicleService": "अनुरोध वाहन सेवा",
+  "requestServiceAnywhere": "कहीं से भी अनुरोध सेवा",
+  "requestServiceAnytime" : "अनुरोध सेवा कभी भी",
+  "serviceContinueText": "अगले महीने से आपको सिर्फ रुपये 999/- का मासिक भुगतान करना होगा"
 }

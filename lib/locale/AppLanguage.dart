@@ -12,7 +12,7 @@ class AppLanguage extends ChangeNotifier {
     String? currentLocale = preferences.getString('language_code');
     print('current applanguage' + currentLocale.toString());
     if (currentLocale == null) {
-      _appLocale = Locale('en');
+      _appLocale = Locale('hi');
       return Null;
     } else {
       _appLocale = Locale(preferences.getString('language_code')!);

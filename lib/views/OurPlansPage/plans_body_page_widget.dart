@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
+import '../../locale/app_localization.dart';
 import '../../viewModels/our_plans_view_model.dart';
 import '../../views/Widgets/app_head_logo_widget.dart';
 
@@ -40,7 +41,7 @@ class PlansBodyPageWidget extends StatelessWidget {
                           children: [
                             Center(
                               child: Text(
-                                'Joining Fees',
+                                AppLocalizations.of(context)!.translate('joiningFees')!,
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 18),
                               ),
@@ -49,7 +50,7 @@ class PlansBodyPageWidget extends StatelessWidget {
                               height: 10,
                             ),
                             Text(
-                              'WHEN ANYONE REGISTER THEIR TRUCK, BUS, CAR WITH OUR APP ALL SERVICES CAN REQUEST ONLY AFTER PAYING JOINING FEE WHICH IS ONE TIME FEE',
+                              AppLocalizations.of(context)!.translate('joiningText')!,
                               maxLines: 5,
                               textAlign: TextAlign.center,
                               style: TextStyle(
@@ -70,7 +71,7 @@ class PlansBodyPageWidget extends StatelessWidget {
                             ),
                             Center(
                               child: Text(
-                                'Vehicle Lifetime Register',
+                                AppLocalizations.of(context)!.translate('lifeTimeRegister')!,
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                               ),
@@ -80,7 +81,7 @@ class PlansBodyPageWidget extends StatelessWidget {
                             ),
                             Center(
                               child: Text(
-                                'Request Vehicle Service',
+                                AppLocalizations.of(context)!.translate('requestVehicleService')!,
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                               ),
@@ -102,7 +103,7 @@ class PlansBodyPageWidget extends StatelessWidget {
                           children: [
                             Center(
                               child: Text(
-                                'SERVICE CONTINUE FEE',
+                                AppLocalizations.of(context)!.translate('serviceFees')!,
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 18),
                               ),
@@ -111,7 +112,7 @@ class PlansBodyPageWidget extends StatelessWidget {
                               height: 10,
                             ),
                             Text(
-                              'FROM NEXT MONTH CUSTOMER WILL GET REMINDER FOR MAKING MONTHLY PAYMENT OF RS. 999/- AND ITS MANDATORY TO PAY TO REQUEST FOR ANY SERVICE',
+                              AppLocalizations.of(context)!.translate('serviceContinueText')!,
                               maxLines: 5,
                               textAlign: TextAlign.center,
                               style: TextStyle(
@@ -132,7 +133,7 @@ class PlansBodyPageWidget extends StatelessWidget {
                             ),
                             Center(
                               child: Text(
-                                'Request Service Anytime',
+                                AppLocalizations.of(context)!.translate('requestServiceAnytime')!,
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                               ),
@@ -142,7 +143,7 @@ class PlansBodyPageWidget extends StatelessWidget {
                             ),
                             Center(
                               child: Text(
-                                'Request Service From Anywhere',
+                                AppLocalizations.of(context)!.translate('requestServiceAnywhere')!,
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                               ),

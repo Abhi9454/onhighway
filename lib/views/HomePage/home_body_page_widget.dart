@@ -152,7 +152,7 @@ class HomePageBodyWidget extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text(
-                      'View/Accept Load',
+                      AppLocalizations.of(context)!.translate('viewLoad')!,
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.black, fontSize: 24),
                     ),

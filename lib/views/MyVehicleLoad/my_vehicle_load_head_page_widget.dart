@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onhighway/viewModels/my_vehicle_load_view_model.dart';
 import 'package:onhighway/views/MyVehicleLoad/my_vehicle_load_body_widget.dart';
+import '../../locale/app_localization.dart';
 import '../../viewModels/vehicle_load_view_model.dart';
 import '../../views/VehicleLoadPage/vehicle_load_body_page_widget.dart';
 import '../../helpers/enum.dart';
@@ -26,7 +27,7 @@ class MyVehicleLoadHeadPageWidget extends StatelessWidget {
             onPressed: () => Navigator.of(context).pop(),
           ),
           title: Text(
-            'Accepted Load',
+              AppLocalizations.of(context)!.translate('acceptedLoad')!,
             textAlign: TextAlign.left,
             style: TextStyle(color: Colors.black, fontSize: 22),
           ),

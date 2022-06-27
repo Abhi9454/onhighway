@@ -45,7 +45,7 @@ class AppFooter extends StatelessWidget {
               onTap: () {
                 _makePhoneCall(AppConfig().customerSupportNumber);
               },
-              child: Text(AppLocalizations.of(context)!.translate('contactSupport')!, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+              child: Text('18002588073', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
             ),
           ],
         ),

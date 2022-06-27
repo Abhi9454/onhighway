@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../locale/app_localization.dart';
 import './.././../helpers/enum.dart';
 import '.././../viewModels/add_vehicle_view_model.dart';
 import '../Widgets/app_footer.dart';
@@ -37,7 +38,7 @@ class AddNewVehicleBodyWidget extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: Text(
-                'Enter Details',
+                AppLocalizations.of(context)!.translate('enterDetail')!,
                 textAlign: TextAlign.left,
                 style: TextStyle(color: Colors.black, fontSize: 22),
               ),
