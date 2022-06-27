@@ -52,6 +52,7 @@ class RegisterPageViewModel extends ChangeNotifier {
     try {
       _registerStatus = RegisterStatus.loading;
       String token = await firebaseMessaging.getToken();
+      firebaseMessaging.setNotification();
       log('the token is '+token);
       _setUserDetails(
           await _registerService.register(name, email, mobileNumber, password, token));
