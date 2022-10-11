@@ -61,7 +61,7 @@ class PlansBodyPageWidget extends StatelessWidget {
                             ),
                             Center(
                               child: Text(
-                                'Rs. 1499',
+                                'Rs. 499 for 3 month',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20),
                               ),
