@@ -3,7 +3,7 @@ import 'package:onhighway/viewModels/my_vehicles_view_model.dart';
 import '../../../models/user_vehicle.dart';
 import '../../../config.dart';
 
-class MyVehicleListViewContainer extends StatelessWidget {
+class MyVehicleListViewContainer extends StatefulWidget {
   MyVehicleListViewContainer(
       {required this.myVehicleModel, required this.myVehicleViewModel});
 
@@ -11,10 +11,20 @@ class MyVehicleListViewContainer extends StatelessWidget {
   final MyVehiclesListViewModel myVehicleViewModel;
 
   @override
+  State<MyVehicleListViewContainer> createState() => _MyVehicleListViewContainerState();
+}
+
+class _MyVehicleListViewContainerState extends State<MyVehicleListViewContainer> {
+
+
+  String planValue = 'Choose Plan';
+  int selectedPlan = 0;
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print(myVehicleModel.vehicleId);
+        print(widget.myVehicleModel.vehicleId);
       },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -26,9 +36,14 @@ class MyVehicleListViewContainer extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(myVehicleModel.vehicleType + ' | ' + myVehicleModel.vehicleFuelType + ' | ' + myVehicleModel.paymentType,
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 16)),
+                  Text(
+                      widget.myVehicleModel.vehicleType +
+                          ' | ' +
+                          widget.myVehicleModel.vehicleFuelType +
+                          ' | ' +
+                          widget.myVehicleModel.paymentType,
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
                   const SizedBox(
                     height: 2,
                   ),
@@ -36,16 +51,22 @@ class MyVehicleListViewContainer extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        myVehicleModel.vehicleModel,
+                        widget.myVehicleModel.vehicleModel,
                         maxLines: 2,
                         textAlign: TextAlign.left,
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18),
                       ),
                       Text(
-                        myVehicleModel.vehicleStatus,
+                        widget.myVehicleModel.vehicleStatus,
                         maxLines: 2,
                         textAlign: TextAlign.left,
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color : myVehicleModel.vehicleStatus == 'Active' ? Colors.green : Colors.red),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            color: widget.myVehicleModel.vehicleStatus == 'Active'
+                                ? Colors.green
+                                : Colors.red),
                       ),
                     ],
                   ),
@@ -53,7 +74,7 @@ class MyVehicleListViewContainer extends StatelessWidget {
                     height: 2,
                   ),
                   Text(
-                    myVehicleModel.vehicleListName,
+                    widget.myVehicleModel.vehicleListName,
                     maxLines: 2,
                     textAlign: TextAlign.left,
                     style:
@@ -63,7 +84,7 @@ class MyVehicleListViewContainer extends StatelessWidget {
                     height: 2,
                   ),
                   Text(
-                    'Renewal Date : '+myVehicleModel.vehicleRenewalDate,
+                    'Renewal Date : ' + widget.myVehicleModel.vehicleRenewalDate,
                     maxLines: 2,
                     textAlign: TextAlign.left,
                     style:
@@ -72,19 +93,62 @@ class MyVehicleListViewContainer extends StatelessWidget {
                   const SizedBox(
                     height: 2,
                   ),
-                  ElevatedButton(
-                    onPressed: () async{
-                      await myVehicleViewModel.initPayment(myVehicleModel.vehicleId, myVehicleModel.paymentType);
-                      if(myVehicleViewModel.paymentTransactionId.isNotEmpty){
-                        myVehicleViewModel.openCheckout(myVehicleModel.paymentAmount);
-                      }
-                    },
-                    child: Text(
-                      'Pay Rs.' + myVehicleModel.paymentAmount.toString(),
-                      style: TextStyle(fontSize: 15),
-                    ),
-                    style:
-                        ElevatedButton.styleFrom(primary: AppConfig().primary),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      DropdownButtonHideUnderline(
+                        child: DropdownButton<String>(
+                          value: planValue,
+                          items: <String>[
+                            'Choose Plan',
+                            '₹ 499',
+                            '₹ 999',
+                            '₹ 1499'
+                          ].map((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                          onChanged: (val) {
+                            if(val != 'Choose Plan'){
+                              setState(() {
+                                planValue = val!;
+                                if(planValue == '₹ 499'){
+                                  selectedPlan = 499;
+                                }
+                                else if(planValue == '₹ 999'){
+                                  selectedPlan = 999;
+                                }
+                                else{
+                                  selectedPlan = 1499;
+                                }
+                              });
+                            }
+                          },
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: planValue != 'Choose Plan' ? () async {
+                          await widget.myVehicleViewModel.initPayment(
+                              widget.myVehicleModel.vehicleId,
+                              widget.myVehicleModel.paymentType);
+                          if (widget.myVehicleViewModel
+                              .paymentTransactionId.isNotEmpty) {
+                            widget.myVehicleViewModel
+                                .openCheckout(selectedPlan);
+                          }
+                        } : null,
+                        child: Text(
+                          'Pay Now',
+                          style: TextStyle(fontSize: 15),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: AppConfig().primary,
+                          disabledBackgroundColor: Colors.grey
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

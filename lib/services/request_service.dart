@@ -13,7 +13,7 @@ class RequestNewService {
       String serviceTypeId,
       String serviceAddress,
       String serviceText,
-      String serviceLatLag) async {
+      String serviceLatLag, String servicePincode) async {
     try {
       final FormData formData = FormData.fromMap(<String, dynamic>{
         'apiToken': AppConfig().apiKey,
@@ -23,7 +23,8 @@ class RequestNewService {
         'serviceTypeId': serviceTypeId,
         'serviceAddress': serviceAddress,
         'serviceText': serviceText,
-        'serviceLatLng': serviceLatLag
+        'serviceLatLng': serviceLatLag,
+        'servicePincode': servicePincode
       });
       final Response<dynamic> response = await httpService.requestSource(
           AppConfig().apiUrl + '/user_create_service_request', 'POST',

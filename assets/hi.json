@@ -30,5 +30,7 @@
   "requestVehicleService": "अनुरोध वाहन सेवा",
   "requestServiceAnywhere": "कहीं से भी अनुरोध सेवा",
   "requestServiceAnytime" : "अनुरोध सेवा कभी भी",
-  "serviceContinueText": "अगले महीने से आपको सिर्फ रुपये 999/- का मासिक भुगतान करना होगा"
+  "serviceContinueText": "अगले महीने से आपको सिर्फ रुपये 999/- का मासिक भुगतान करना होगा",
+  "serviceProviders": "सेवा प्रदाताओं",
+  "updateLocation": "स्थान अपडेट"
 }

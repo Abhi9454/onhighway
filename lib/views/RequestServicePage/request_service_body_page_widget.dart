@@ -5,6 +5,7 @@ import '../Widgets/poster_widget.dart';
 import '../Widgets/app_footer.dart';
 import '../../config.dart';
 import '../../helpers/enum.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class RequestServiceBodyPageWidget extends StatelessWidget {
   RequestServiceBodyPageWidget({required this.requestServiceModel});
@@ -13,6 +14,7 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
   final TextEditingController serviceTextController = TextEditingController();
   final TextEditingController locationTextController = TextEditingController();
   final TextEditingController addressController = TextEditingController();
+  final TextEditingController pincodeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +32,12 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
             : SizedBox(),
         requestServiceModel.status == Status.errorResponse
             ? Center(
-                child: Text(
-                  'Something went wrong',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                child: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Text(
+                    requestServiceModel.serviceAddErrorMessage,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
                 ),
               )
             : SizedBox(),
@@ -153,12 +158,37 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.35,
                     child: ElevatedButton(
                       onPressed: () async {
+                      Map<Permission, PermissionStatus>  status = await [Permission.location].request();
+                      if(await Permission.location.isGranted){
                         Position position = await Geolocator.getCurrentPosition(
                             desiredAccuracy: LocationAccuracy.high);
                         requestServiceModel.setLocation(
                             position.latitude.toString() +
                                 ',' +
                                 position.longitude.toString());
+                      }
+                      else{
+                        showDialog(
+                          context: context,
+                          builder: (ctx) => AlertDialog(
+                            title: const Text("Permission Denied"),
+                            content: const Text("You denied location permission. Please enable it in settings"),
+                            actions: <Widget>[
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.of(ctx).pop();
+                                },
+                                child: Container(
+                                  color: Colors.green,
+                                  padding: const EdgeInsets.all(14),
+                                  child: const Text("Ok"),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      }
+
                       },
                       child: Text('Get Location'),
                       style: ElevatedButton.styleFrom(
@@ -201,6 +231,28 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
                     left: 15.0, right: 15, top: 5.0, bottom: 5.0),
                 child: TextFormField(
                   autofocus: false,
+                  controller: pincodeController,
+                  style: TextStyle(color: Colors.black, fontSize: 13),
+                  decoration: const InputDecoration(
+                      hintText: 'Enter Pincode',
+                      enabledBorder: const OutlineInputBorder(
+                        borderSide:
+                        const BorderSide(color: Colors.grey, width: 0.0),
+                      ),
+                      focusedBorder: const OutlineInputBorder(
+                        borderSide:
+                        const BorderSide(color: Colors.grey, width: 0.0),
+                      )),
+                ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                    left: 15.0, right: 15, top: 5.0, bottom: 5.0),
+                child: TextFormField(
+                  autofocus: false,
                   maxLines: 5,
                   controller: serviceTextController,
                   style: TextStyle(color: Colors.black, fontSize: 13),
@@ -229,7 +281,7 @@ class RequestServiceBodyPageWidget extends StatelessWidget {
                       addressController.text.isNotEmpty) {
                     if (requestServiceModel.latitudeLongitude.isNotEmpty) {
                       requestServiceModel.serviceRequest(
-                          addressController.text, serviceTextController.text);
+                          addressController.text, serviceTextController.text, pincodeController.text);
                     } else {
                       final snackBar = SnackBar(
                         content: const Text(

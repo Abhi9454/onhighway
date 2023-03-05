@@ -7,6 +7,7 @@ import '../../views/MyProfilePage/my_profile_page.dart';
 import 'package:provider/provider.dart';
 import '../../viewModels/home_page_view_model.dart';
 import '../../../config.dart';
+import '../UpdateLocationPage/update_location_page_widget.dart';
 
 class AppBodyPaymentContainer extends StatelessWidget {
   AppBodyPaymentContainer({required this.homePageModel});
@@ -93,6 +94,22 @@ class AppBodyPaymentContainer extends StatelessWidget {
               ],
             ),
           ),
+          // OutlinedButton(
+          //   child: Text(
+          //     AppLocalizations.of(context)!.translate('updateLocation')!,
+          //     style: TextStyle(
+          //         color: Colors.white, fontWeight: FontWeight.normal),
+          //   ),
+          //   onPressed: () {
+          //     Navigator.push(
+          //       context,
+          //       MaterialPageRoute(builder: (context) => const SelectPinLocationPageWidget()),
+          //     );
+          //   },
+          //   style: OutlinedButton.styleFrom(
+          //     side: BorderSide(color: Colors.white),
+          //   ),
+          // ),
           if (homePageModel.status == Status.error) Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Center(

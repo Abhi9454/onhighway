@@ -30,5 +30,7 @@
   "requestServiceAnywhere": "Request Service from Anywhere",
   "requestServiceAnytime" : "Request Service Anytime",
   "serviceFees": "Service continuing fees",
-  "serviceContinueText": "FROM NEXT MONTH CUSTOMER WILL GET REMINDER FOR MAKING MONTHLY PAYMENT OF RS. 999/-"
+  "serviceContinueText": "FROM NEXT MONTH CUSTOMER WILL GET REMINDER FOR MAKING MONTHLY PAYMENT OF RS. 999/-",
+  "serviceProviders": "Service Providers",
+  "updateLocation": "Update Location"
 }

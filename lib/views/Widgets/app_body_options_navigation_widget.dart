@@ -10,8 +10,8 @@ class AppBodyNavigationContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.30,
-      height: MediaQuery.of(context).size.width * 0.34,
+      width: MediaQuery.of(context).size.width * 0.23,
+      height: MediaQuery.of(context).size.width * 0.30,
       color: AppConfig().onPrimary,
       child: Padding(
         padding: const EdgeInsets.all(10.0),

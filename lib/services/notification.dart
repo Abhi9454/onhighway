@@ -55,7 +55,6 @@ class FCM {
               android: AndroidNotificationDetails(
                 channel.id,
                 channel.name,
-                channel.description,
                 color:  Color(0XFFFFBA00),
                 icon: "@mipmap/ic_launcher",
               ),

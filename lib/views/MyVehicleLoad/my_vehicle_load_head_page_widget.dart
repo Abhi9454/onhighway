@@ -65,7 +65,6 @@ class MyVehicleLoadHeadPageWidget extends StatelessWidget {
               scrollDirection: Axis.vertical,
               child: MyVehicleLoadBodyPageWidget(
                 context: con, myVehicleLoadModel: myVehicleLoadDetails,
-
               ))
               : SizedBox();
         },

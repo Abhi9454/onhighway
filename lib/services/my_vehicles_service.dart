@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:onhighway/models/vehicle_service_model.dart';
 import '../models/user_vehicle.dart';
 import '../helpers/error_handler.dart';
 import '../config.dart';
@@ -11,6 +12,7 @@ class MyVehiclesListService {
   Future<List<UserVehicleModel>> myVehiclesList(
       String userId, String userToken) async {
     try {
+      print("UserId : $userId and userToken is : $userToken");
       final Map<String, dynamic> userVehicleList = {
         'apiToken': AppConfig().apiKey,
         'userToken': userToken,
@@ -21,6 +23,36 @@ class MyVehiclesListService {
           queryParameters: userVehicleList);
       return (response.data as List)
           .map((e) => UserVehicleModel.fromJson(e))
+          .toList();
+    } on DioError catch (error) {
+      if (error.type == DioErrorType.receiveTimeout ||
+          error.type == DioErrorType.connectTimeout) {
+        throw ShowError('Server timeout ');
+      } else if (error.type == DioErrorType.other) {
+        throw ShowError('No Internet connection...');
+      } else {
+        throw ShowError('Something went wrong');
+      }
+    }
+  }
+
+
+
+  Future<List<VehicleServiceModel>> vehicleServiceList(
+      String userId, String userToken, String vehicleId) async {
+    try {
+      print("UserId : $userId and userToken is : $userToken");
+      final Map<String, dynamic> userVehicleList = {
+        'apiToken': AppConfig().apiKey,
+        'userToken': userToken,
+        'userId': userId,
+        'vehicleId': vehicleId
+      };
+      final Response<dynamic> response = await dio.get(
+          AppConfig().apiUrl + '/service_type_list',
+          queryParameters: userVehicleList);
+      return (response.data as List)
+          .map((e) => VehicleServiceModel.fromJson(e))
           .toList();
     } on DioError catch (error) {
       if (error.type == DioErrorType.receiveTimeout ||

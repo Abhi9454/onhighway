@@ -16,10 +16,17 @@ class MyVehiclesListViewModel extends ChangeNotifier {
   TransactionStatus _transactionStatus = TransactionStatus.init;
   UpdatePaymentService _paymentService = new UpdatePaymentService();
 
+
   String paymentTransactionId = '';
 
   Status get status => _status;
   TransactionStatus get transactionStatus => _transactionStatus;
+
+
+  // setPlanValue(String value){
+  //   planValue = value;
+  //   notifyListeners();
+  // }
 
 
   late List<UserVehicleModel> _vehicleDetails;

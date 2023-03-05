@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onhighway/viewModels/request_service_view_model.dart';
 import 'package:onhighway/viewModels/vehicle_load_view_model.dart';
+import 'package:onhighway/viewModels/vendor_list_view_model.dart';
 import 'package:onhighway/views/RequestServicePage/request_service_head_page_widget.dart';
 import 'package:onhighway/views/VehicleLoadPage/vehicle_load_head_page_widget.dart';
+import 'package:onhighway/views/VendorListPage/vendor_list_page_widget.dart';
 import '../../viewModels/running_service_view_model.dart';
 import '../../views/RunningServicePage/running_service_head_page_widget.dart';
 import '../../locale/app_localization.dart';
@@ -84,7 +86,7 @@ class HomePageBodyWidget extends StatelessWidget {
                       Icons.add),
                 ),
                 SizedBox(
-                  width: 2,
+                  width: 1,
                 ),
                 GestureDetector(
                   onTap: () {
@@ -104,7 +106,7 @@ class HomePageBodyWidget extends StatelessWidget {
                       Icons.car_rental),
                 ),
                 SizedBox(
-                  width: 2,
+                  width: 1,
                 ),
                 GestureDetector(
                   onTap: () {
@@ -123,7 +125,27 @@ class HomePageBodyWidget extends StatelessWidget {
                       AppLocalizations.of(context)!
                           .translate('runningService')!,
                       Icons.run_circle),
-                )
+                ),
+                SizedBox(
+                  width: 1,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MultiProvider(providers: <
+                                ChangeNotifierProvider<
+                                    VendorListViewModel>>[
+                              ChangeNotifierProvider<
+                                  VendorListViewModel>(
+                                  create: (_) => VendorListViewModel())
+                            ], child: VendorListPageWidget())));
+                  },
+                  child: AppBodyNavigationContainer(
+                      AppLocalizations.of(context)!.translate('serviceProviders')!,
+                      Icons.home_repair_service),
+                ),
               ],
             ),
           ),

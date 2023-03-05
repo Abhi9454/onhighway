@@ -19,6 +19,7 @@ class ServiceHistoryHeadPageWidget extends StatelessWidget {
         preferredSize: Size.fromHeight(50),
         child: AppBar(
           backgroundColor: AppConfig().secondary,
+          automaticallyImplyLeading: false,
           title: Text(
             'Service History',
             textAlign: TextAlign.left,

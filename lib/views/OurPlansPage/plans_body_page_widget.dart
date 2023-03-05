@@ -41,27 +41,7 @@ class PlansBodyPageWidget extends StatelessWidget {
                           children: [
                             Center(
                               child: Text(
-                                AppLocalizations.of(context)!.translate('joiningFees')!,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 18),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              AppLocalizations.of(context)!.translate('joiningText')!,
-                              maxLines: 5,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontWeight: FontWeight.normal, fontSize: 13),
-                            ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            Center(
-                              child: Text(
-                                'Rs. 499 for 3 month',
+                                '₹ 499/- for 3 months',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20),
                               ),
@@ -69,22 +49,184 @@ class PlansBodyPageWidget extends StatelessWidget {
                             const SizedBox(
                               height: 5,
                             ),
-                            Center(
-                              child: Text(
-                                AppLocalizations.of(context)!.translate('lifeTimeRegister')!,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 15),
-                              ),
+                            // Center(
+                            //   child: Text(
+                            //     AppLocalizations.of(context)!.translate('lifeTimeRegister')!,
+                            //     style: TextStyle(
+                            //         fontWeight: FontWeight.bold, fontSize: 15),
+                            //   ),
+                            // ),
+                            // const SizedBox(
+                            //   height: 2,
+                            // ),
+                            // Center(
+                            //   child: Text(
+                            //     AppLocalizations.of(context)!.translate('requestVehicleService')!,
+                            //     style: TextStyle(
+                            //         fontWeight: FontWeight.bold, fontSize: 15),
+                            //   ),
+                            // ),
+                            Text(
+                              '- Request for service',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
                             ),
                             const SizedBox(
                               height: 2,
                             ),
+                            Text(
+                              '- Get truck load requests',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
+                            ),
+                            const SizedBox(
+                              height: 2,
+                            ),
+                            Text(
+                              '- Manage all your vehicles at one place',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
+                            ),
+                            const SizedBox(
+                              height: 2,
+                            ),
+                            Text(
+                              '- Find service provider nearby',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(10.0),
+                  //   child: Card(
+                  //     color: Colors.white70,
+                  //     elevation: 2,
+                  //     child: Padding(
+                  //       padding: const EdgeInsets.all(15.0),
+                  //       child: Column(
+                  //         mainAxisAlignment: MainAxisAlignment.start,
+                  //         children: [
+                  //           Center(
+                  //             child: Text(
+                  //               AppLocalizations.of(context)!.translate('serviceFees')!,
+                  //               style: TextStyle(
+                  //                   fontWeight: FontWeight.bold, fontSize: 18),
+                  //             ),
+                  //           ),
+                  //           const SizedBox(
+                  //             height: 10,
+                  //           ),
+                  //           Text(
+                  //             AppLocalizations.of(context)!.translate('serviceContinueText')!,
+                  //             maxLines: 5,
+                  //             textAlign: TextAlign.center,
+                  //             style: TextStyle(
+                  //                 fontWeight: FontWeight.normal, fontSize: 13),
+                  //           ),
+                  //           const SizedBox(
+                  //             height: 5,
+                  //           ),
+                  //           Center(
+                  //             child: Text(
+                  //               'Rs. 999',
+                  //               style: TextStyle(
+                  //                   fontWeight: FontWeight.bold, fontSize: 20),
+                  //             ),
+                  //           ),
+                  //           const SizedBox(
+                  //             height: 5,
+                  //           ),
+                  //           Center(
+                  //             child: Text(
+                  //               AppLocalizations.of(context)!.translate('requestServiceAnytime')!,
+                  //               style: TextStyle(
+                  //                   fontWeight: FontWeight.bold, fontSize: 15),
+                  //             ),
+                  //           ),
+                  //           const SizedBox(
+                  //             height: 2,
+                  //           ),
+                  //           Center(
+                  //             child: Text(
+                  //               AppLocalizations.of(context)!.translate('requestServiceAnywhere')!,
+                  //               style: TextStyle(
+                  //                   fontWeight: FontWeight.bold, fontSize: 15),
+                  //             ),
+                  //           ),
+                  //         ],
+                  //       ),
+                  //     ),
+                  //   ),
+                  // )
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Card(
+                      color: Colors.white70,
+                      elevation: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
                             Center(
                               child: Text(
-                                AppLocalizations.of(context)!.translate('requestVehicleService')!,
+                                '₹ 999/- for 6 months',
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 15),
+                                    fontWeight: FontWeight.bold, fontSize: 20),
                               ),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            // Center(
+                            //   child: Text(
+                            //     AppLocalizations.of(context)!.translate('lifeTimeRegister')!,
+                            //     style: TextStyle(
+                            //         fontWeight: FontWeight.bold, fontSize: 15),
+                            //   ),
+                            // ),
+                            // const SizedBox(
+                            //   height: 2,
+                            // ),
+                            // Center(
+                            //   child: Text(
+                            //     AppLocalizations.of(context)!.translate('requestVehicleService')!,
+                            //     style: TextStyle(
+                            //         fontWeight: FontWeight.bold, fontSize: 15),
+                            //   ),
+                            // ),
+                            Text(
+                              '- Request for service',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
+                            ),
+                            const SizedBox(
+                              height: 2,
+                            ),
+                            Text(
+                              '- Get truck load requests',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
+                            ),
+                            const SizedBox(
+                              height: 2,
+                            ),
+                            Text(
+                              '- Manage all your vehicles at one place',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
+                            ),
+                            const SizedBox(
+                              height: 2,
+                            ),
+                            Text(
+                              '- Find service provider nearby',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
                             ),
                           ],
                         ),
@@ -103,27 +245,7 @@ class PlansBodyPageWidget extends StatelessWidget {
                           children: [
                             Center(
                               child: Text(
-                                AppLocalizations.of(context)!.translate('serviceFees')!,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 18),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              AppLocalizations.of(context)!.translate('serviceContinueText')!,
-                              maxLines: 5,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontWeight: FontWeight.normal, fontSize: 13),
-                            ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            Center(
-                              child: Text(
-                                'Rs. 999',
+                                '₹ 1499/- for 12 months',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20),
                               ),
@@ -131,28 +253,57 @@ class PlansBodyPageWidget extends StatelessWidget {
                             const SizedBox(
                               height: 5,
                             ),
-                            Center(
-                              child: Text(
-                                AppLocalizations.of(context)!.translate('requestServiceAnytime')!,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 15),
-                              ),
+                            // Center(
+                            //   child: Text(
+                            //     AppLocalizations.of(context)!.translate('lifeTimeRegister')!,
+                            //     style: TextStyle(
+                            //         fontWeight: FontWeight.bold, fontSize: 15),
+                            //   ),
+                            // ),
+                            // const SizedBox(
+                            //   height: 2,
+                            // ),
+                            // Center(
+                            //   child: Text(
+                            //     AppLocalizations.of(context)!.translate('requestVehicleService')!,
+                            //     style: TextStyle(
+                            //         fontWeight: FontWeight.bold, fontSize: 15),
+                            //   ),
+                            // ),
+                            Text(
+                              '- Request for service',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
                             ),
                             const SizedBox(
                               height: 2,
                             ),
-                            Center(
-                              child: Text(
-                                AppLocalizations.of(context)!.translate('requestServiceAnywhere')!,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 15),
-                              ),
+                            Text(
+                              '- Get truck load requests',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
+                            ),
+                            const SizedBox(
+                              height: 2,
+                            ),
+                            Text(
+                              '- Manage all your vehicles at one place',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
+                            ),
+                            const SizedBox(
+                              height: 2,
+                            ),
+                            Text(
+                              '- Find service provider nearby',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
                             ),
                           ],
                         ),
                       ),
                     ),
-                  )
+                  ),
                 ],
               );
   }
