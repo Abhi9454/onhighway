@@ -1,6 +1,8 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../viewModels/google_map_view_model.dart';
 import '../../locale/app_localization.dart';
@@ -40,6 +42,7 @@ void main() async {
   AppLanguage appLanguage = AppLanguage();
   await appLanguage.fetchLocale();
   await Firebase.initializeApp();
+  SharedPreferences.setMockInitialValues({});
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   await flutterLocalNotificationsPlugin
@@ -61,6 +64,8 @@ class MyApp extends StatelessWidget {
   final AppLanguage appLanguage;
 
   MyApp({required this.appLanguage});
+
+
 
   @override
   Widget build(BuildContext context) {

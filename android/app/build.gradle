@@ -43,7 +43,7 @@ apply plugin: 'com.google.gms.google-services'
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.img.onhighway"
         minSdkVersion 24
-        targetSdkVersion 31
+        targetSdkVersion 33
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }

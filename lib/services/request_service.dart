@@ -33,9 +33,9 @@ class RequestNewService {
       return response.data as Map<String,dynamic>;
     } on DioError catch (error) {
       if (error.type == DioErrorType.receiveTimeout ||
-          error.type == DioErrorType.connectTimeout) {
+          error.type == DioErrorType.connectionTimeout) {
         throw ShowError('Server timeout ');
-      } else if (error.type == DioErrorType.other) {
+      } else if (error.type == DioErrorType.unknown) {
         throw ShowError('No Internet connection...');
       } else {
         throw ShowError('Something went wrong');
